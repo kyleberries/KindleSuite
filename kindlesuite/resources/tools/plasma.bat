@@ -25,9 +25,9 @@ echo.
 echo Moving plasma to Kindle (Be patient, takes ~5 mins)
 echo Make sure kindle is plugged into 
 echo regular cable with ADB enabled!
-adb wait-for-devplasma 
+adb wait-for-device
 echo moving...
-adb wait-for-devplasma push resources\rom\plasma\plasma.img /sdcard/
+adb wait-for-device push resources\rom\plasma\plasma.img /sdcard/
 echo.
 echo.
 echo Installing plasma (takes ~5 mins)...
