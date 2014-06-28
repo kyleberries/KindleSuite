@@ -1,0 +1,177 @@
+<style>
+body{
+background-color:black;
+color:#b2d1e0;
+font-family:helvetica;
+}
+	 img.bg {
+    border:none;
+	position:absolute;
+	z-index:-1;
+	top:0px;
+	left:0px;
+	    }
+	div.content{
+            margin-top:90px;
+			height:385px;
+			margin-left:240px;
+			width:540px;
+			overflow:auto;
+			font-weight:bold;
+			}
+	hr {
+	    width:520px;
+		color:#999898;
+		margin-top:15px;
+		margin-bottom:15px;
+	   }
+	 a {
+	    cursor:pointer;
+	   }
+
+	
+
+</style>
+
+<html>
+<head>
+<SCRIPT FOR="restorebat" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\checks\restorecheck.bat"
+      </SCRIPT>
+	        <SCRIPT FOR="update" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "..\update.bat"
+		window.close()
+      </SCRIPT>
+	        <SCRIPT FOR="11310root" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\11310.bat"
+      </SCRIPT>
+	  	    <SCRIPT FOR="113232root" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\113232.bat"
+      </SCRIPT>
+	        <SCRIPT FOR="11321root" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\11321.bat"
+      </SCRIPT>
+	        <SCRIPT FOR="11322root" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\11322.bat"
+      </SCRIPT>
+	        <SCRIPT FOR="stockrooter" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\stockmod.bat"
+      </SCRIPT>
+	        <SCRIPT FOR="water" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\water.bat"
+      </SCRIPT>
+	        <SCRIPT FOR="hellfire" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\hellfire.bat"
+      </SCRIPT>
+	  	    <SCRIPT FOR="ice" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\ice.bat"
+      </SCRIPT>
+	  <SCRIPT FOR="adbdrive" EVENT="onClick" Language="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\AdbDriverInstaller.exe"
+	  </SCRIPT>
+	  <SCRIPT FOR="dlpc" EVENT="onClick" Language="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\dlpc.bat"
+	  </SCRIPT>
+	  <SCRIPT FOR="kfl" EVENT="onClick" Language="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\kfl.bat"
+	  </SCRIPT>
+	  <SCRIPT FOR="plasma" EVENT="onClick" Language="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\plasma.bat"
+	  </SCRIPT>
+<SCRIPT LANGUAGE="VBScript">
+    Sub Window_onLoad
+        window.resizeTo 820,540
+    End Sub 
+</SCRIPT>
+<title>KindleSuite</title>
+<HTA:APPLICATION 
+     ID="objTest" 
+     APPLICATIONNAME="KindleSuite"
+     SCROLL="NO"
+     SINGLEINSTANCE="YES"
+	 MAXIMIZEBUTTON="NO"
+>
+</head>
+
+<body>
+<map name="testmap">
+  <area id=update name="update" shape="rect" coords="650,30,680,55" alt="Check for Updates" onclick="javascript:alert('KS is up to date!')">
+  <area shape="rect" coords="10,90,200,155" alt="backup, recovery, devices" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('adb').style.display ='block';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('roms').style.display ='none';">
+  <area shape="rect" coords="10,180,200,230" alt="Root Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('adb').style.display ='none';document.getElementById('root').style.display ='block';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('roms').style.display ='none';">
+  <area shape="rect" coords="10,245,200,315" alt="Restore to 11.3.2.3.2" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('adb').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='block';document.getElementById('gapps').style.display ='none';document.getElementById('roms').style.display ='none';">
+  <area shape="rect" coords="10,320,200,390" alt="Install Gapps or DLPC" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('adb').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='block';document.getElementById('roms').style.display ='none';">
+  <area shape="rect" coords="10,405,200,465" alt="Custom ROMs" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('adb').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('roms').style.display ='block';">
+</map>
+<img class="bg" src=".\bg2.png" usemap="#testmap"/>
+
+<div id="home" class="content">
+Welcome to KindleSuite 3.0 This program is designed to quickly and easily backup modify, and restore your KFSOWI. If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com
+<br /><br />
+Try out our intensive repair Linux Distro KFL <a id=kfl name="kfl">here</a>
+</div>
+<div id="adb" class="content">
+<h3>ADB</h3>
+<a onclick="">Backup Files/Apps</a>
+<hr />
+<a onclick="">Restore Files/Apps</a>
+<hr />
+<a onclick="">Reboot</a>
+<hr />
+<a onclick="">Reboot Recovery</a>
+<hr />
+<a onclick="">Check for Devices</a>
+<hr />
+<a id=adbdrive name="adbdrive">Install Drivers</a>
+<hr />
+</div>
+<div id="root" class="content">
+<h3>Root</h3>
+<h5>Select your current FireOS version to begin</h5>
+<a id=11310root name="11310root" onclick="">11.3.1.0</a>
+<hr />
+<a id=11321root name="11321root" onclick="">11.3.2.1</a>
+<hr />
+<a id=11322root name="11322root" onclick="">11.3.2.2</a>
+<hr />
+<a id=113232root name="113232root" onclick="">11.3.2.3.2</a>
+<hr />
+</div>
+<div id="restore" class="content">
+<h3>Restore</h3>
+<a id=restorebat name="restorebat" onclick="">Restore 11.3.2.3.2</a>
+<hr />
+</div>
+<div id="gapps" class="content">
+<h3>Gapps</h3>
+<a id=stockrooter name="stockrooter" onclick="">Gapps</a>
+<hr />
+<a id=dlpc name="dlpc" onclick="">DLPC</a><br /><br />
+DLPC is a binary feature to quickly switch between Google and Amazon Appstores.
+<hr />
+</div>
+<div id="roms" class="content">
+<h3>ROMs</h3>
+<a id=plasma name="plasma" onclick="">Plasma</a>
+<hr />
+<a id=hellfire name="hellfire" onclick="">HellFire</a>
+<hr />
+<a id=ice name="ice" onclick="">Ice</a>
+<hr />
+</div>
+</body>
+
+
