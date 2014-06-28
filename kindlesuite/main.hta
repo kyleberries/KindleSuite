@@ -92,6 +92,18 @@ font-family:helvetica;
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "resources\tools\plasma.bat"
 	  </SCRIPT>
+	  <SCRIPT FOR="reboot" EVENT="onClick" Language="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\reboot.bat"
+	  </SCRIPT>
+	  <SCRIPT FOR="recovery" EVENT="onClick" Language="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\recovery.bat"
+	  </SCRIPT>
+	  <SCRIPT FOR="devices" EVENT="onClick" Language="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\devices.bat"
+	  </SCRIPT>
 <SCRIPT LANGUAGE="VBScript">
     Sub Window_onLoad
         window.resizeTo 820,540
@@ -129,11 +141,11 @@ Try out our intensive repair Linux Distro KFL <a id=kfl name="kfl">here</a>
 <hr />
 <a onclick="">Restore Files/Apps</a>
 <hr />
-<a onclick="">Reboot</a>
+<a id=reboot name="reboot" onclick="">Reboot</a>
 <hr />
-<a onclick="">Reboot Recovery</a>
-<hr />
-<a onclick="">Check for Devices</a>
+<a id=recovery name="recovery" onclick="">Reboot Recovery</a>
+<!--hr />
+<a id=devices name="devices" onclick="">Check for Devices</a-->
 <hr />
 <a id=adbdrive name="adbdrive">Install Drivers</a>
 <hr />
