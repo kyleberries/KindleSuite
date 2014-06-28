@@ -9,7 +9,8 @@ KindleSuite is a collection of tools to modify the Amazon 2013 Kindle Fire HD 7"
 the file heirarchy is as follows
 
 KindleSuite
-  | RUNME.bat   -The user-end file to open the program
+  | RUNME-windows.bat   -The user-end file to open the program
+  | runme.sh            -The user-end file for Linux/Mac
   | update.bat  -script to allow users to update KS to the latest version
   | kindlesuite
      | adb
@@ -28,14 +29,15 @@ KindleSuite
      | resources
         | LICESNSE
         | AdbDriverInstaller.exe  - Tool to install ADB drivers
-        | boot     - bot images for ROOT
+        | boot     - boot images for ROOT
         |  | 11310-boot.img
         |  | 11321-boot.img
         |  | 11322-boot.img
-        | icons
-        |  | bg.jpg
-        |  | button.bmp
-        |  | license.png
+		|  | 113232-boot.img
+		|  | 11324-boot.img
+        | images
+        |  | bg2.jpg
+        |  | icon.ico
         | root
         |  | exploit
         |  | rootme.sh   - Script to execute exploit device-side
@@ -44,8 +46,12 @@ KindleSuite
         |  | 11310.bat   - Root tool for 11.3.1.0
         |  | 11321.bat   - Root tool for 11.3.2.1
         |  | 11322.bat   - Root tool for 11.3.2.2
+		|  | 113232.bat  - Root tool for 11.3.2.3.2
+		|  | 11324.bat   - Root tool for 11.3.2.4
         |  | restore.bat - Tool to restore bricked/return kindles
-        |  | stockmod.bat - Tool to install Google Play Services
+        |  | stockmod.bat- Tool to install Google Play Services
+		|  | backup.bat  - /data backup tool
+		|  | bak_restore.bat - /data restore tool
         | checks
         |  | restorecheck.bat  - Tools to check for latest KS version
         |  | versioncurrent
