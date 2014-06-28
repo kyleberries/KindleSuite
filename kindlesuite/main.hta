@@ -76,6 +76,14 @@ font-family:helvetica;
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "resources\tools\ice.bat"
       </SCRIPT>
+	  	  	<SCRIPT FOR="backup" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\backup.bat"
+      </SCRIPT>
+	  	  	<SCRIPT FOR="bak_restore" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "resources\tools\bak_restore.bat"
+      </SCRIPT>
 	  <SCRIPT FOR="adbdrive" EVENT="onClick" Language="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "resources\AdbDriverInstaller.exe"
@@ -134,12 +142,14 @@ font-family:helvetica;
 Welcome to KindleSuite 3.0 This program is designed to quickly and easily backup modify, and restore your KFSOWI. If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com
 <br /><br />
 Try out our intensive repair Linux Distro KFL <a id=kfl name="kfl">here</a>
+<br /><br />
+<img src=".\license.png" />
 </div>
 <div id="adb" class="content">
 <h3>ADB</h3>
-<a onclick="">Backup Files/Apps</a>
+<a id=backup name="backup" onclick="">Backup Files/Apps</a>
 <hr />
-<a onclick="">Restore Files/Apps</a>
+<a id=bak_restore name="bak_restore" onclick="">Restore Files/Apps</a>
 <hr />
 <a id=reboot name="reboot" onclick="">Reboot</a>
 <hr />
