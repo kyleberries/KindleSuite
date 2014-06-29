@@ -36,7 +36,7 @@ echo
 echo "  1)Restore 11.3.2.3.2       4)Root Kindle"
 echo "  2)Install Gapps            5)Enable switching Amazon and Gapps"
 echo "  3)Disable OTAs and ads     6)Disable stock SoftKeys"
-echo "  7)install another rom"
+echo "  7)install another rom      8) backup or restore device (before/after rom install)"
 echo "  9)special root & no OTA's for 11.3.2.3.2 in one"
 echo 
 echo "             X)Exit Program"
@@ -49,9 +49,7 @@ then
     clear
     echo "======================================================================"
 	echo "This restore tool will download the 11.3.2.3.2 update.bin from amazon"
-	echo "using a builtin download manager. When the manager opens simply "
-	echo "click OK to begin download. after download has completed, close"
-	echo  "download manager and continue."
+	echo 
 	echo "***WARNING!!!!***"
 	echo "          Failure to follow instructions correctly WILL result in a"
 	echo "          soft-bricked device!!! We are not responsible for"
@@ -167,7 +165,7 @@ then
 elif [ "$index" = "4" ] ;
 then
     clear
-	echo " a) 11.3.1.0    b) 11.3.2.1   c) 11.3.2.2  d) 11.3.2.3.2 f) Cancel"
+	echo " a) 11.3.1.0    b) 11.3.2.1   c) 11.3.2.2  d) 11.3.2.3.2 e) 11.3.2.4"
 	echo "What software version do you have?"
 	read ranswer
 
@@ -332,7 +330,52 @@ then
 		echo "reloading script"
 		sleep 2
 		bash runme.sh
-
+	elif [ "$ranswer" = "e" ] ;
+	then
+	    clear
+		echo "Make sure you power Kindle OFF and plug into FASTBOOT cable"
+		sleep 2
+		echo
+		echo
+		echo
+		echo "Downgrading Boot Image..."
+		echo
+		echo
+		echo
+		echo
+		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11310-boot.img
+		fastboot -i 0x1949 continue
+		echo " if you are stuck at ADB wait for device, plugin your regular cable"
+		echo " plug it also into your computer and manually reboot the device by"
+                echo " long pressing power button"
+		echo
+		adb wait-for-device
+		echo "Device connected. Pushing files..."
+		adb push ./kindlesuite/resources/root/su /data/local/tmp/
+		adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
+		adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
+		echo "Changing permissions..."
+		adb shell chmod 755 /data/local/tmp/*
+		echo "Executing Exploit (could take some time, be patient!)"
+		sleep 2
+		adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
+		echo
+		echo
+		echo "rebooting fastboot..."
+		adb reboot
+		echo " if you have a regular cable in, turn off device and plugin your fastboot cable"
+		echo
+		fastboot -i 0x1949 wait-for-device devices
+		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11324-boot.img
+		fastboot -i 0x1949 continue
+		echo
+		echo
+		echo "Device should reboot to home screen, and have ROOT!"
+		echo "Dont forget to install a superuser app like SuperSU!"
+		sleep 10
+		echo "reloading script"
+		sleep 2
+		bash runme.sh
 	else
 	    bash runme.sh
 	fi
@@ -607,9 +650,9 @@ then
     echo "if KFTT, those roms will brick your device!"
     echo "----------------------------------------------------"
     echo "chose a rom for instalation:"
-    echo " a)Ice"
+    echo " a) Ice"
     echo " b) Hellfire"
-    echo " c)Plasma   "
+    echo " c) Plasma   "
     echo 
     echo 
     echo 
@@ -804,8 +847,6 @@ then
 			echo "select wipe and reboot"
 			sleep 10
 			bash runme.sh
-			
-	    
 	else
 	    bash runme.sh
 	fi
@@ -852,7 +893,41 @@ then
 	else
 	    bash runme.sh
 	fi
-
+elif [ "$index" = "8" ] ;
+then
+	echo "this will backup/restore your whole device with the exception of the /system partition"
+	echo "this process isn't a fast one. Of course: restoring means you have previously backed up"
+	echo "you need to have your REGULAR cable pluged in and the device switched on"
+	echo
+	echo "chose either:"
+	echo " a) backup       b)restore"
+	read bkrest
+	if [ "$bkrest" = "a" ] ;
+	then
+		clear
+		mkdir -p ./kindlesuite/resources/backup
+		echo "This will backup the ENTIRE device (except system),"
+		echo "so be prepared for a long wait. this screen will inform you when the backup is complete"
+		adb wait-for-device
+		adb backup -f ./kindlesuite/resources/backup/backup.ab -apk -shared -all -nosystem
+		echo "backup complete"
+		sleep 5
+		bash runme.sh
+	
+	elif [ "$bkrest" = "b" ] ;
+	then
+		echo "This will restore the ENTIRE device (except system),"
+		echo "so be prepared for a long wait."
+		echo "this screen will inform you when the restore is complete"
+		adb wait-for-device
+		adb restore ./kindlesuite/resources/backup/backup.ab
+		echo "restore complete"
+		rmdir -p ./kindlesuite/resources/backup
+		
+	else
+		bash runme.sh
+	fi
+	
 elif [ "$index" = "x" ] ;
 then
     exit
