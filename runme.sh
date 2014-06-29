@@ -641,7 +641,7 @@ then
 	sleep 2
 	bash runme.sh
 
-elif ["$index" = "7" ] ;
+elif [ "$index" = "7" ] ;
 then
     clear
     echo "----------------------------------------------------"
