@@ -71,7 +71,7 @@ then
             clear
 		    echo "Downloading Bin from Amazon..."
 		    wget --no-check-certificate -P ./kindlesuite/resources/update https://gmf.dabbleam.com/KFSOWI/minisystem.img
-		    wget --no-check-certificate -P ./kindlesuiteresources/update https://s3.amazonaws.com/kindle-fire-updates/update-kindle-11.3.2.3.2_user_323001620.bin 
+		    wget --no-check-certificate -P ./kindlesuite/resources/update https://s3.amazonaws.com/kindle-fire-updates/update-kindle-11.3.2.3.2_user_323001620.bin 
 		    sleep 2
 		    clear
 		    mv ./kindlesuite/resources/update/upd* ./kindlesuite/resources/update/update.zip ;
