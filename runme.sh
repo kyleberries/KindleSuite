@@ -66,112 +66,117 @@ then
 	read restorecont
 	if [ "$restorecont" = "y" ] ;
 	then
-	    if [ ! -f ./kindlesuite/resources/update/update.zip ] ;
-	    then
-            clear
-		    echo "Downloading Bin from Amazon..."
-		    wget --no-check-certificate -P ./kindlesuite/resources/update https://gmf.dabbleam.com/KFSOWI/minisystem.img
-		    wget --no-check-certificate -P ./kindlesuite/resources/update https://s3.amazonaws.com/kindle-fire-updates/update-kindle-11.3.2.3.2_user_323001620.bin 
-		    sleep 2
-		    clear
-		    mv ./kindlesuite/resources/update/upd* ./kindlesuite/resources/update/update.zip ;
-		    echo "power kindle OFF and plug into FASTBOOT cable"
-		    echo
-		    fastboot -i 0x1949 flash system ./kindlesuite/resources/update/minisystem.img
-		    fastboot -i 0x1949 continue
-		    echo" if you are stuck at ADB wait for device, plugin your regular cable"
-		    echo" plug it also into your computer and manually reboot the device by"
-            echo" long pressing power button"
-		    echo
-		    adb wait-for-device
-		    echo
-		    echo "Moving update to Kindle (be patient)..."
-		    echo
-		    adb shell su -c "chmod 777 /cache"
-		    adb push ./kindlesuite/resources/update/update.zip /cache/
-		    echo
-		    echo
-		    echo "Setting up restore (be patient)..."
-		    echo
-		    adb shell su -c "echo --update_package=/cache/update.zip > /cache/recovery/command"
-		    echo "unplug Kindle and plug into REGULAR cable if not already done"
-		    echo
-		    adb wait-for-device
-		    adb reboot recovery
-		    echo "Device upgrading to 11.3.2.3.2 now."
-		    sleep 2
-		    clear
-		    echo
-		    echo
-		    echo"-----------------------------------------------------------------------"
-		    echo"important notice"
-		    echo"----------------"
-		    echo
-		    echo "turn off wifi and execute 9) as soon as device is upgraded and installed. "
-		    echo "failure to do so can cause device to autoinstall an unrootable update"
-		    echo "------------------------------------------------------------------------"
-		    sleep 20
-		    echo "reloading script"
-		    sleep 2
-		    bash runme.sh
-        else
-            echo "power kindle OFF and plug into FASTBOOT cable"
-		    echo
-		    fastboot -i 0x1949 flash system ./kindlesuite/resources/update/minisystem.img
-		    fastboot -i 0x1949 continue
-		    echo" if you are stuck at ADB wait for device, plugin your regular cable"
-		    echo" plug it also into your computer and manually reboot the device by"
-                    echo" long pressing power button"
-		    echo
-		    adb wait-for-device
-		    echo
-		    echo "Moving update to Kindle (be patient)..."
-		    echo
-		    adb shell su -c "rm -rf /cache/*"
-		    adb shell su -c "chmod 777 /cache"
-		    adb push ./kindlesuite/resources/update/update.zip /cache/
-		    echo
-		    echo
-		    echo "Setting up restore (be patient)..."
-		    echo
-		    adb shell su -c "echo --update_package=/cache/update.zip > /cache/recovery/command"
-		    echo "unplug Kindle and plug into REGULAR cable if you haven't allready done so"
-		    echo
-		    adb wait-for-device
-		    adb reboot recovery
-		    echo "Device upgrading to 11.3.2.3.2 now."
-		    sleep 2
-		    clear
-		    echo
-		    echo
-		    echo"-----------------------------------------------------------------------"
-		    echo"important notice"
-		    echo"----------------"
-		    echo
-		    echo "turn off wifi and execute 9) as soon as device is upgraded and installed. "
-		    echo "failure to do so can cause device to autoinstall an unrootable update"
-		    echo "------------------------------------------------------------------------"
-		    sleep 20
-		    echo "reloading script"
-		    sleep 2
-		    bash runme.sh
-
-        fi
-    
-    else
-	    bash runme.sh
-    fi	
-
+		if [ ! -f ./kindlesuite/resources/update/update.zip ] ;
+		then
+			clear
+			echo "Downloading Bin from Amazon..."
+			wget --no-check-certificate -P ./kindlesuite/resources/update https://gmf.dabbleam.com/KFSOWI/minisystem.img
+			wget --no-check-certificate -P ./kindlesuite/resources/update https://s3.amazonaws.com/kindle-fire-updates/update-kindle-11.3.2.3.2_user_323001620.bin 
+			sleep 2
+			clear
+			mv ./kindlesuite/resources/update/upd* ./kindlesuite/resources/update/update.zip ;
+			echo "power kindle OFF and plug into FASTBOOT cable"
+			echo
+			fastboot -i 0x1949 flash system ./kindlesuite/resources/update/minisystem.img
+			fastboot -i 0x1949 continue
+			echo" Plugin your regular cable"
+			echo" plug it also into your computer and manually reboot the device by"
+			echo"long pressing power button. Press letter a when ready."
+			read pressready1
+			if [ "$pressready1" = "a" ] ;
+			then
+				echo
+				adb wait-for-device
+				echo
+				echo "Moving update to Kindle (be patient)..."
+				echo
+				adb shell su -c "chmod 777 /cache"
+				adb shell su -c "rm -rf /cache/*"
+				adb shell su -c "mkdir -p /cache/recovery"
+				adb push ./kindlesuite/resources/update/update.zip /cache/
+				echo
+				echo
+				echo "Setting up restore (be patient)..."
+				echo
+				adb shell su -c "echo --update_package=/cache/update.zip > /cache/recovery/command"
+				echo "unplug Kindle and plug into REGULAR cable if not already done"
+				echo
+				adb wait-for-device
+				adb reboot recovery
+				echo "Device upgrading to 11.3.2.3.2 now."
+				sleep 2
+			fi
+			clear
+			echo
+			echo
+			echo "-----------------------------------------------------------------------"
+			echo "important notice"
+			echo "----------------"
+			echo
+			echo "turn off wifi and execute 9) as soon as device is upgraded and installed. "
+			echo "failure to do so can cause device to autoinstall an unrootable update"
+			echo "------------------------------------------------------------------------"
+			sleep 20
+			echo "reloading script"
+			sleep 2
+			bash runme.sh
+		else
+		echo "power kindle OFF and plug into FASTBOOT cable"
+		echo
+		fastboot -i 0x1949 flash system ./kindlesuite/resources/update/minisystem.img
+		fastboot -i 0x1949 continue
+		echo " Plugin your regular cable"
+		echo " plug it also into your computer and manually reboot the device by"
+		echo " long pressing power button. Press letter a when ready."
+		read pressready2
+		if [ "$pressready2" = "a" ] ;
+		then
+			echo
+			adb wait-for-device
+			echo
+			echo "Moving update to Kindle (be patient)..."
+			echo
+			adb shell su -c "chmod 777 /cache"
+			adb shell su -c "rm -rf /cache/*"
+			adb push ./kindlesuite/resources/update/update.zip /cache/
+			echo
+			echo
+			echo "Setting up restore (be patient)..."
+			echo
+			adb shell su -c "mkdir -p /cache/recovery"
+			adb shell su -c "echo --update_package=/cache/update.zip > /cache/recovery/command"
+			adb wait-for-device
+			adb reboot recovery
+			echo "Device upgrading to 11.3.2.3.2 now."
+		fi
+		sleep 2
+		clear
+		echo
+		echo
+		echo "-----------------------------------------------------------------------"
+		echo "important notice"
+		echo "----------------"
+		echo
+		echo "turn off wifi and execute 9) as soon as device is upgraded and installed. "
+		echo "failure to do so can cause device to autoinstall an unrootable update"
+		echo "------------------------------------------------------------------------"
+		sleep 20
+		echo "reloading script"
+		sleep 2
+		bash runme.sh
+		fi
+	else
+	bash runme.sh
+	fi
 elif [ "$index" = "4" ] ;
 then
-    clear
+	clear
 	echo " a) 11.3.1.0    b) 11.3.2.1   c) 11.3.2.2  d) 11.3.2.3.2 e) 11.3.2.4"
 	echo "What software version do you have?"
 	read ranswer
-
 	if [ "$ranswer" = "a" ] ;
 	then
-        clear
+		clear
 		echo "Make sure ADB Debugging is ENABLED!"
 		echo
 		echo
@@ -200,7 +205,7 @@ then
 
 	elif [ "$ranswer" = "b" ] ;
 	then
-	    clear
+		clear
 		echo "Make sure you power Kindle OFF and plug into FASTBOOT cable"
 		sleep 2
 		echo
@@ -213,29 +218,38 @@ then
 		echo
 		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11310-boot.img
 		fastboot -i 0x1949 continue
-		echo " if you are stuck at ADB wait for device, plugin your regular cable"
+		echo " Plugin your regular cable"
 		echo " plug it also into your computer and manually reboot the device by"
-                echo " long pressing power button"
-		echo
-		adb wait-for-device
-		echo "Device connected. Pushing files..."
-		adb push ./kindlesuite/resources/root/su /data/local/tmp/
-		adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
-		adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
-		echo "Changing permissions..."
-		adb shell chmod 755 /data/local/tmp/*
-		echo "Executing Exploit (could take some time, be patient!)"
-		sleep 2
-		adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
-		echo
-		echo
-		echo "rebooting fastboot..."
-		adb reboot
-		echo " if you have a regular cable in, turn off device and plugin your fastboot cable"
-		echo
-		fastboot -i 0x1949 wait-for-device devices
-		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11321-boot.img
-		fastboot -i 0x1949 continue
+		echo " long pressing power button. Press letter a when ready."
+		read pressready3
+		if [ "$pressready3" = "a" ] ;
+		then
+			echo
+			adb wait-for-device
+			echo "Device connected. Pushing files..."
+			adb push ./kindlesuite/resources/root/su /data/local/tmp/
+			adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
+			adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
+			echo "Changing permissions..."
+			adb shell chmod 755 /data/local/tmp/*
+			echo "Executing Exploit (could take some time, be patient!)"
+			sleep 2
+			adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
+			echo
+			echo
+			echo "rebooting fastboot..."
+			adb reboot
+		fi
+		echo " Turn off device, Plugin your fastboot cable"
+		echo " plug it also into your computer. Press letter a when ready."
+		read pressready4
+		if [ "$pressready4" = "a" ] ;
+		then
+			echo
+			fastboot -i 0x1949 wait-for-device devices
+			fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11321-boot.img
+			fastboot -i 0x1949 continue
+		fi
 		echo
 		echo
 		echo "Device should reboot to home screen, and have ROOT!"
@@ -244,10 +258,9 @@ then
 		echo "reloading script"
 		sleep 2
 		bash runme.sh
-
 	elif [ "$ranswer" = "c" ] ;
 	then
-        clear
+		clear
 		echo "Make sure you power Kindle OFF and plug into FASTBOOT cable"
 		sleep 2
 		echo
@@ -256,29 +269,36 @@ then
 		echo "Downgrading Boot Image..."
 		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11310-boot.img
 		fastboot -i 0x1949 continue
-		echo" if you are stuck at ADB wait for device, plugin your regular cable"
-		echo" plug it also into your computer and manually reboot the device by"
-                echo" long pressing power button"
-		echo
-		adb wait-for-device
-		echo "Device connected. Pushing files..."
-		adb push ./kindlesuite/resources/root/su /data/local/tmp/
-		adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
-		adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
-		echo "Changing permissions..."
-		adb shell chmod 755 /data/local/tmp/*
-		echo "Executing Exploit (could take some time, be patient!)"
-		sleep 2
-		adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
-		echo
+		echo " Plugin your regular cable"
+		echo " plug it also into your computer and manually reboot the device by"
+		echo " long pressing power button. Press letter a when ready."
+		read pressready5
+		if [ "$pressready5" = "a" ] ;
+		then
+			adb wait-for-device
+			echo "Device connected. Pushing files..."
+			adb push ./kindlesuite/resources/root/su /data/local/tmp/
+			adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
+			adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
+			echo "Changing permissions..."
+			adb shell chmod 755 /data/local/tmp/*
+			echo "Executing Exploit (could take some time, be patient!)"
+			sleep 2
+			adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
+			echo
+		fi
 		echo
 		echo "rebooting fastboot..."
-		echo" if you have a regular cable, turn off device and plugin your fastboot cable"
 		echo
-		adb reboot
-		fastboot -i 0x1949 wait-for-device devices
-		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11322-boot.img
-		fastboot -i 0x1949 continue
+		echo " Turn off device, Plugin your fastboot cable"
+		echo " plug it also into your computer. Press letter a when ready."
+		read pressready4
+		if [ "$pressready4" = "a" ] ;
+		then
+			fastboot -i 0x1949 wait-for-device devices
+			fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11322-boot.img
+			fastboot -i 0x1949 continue
+		fi
 		echo
 		echo
 		echo "Device should reboot to home screen, and have ROOT!"
@@ -290,7 +310,7 @@ then
 		
 	elif [ "$ranswer" = "d" ] ;
 	then
-        clear
+		clear
 		echo "Make sure you power Kindle OFF and plug into FASTBOOT cable"
 		sleep 2
 		echo
@@ -299,30 +319,35 @@ then
 		echo "Downgrading Boot Image..."
 		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11322-boot.img
 		fastboot -i 0x1949 continue
-		echo" if you are stuck at ADB wait for device, plugin your regular cable"
-		echo" plug it also into your computer and manually reboot the device by"
-                echo" long pressing power button"
+		echo " Plugin your regular cable"
+		echo " plug it also into your computer and manually reboot the device by"
+		echo " long pressing power button. Press "a" when ready."
+		read pressready6
+		if [ "$pressready6" = "a" ];
+		then
+			echo
+			adb wait-for-device
+			echo "Device connected. Pushing files..."
+			adb push ./kindlesuite/resources/root/su /data/local/tmp/
+			adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
+			adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
+			echo "Changing permissions..."
+			adb shell chmod 755 /data/local/tmp/*
+			echo "Executing Exploit (could take some time, be patient!)"
+			sleep 2
+			adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
+		fi
 		echo
-		adb wait-for-device
-		echo "Device connected. Pushing files..."
-		adb push ./kindlesuite/resources/root/su /data/local/tmp/
-		adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
-		adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
-		echo "Changing permissions..."
-		adb shell chmod 755 /data/local/tmp/*
-		echo "Executing Exploit (could take some time, be patient!)"
-		sleep 2
-		adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
-		echo
-		echo
-		echo "rebooting fastboot..."
-		echo" if you have a regular cable, turn off device and plugin your fastboot cable"
-		echo
-		adb reboot
-		fastboot -i 0x1949 wait-for-device devices
-		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/113232-boot.img
-		fastboot -i 0x1949 continue
-		echo
+		echo " Turn off device, Plugin your fastboot cable"
+		echo " plug it also into your computer. Press letter a when ready."
+		read pressready7
+		if [ "$pressready7" = "a" ] ;
+		then
+			echo
+			fastboot -i 0x1949 wait-for-device devices
+			fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/113232-boot.img
+			fastboot -i 0x1949 continue
+		fi
 		echo
 		echo "Device should reboot to home screen, and have ROOT!"
 		echo "Dont forget to install a superuser app like SuperSU!"
@@ -332,7 +357,7 @@ then
 		bash runme.sh
 	elif [ "$ranswer" = "e" ] ;
 	then
-	    clear
+		clear
 		echo "Make sure you power Kindle OFF and plug into FASTBOOT cable"
 		sleep 2
 		echo
@@ -345,30 +370,33 @@ then
 		echo
 		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11310-boot.img
 		fastboot -i 0x1949 continue
-		echo " if you are stuck at ADB wait for device, plugin your regular cable"
+		echo " Plugin your regular cable"
 		echo " plug it also into your computer and manually reboot the device by"
-                echo " long pressing power button"
+		echo " long pressing power button. Press letter a when ready."
+		read pressready8
+		if [ "$pressready8" = "a" ];
+		then
+			adb wait-for-device
+			echo "Device connected. Pushing files..."
+			adb push ./kindlesuite/resources/root/su /data/local/tmp/
+			adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
+			adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
+			echo "Changing permissions..."
+			adb shell chmod 755 /data/local/tmp/*
+			echo "Executing Exploit (could take some time, be patient!)"
+			sleep 2
+			adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
+		fi
 		echo
-		adb wait-for-device
-		echo "Device connected. Pushing files..."
-		adb push ./kindlesuite/resources/root/su /data/local/tmp/
-		adb push ./kindlesuite/resources/root/exploit /data/local/tmp/
-		adb push ./kindlesuite/resources/root/rootme.sh /data/local/tmp/
-		echo "Changing permissions..."
-		adb shell chmod 755 /data/local/tmp/*
-		echo "Executing Exploit (could take some time, be patient!)"
-		sleep 2
-		adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
-		echo
-		echo
-		echo "rebooting fastboot..."
-		adb reboot
-		echo " if you have a regular cable in, turn off device and plugin your fastboot cable"
-		echo
-		fastboot -i 0x1949 wait-for-device devices
-		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11324-boot.img
-		fastboot -i 0x1949 continue
-		echo
+		echo " Turn off device, Plugin your fastboot cable"
+		echo " plug it also into your computer. Press letter a when ready."
+		read pressready9
+		if [ "$pressready9" = "a" ] ;
+		then
+			fastboot -i 0x1949 wait-for-device devices
+			fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11324-boot.img
+			fastboot -i 0x1949 continue
+		fi
 		echo
 		echo "Device should reboot to home screen, and have ROOT!"
 		echo "Dont forget to install a superuser app like SuperSU!"
@@ -377,23 +405,25 @@ then
 		sleep 2
 		bash runme.sh
 	else
-	    bash runme.sh
+	bash runme.sh
 	fi
-
 elif [ "$index" = "9" ] ;
+then
+	clear
+	echo "Make sure you power Kindle OFF and plug into FASTBOOT cable"
+	sleep 2
+	echo
+	echo
+	echo
+	echo "Downgrading Boot Image..."
+	fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11310-boot.img
+	fastboot -i 0x1949 continue
+	echo " Plugin your regular cable"
+	echo " plug it also into your computer and manually reboot the device by"
+	echo " long pressing power button. Press letter a when ready."
+	read pressready10
+	if [ "$pressready10" = "a" ] ;
 	then
-        clear
-		echo "Make sure you power Kindle OFF and plug into FASTBOOT cable"
-		sleep 2
-		echo
-		echo
-		echo
-		echo "Downgrading Boot Image..."
-		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/11310-boot.img
-		fastboot -i 0x1949 continue
-		echo "you might want to unplug fastboot cable, long press power button"
-		echo ", plug regular cable and restart the device by pressing power"
-		echo " button now if device is still in fastboot mode."
 		adb wait-for-device
 		echo "Device connected. Pushing files..."
 		adb push ./kindlesuite/resources/root/su /data/local/tmp/
@@ -405,20 +435,23 @@ elif [ "$index" = "9" ] ;
 		sleep 2
 		adb shell /data/local/tmp/exploit -c "/data/local/tmp/rootme.sh";
 		echo
-		echo
-		echo "rebooting fastboot..."
-		adb reboot
-		echo "if you changed cables,turn off the device and"
-		echo " plug back in fastboot cable"
+	fi
+	echo " Turn off device, Plugin your fastboot cable"
+	echo " plug it also into your computer. Press letter a when ready."
+	read pressready11
+	if [ "$pressready11" = "a" ] ;
+		then
 		fastboot -i 0x1949 wait-for-device devices
 		fastboot -i 0x1949 flash boot ./kindlesuite/resources/boot/113232-boot.img
 		fastboot -i 0x1949 continue
-		echo
-		echo
-		echo "Device should reboot to home screen"
-		echo "you might want to unplug fastboot cable, long press power button"
-		echo ", plug regular cable and restart the device by pressing power"
-		echo " button now if device is still in fastboot mode."
+	fi
+	echo
+	echo " Plugin your regular cable"
+	echo " plug it also into your computer and manually reboot the device by"
+	echo " long pressing power button. Press letter a when ready."
+	read pressready12
+	if [ "$pressready12" = "a" ] ;
+	then
 		echo "now, removing OTA software"
 		adb wait-for device
 		adb shell
@@ -428,16 +461,16 @@ elif [ "$index" = "9" ] ;
 		rm com.amazon.dcp.apk
 		rm com.amazon.dcp.odex
 		rm *dtcp*
-		echo "all is done, no further OTA's for you!In order to do this"
-		echo "your device was also rooted, install a superuser.apk"
-        sleep 10
-        echo "reloading script"
-        sleep 2
-        bash runme.sh
-
+	fi
+	echo "all is done, no further OTA's for you!In order to do this"
+	echo "your device was also rooted, install a superuser.apk"
+	sleep 10
+	echo "reloading script"
+	sleep 2
+	bash runme.sh
 elif [ "$index" = "2" ] ;
 then
-    clear
+	clear
 	echo 
 	echo " ========================================================"
 	echo " ***WARNING***                                          "
@@ -448,99 +481,97 @@ then
 	echo
 	echo "Do you wish to continue? (y/n)"
 	read gappscont
-
 	if [ "$gappscont" = "y" ] ;
 	then
-	    if [ ! -f ./kindlesuite/resources/gaaps/Lu*]
-	    then
-             echo "downloading Gapps"
-	        wget -P ./kindlesuite/resources http://dl.kfsowi.com/tools/kindlesuite/gapps.zip
-	        echo "decompacting Gapps"
-	        unzip ./kindlesuite/resources/gapps.zip
-	        rm ./kindlesuite/resources/gapps.zip
-	    fi
-	        clear
-		    echo "Plug kindle into regular cable with ADB Debugging enabled..."
-		    adb wait-for-device
-		    echo
-		    echo "Installing Lucky Patcher..."
-		    adb install ./kindlesuite/resources/gapps/Lucky-Patcher-v4.1.9.apk
-		    echo
-		    echo " Making temporary directories..."
-		    adb shell mkdir /sdcard/gapps
-		    adb shell mkdir /sdcard/lib
-		    adb shell mkdir /sdcard/framework
-		    adb shell mkdir /sdcard/etc
-		    adb shell mkdir /sdcard/etc/permissions 
-		    echo
-		    echo "Pushing files to SD..."
-		    adb push ./kindlesuite/resources/gapps/gapps/LatinImeDictionaryPack.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/MediaUploader.apk sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/NetworkLocation.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/QuickSearchBox.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GmsCore.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GooglePlus.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/Gmail.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GoogleBackupTransport.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GoogleCalendarSyncAdapter.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GoogleContactsSyncAdapter.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GoogleFeedback.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GoogleLoginService.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GooglePartnerSetup.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/GoogleServicesFramework.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/Phonesky.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/DownloadProvider.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/DownloadProviderUi.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/AppWidgetPicker.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/gapps/Maps.apk /sdcard/gapps
-		    adb push ./kindlesuite/resources/gapps/lib/libpatts_engine_jni_api.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/lib/libspeexwrapper.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/lib/libAppDataSearch.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/lib/libgames_rtmp_jni.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/lib/libgcastv2_base.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/lib/libgcastv2_support.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/lib/libjgcastservice.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/lib/libjni_latinime.so /sdcard/lib
-		    adb push ./kindlesuite/resources/gapps/framework/com.google.android.maps.jar /sdcard/framework
-		    adb push ./kindlesuite/resources/gapps/framework/com.google.android.media.effects.jar /sdcard/framework
-		    adb push ./kindlesuite/resources/gapps/framework/com.google.widevine.software.drm.jar /sdcard/framework
-		    adb push ./kindlesuite/resources/gapps/etc/permissions/com.google.android.maps.xml /sdcard/etc/permissions
-		    adb push ./kindlesuite/resources/gapps/etc/permissions/com.google.android.media.effects.xml /sdcard/etc/permissions
-		    adb push ./kindlesuite/resources/gapps/etc/permissions/com.google.widevine.software.drm.xml /sdcard/etc/permissions
-		    echo
-		    echo
-	    	echo "Copying files to System..."
-	    	adb shell su -c "mount -o remount rw, /system"
-	    	adb shell su -c "rm /system/app/DownloadProvider*.*"
-		    adb shell su -c "cp /sdcard/gapps/* /system/app/"
-		    adb shell su -c "cp /sdcard/lib/* /system/lib/"
-		    adb shell su -c "cp /sdcard/framework/* /system/framework/"
-		    adb shell su -c "cp /sdcard/etc/permissions/* /system/etc/permissions/"
-		    echo
-	    	echo
-		    echo "removing temp files..."
-		    adb shell rm -rf /sdcard/gapps
-		    adb shell rm -rf /sdcard/lib
-		    adb shell rm -rf /sdcard/framework
-		    adb shell rm -rf /sdcard/etc
-		    adb shell rm -rf /sdcard/etc/permissions
-		    echo
-		    echo
-		    echo "File copy complete, open Lucky Patcher on kindle and select toolbox at bottom."
-		    echo "Select patch to android. "
-		    echo "Select disable signature verification in pkg manager."
-	    	echo "Congratulations, You now have Google Play Store!"
-	    	sleep 10
-	    	echo "reloading script"
-	    	sleep 2
-	    	bash runme.sh
+		if [ ! -f ./kindlesuite/resources/gaaps/Lu*]
+		then
+			echo "downloading Gapps"
+			wget -P ./kindlesuite/resources http://dl.kfsowi.com/tools/kindlesuite/gapps.zip
+			echo "decompacting Gapps"
+			unzip ./kindlesuite/resources/gapps.zip
+			rm ./kindlesuite/resources/gapps.zip
+		fi
+		clear
+		echo "Plug kindle into regular cable with ADB Debugging enabled..."
+		adb wait-for-device
+		echo
+		echo "Installing Lucky Patcher..."
+		adb install ./kindlesuite/resources/gapps/Lucky-Patcher-v4.1.9.apk
+		echo
+		echo " Making temporary directories..."
+		adb shell mkdir /sdcard/gapps
+		adb shell mkdir /sdcard/lib
+		adb shell mkdir /sdcard/framework
+		adb shell mkdir /sdcard/etc
+		adb shell mkdir /sdcard/etc/permissions 
+		echo
+		echo "Pushing files to SD..."
+		adb push ./kindlesuite/resources/gapps/gapps/LatinImeDictionaryPack.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/MediaUploader.apk sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/NetworkLocation.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/QuickSearchBox.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GmsCore.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GooglePlus.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/Gmail.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GoogleBackupTransport.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GoogleCalendarSyncAdapter.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GoogleContactsSyncAdapter.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GoogleFeedback.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GoogleLoginService.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GooglePartnerSetup.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/GoogleServicesFramework.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/Phonesky.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/DownloadProvider.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/DownloadProviderUi.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/AppWidgetPicker.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/gapps/Maps.apk /sdcard/gapps
+		adb push ./kindlesuite/resources/gapps/lib/libpatts_engine_jni_api.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/lib/libspeexwrapper.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/lib/libAppDataSearch.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/lib/libgames_rtmp_jni.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/lib/libgcastv2_base.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/lib/libgcastv2_support.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/lib/libjgcastservice.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/lib/libjni_latinime.so /sdcard/lib
+		adb push ./kindlesuite/resources/gapps/framework/com.google.android.maps.jar /sdcard/framework
+		adb push ./kindlesuite/resources/gapps/framework/com.google.android.media.effects.jar /sdcard/framework
+		adb push ./kindlesuite/resources/gapps/framework/com.google.widevine.software.drm.jar /sdcard/framework
+		adb push ./kindlesuite/resources/gapps/etc/permissions/com.google.android.maps.xml /sdcard/etc/permissions
+		adb push ./kindlesuite/resources/gapps/etc/permissions/com.google.android.media.effects.xml /sdcard/etc/permissions
+		adb push ./kindlesuite/resources/gapps/etc/permissions/com.google.widevine.software.drm.xml /sdcard/etc/permissions
+		echo
+		echo
+		echo "Copying files to System..."
+		adb shell su -c "mount -o remount rw, /system"
+		adb shell su -c "rm /system/app/DownloadProvider*.*"
+		adb shell su -c "cp /sdcard/gapps/* /system/app/"
+		adb shell su -c "cp /sdcard/lib/* /system/lib/"
+		adb shell su -c "cp /sdcard/framework/* /system/framework/"
+		adb shell su -c "cp /sdcard/etc/permissions/* /system/etc/permissions/"
+		echo
+		echo
+		echo "removing temp files..."
+		adb shell rm -rf /sdcard/gapps
+		adb shell rm -rf /sdcard/lib
+		adb shell rm -rf /sdcard/framework
+		adb shell rm -rf /sdcard/etc
+		adb shell rm -rf /sdcard/etc/permissions
+		echo
+		echo
+		echo "File copy complete, open Lucky Patcher on kindle and select toolbox at bottom."
+		echo "Select patch to android. "
+		echo "Select disable signature verification in pkg manager."
+		echo "Congratulations, You now have Google Play Store!"
+		sleep 10
+		echo "reloading script"
+		sleep 2
+		bash runme.sh
 	else 
-	     bash runme.sh
+		bash runme.sh
 	fi
-
 elif [ "$index" = "5" ] ;
 then
-    clear
+	clear
 	echo "==============================================================="
 	echo "This option will change the the Download Provider "
 	echo "It is ONLY for rooted STOCK Fireos"
@@ -549,22 +580,19 @@ then
 	echo "Do you wish to continue? (y/n)"
 	read aappscont
 	clear
-
 	if [ "$aappscont" = "y" ] ;
 	then
-	    if [ ! -f ./kindlesuite/resources/tools/dlps/dlpc];
-	    then
-	    echo "Downloading DLPC..."
-	    wget -P ./kindlesuite/resources/tools http://dl.kfsowi.com/tools/legacy/appstore_switcher.zip
-	    echo "unzipping tools..."
-	    unzip ./kindlesuite/resources/tools/appstore_switcher.zip
-	    mv ./kindlesuite/resource/tools/appstore_switcher ./resources/tools/dlpc
-	    rm ./kindlesuite/resources/tools/apstore_switcher.zip
-	    
-	    fi
-	    
-	    clear
-	    echo "Installing dlpc..."
+		if [ ! -f ./kindlesuite/resources/tools/dlps/dlpc];
+		then
+			echo "Downloading DLPC..."
+			wget -P ./kindlesuite/resources/tools http://dl.kfsowi.com/tools/legacy/appstore_switcher.zip
+			echo "unzipping tools..."
+			unzip ./kindlesuite/resources/tools/appstore_switcher.zip
+			mv ./kindlesuite/resource/tools/appstore_switcher ./resources/tools/dlpc
+			rm ./kindlesuite/resources/tools/apstore_switcher.zip
+		fi
+		clear
+		echo "Installing dlpc..."
 		echo "Plug kindle into regular cable with ADB Debugging enabled..."
 		adb wait-for-device
 		echo
@@ -622,14 +650,12 @@ then
 		echo "reloading script"
 		sleep 2
 		bash runme.sh
-
 	else
-	    bash runme.sh
-    fi
-    
+	bash runme.sh
+	fi
 elif [ "$index" = "3" ] ;
 then
-    echo "Plug kindle into regular cable with ADB Debugging enabled..."
+	echo "Plug kindle into regular cable with ADB Debugging enabled..."
 	adb wait-for-device 
 	adb shell su -c "mount -o remount rw, /system"
 	adb shell su -c "rm /system/app/*dcp.apk"
@@ -640,28 +666,22 @@ then
 	echo "reloading script"
 	sleep 2
 	bash runme.sh
-
 elif [ "$index" = "7" ] ;
 then
-    clear
-    echo "----------------------------------------------------"
-    echo "----------------WARNING!----------------------------"  
-    echo "Before proceeding, check your kindle HD is KFSOWI:"
-    echo "if KFTT, those roms will brick your device!"
-    echo "----------------------------------------------------"
-    echo "chose a rom for instalation:"
-    echo " a) Ice"
-    echo " b) Hellfire"
-    echo " c) Plasma   "
-    echo 
-    echo 
-    echo 
-    echo 
+	clear
+	echo "----------------------------------------------------"
+	echo "----------------WARNING!----------------------------"
+	echo "Before proceeding, check your kindle HD is KFSOWI:"
+	echo "if KFTT, those roms will brick your device!"
+	echo "----------------------------------------------------"
+	echo "chose a rom for instalation:"
+	echo " a) Ice"
+	echo " b) Hellfire"
+	echo " c) Plasma   "
 	read rom
-
 	if [ "$rom" = "a" ] ;
 	then
-	    clear
+		clear
 		SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 		mkdir -p $SCRIPTPATH/kindlesuite/resources/rom/ice
 		if [ -f ./kindlesuite/resources/rom/ice/MD5];
@@ -683,37 +703,11 @@ then
 		fi
 		if [ -f"%md5%" == "%md5local%" ] ;
 		then
-		echo " There was a problem with the download. Please close program and try again."
-		rmdir -p $pwd/kindlesuite/resources/rom/ice
-		sleep 2
-		bash runme.sh
+			echo " There was a problem with the download. Please close program and try again."
+			rmdir -p $pwd/kindlesuite/resources/rom/ice
+			sleep 2
+			bash runme.sh
 		fi
-		echo
-		echo
-		echo Unzipping ice...
-		echo
-		echo
-		echo "Moving ice to Kindle (Be patient, takes ~5 mins)"
-		echo "Make sure kindle is plugged into" 
-		echo "regular cable with ADB enabled!"
-		adb wait-for-device 
-		echo "moving..."
-		adb wait-for-device
-		adb push ./kindlesuite/resources/rom/ice/ice.img /sdcard/
-		echo
-		echo
-		echo "Installing ice (takes ~5 mins)..."
-		adb shell su -c "dd if=/sdcard/ice.img of=/dev/block/mmcblk0p9"
-		echo
-		echo
-		echo "Ice Installed, Rebooting Now!"
-		adb reboot recovery
-		echo "select wipe and reboot"
-		sleep 10
-		bash runme.sh
-		echo
-		echo
-		echo Unzipping ice...
 		if [ ! -f ./kindlesuite/resources/rom/ice/*.img] ;
 		then
 			unzip  ./kindlesuite/resources/rom/ice/ice.zip ./kindlesuite/resources/rom/ice/
@@ -741,8 +735,7 @@ then
 
 	elif [ "$rom" = "b" ] ;
 	then
-	    clear
-
+		clear
 		SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 		mkdir -p $SCRIPTPATH/kindlesuiteresources/rom/hellfire
 		if [ ! -f ./kindlesuite/resources/rom/hellfire/hellfire.zip ] ;
@@ -773,31 +766,30 @@ then
 			unzip  ./kindlesuite/resources/rom/hellfire/hellfire.zip ./kindlesuite/resources/rom/hellfire/
 			mv ./kindlesuite/resources/rom/hellfire/hellfire* ./kindlesuite/resources/rom/hellfire/hellfire.img
 		fi
-			echo
-			echo
-			echo "Moving hellfire to Kindle (Be patient, takes ~5 mins)"
-			echo "Make sure kindle is plugged into" 
-			echo "regular cable with ADB enabled!"
-			adb wait-for-device 
-			echo "moving..."
-			adb wait-for-device
-			adb push ./kindlesuite/resources/rom/hellfire/hellfire.img /sdcard/
-			echo
-			echo
-			echo "Installing hellfire (takes ~5 mins)..."
-			adb shell su -c "dd if=/sdcard/hellfire.img of=/dev/block/mmcblk0p9"
-			echo
-			echo
-			echo "hellfire Installed, Rebooting Now!"
-			adb reboot recovery
-			echo "select wipe and reboot"
-			sleep 10
-			bash runme.sh
-			
+		echo
+		echo
+		echo "Moving hellfire to Kindle (Be patient, takes ~5 mins)"
+		echo "Make sure kindle is plugged into" 
+		echo "regular cable with ADB enabled!"
+		adb wait-for-device 
+		echo "moving..."
+		adb wait-for-device
+		adb push ./kindlesuite/resources/rom/hellfire/hellfire.img /sdcard/
+		echo
+		echo
+		echo "Installing hellfire (takes ~5 mins)..."
+		adb shell su -c "dd if=/sdcard/hellfire.img of=/dev/block/mmcblk0p9"
+		echo
+		echo
+		echo "hellfire Installed, Rebooting Now!"
+		adb reboot recovery
+		echo "select wipe and reboot"
+		sleep 10
+		bash runme.sh
 	elif [ "$rom" = "c" ] ;
 	then
-	    clear
-	    	SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+		clear
+		SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 		mkdir -p $SCRIPTPATH/kindlesuiteresources/rom/plasma
 		if [ ! -f ./kindlesuite/resources/rom/plasma/plasma.zip ] ;
 		then
@@ -827,33 +819,32 @@ then
 			unzip  ./kindlesuite/resources/rom/plasma/plasma.zip ./kindlesuite/resources/rom/plasma/
 			mv ./kindlesuite/resources/rom/plasma/plasma* ./kindlesuite/resources/rom/plasma/plasma.img
 		fi
-			echo
-			echo
-			echo "Moving plasma to Kindle (Be patient, takes ~5 mins)"
-			echo "Make sure kindle is plugged into" 
-			echo "regular cable with ADB enabled!"
-			adb wait-for-device 
-			echo "moving..."
-			adb wait-for-device
-			adb push ./kindlesuite/resources/rom/plasma/plasma.img /sdcard/
-			echo
-			echo
-			echo "Installing plasma (takes ~5 mins)..."
-			adb shell su -c "dd if=/sdcard/plasma.img of=/dev/block/mmcblk0p9"
-			echo
-			echo
-			echo "plasma Installed, Rebooting Now!"
-			adb reboot recovery
-			echo "select wipe and reboot"
-			sleep 10
-			bash runme.sh
+		echo
+		echo
+		echo "Moving plasma to Kindle (Be patient, takes ~5 mins)"
+		echo "Make sure kindle is plugged into" 
+		echo "regular cable with ADB enabled!"
+		adb wait-for-device 
+		echo "moving..."
+		adb wait-for-device
+		adb push ./kindlesuite/resources/rom/plasma/plasma.img /sdcard/
+		echo
+		echo
+		echo "Installing plasma (takes ~5 mins)..."
+		adb shell su -c "dd if=/sdcard/plasma.img of=/dev/block/mmcblk0p9"
+		echo
+		echo
+		echo "plasma Installed, Rebooting Now!"
+		adb reboot recovery
+		echo "select wipe and reboot"
+		sleep 10
+		bash runme.sh
 	else
-	    bash runme.sh
+	bash runme.sh
 	fi
-
 elif [ "$index" = "6" ] ;
 then
-    clear
+	clear
 	echo 
 	echo " ============================================= "
 	echo " PREREQUISITES*** "
@@ -870,10 +861,9 @@ then
 	echo
 	echo " Do you wish to continue? (y/n)"
 	read skcont
-
 	if [ "$skcont" = "y" ] ;
-    then
-        clear
+	then
+		clear
 		echo "Plug kindle into regular cable with ADB Debugging enabled..."
 		adb wait-for-device
 		echo
@@ -889,9 +879,8 @@ then
 		echo "reloading script"
 		sleep 2
 		bash runme.sh
-
 	else
-	    bash runme.sh
+	bash runme.sh
 	fi
 elif [ "$index" = "8" ] ;
 then
@@ -936,4 +925,3 @@ else
     bash runme.sh
     
 fi
-
