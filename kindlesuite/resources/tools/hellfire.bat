@@ -22,7 +22,7 @@ cd ..\..\..\
 echo.
 echo.
 echo Please Power Kindle OFF and plug into fastboot cable
-fastboot wait-for-device devices
+fastboot -i 0x1949 wait-for-device devices
 fastboot -i 0x1949 flash system resources\rom\hellfire\hellfire.img
 echo.
 echo.
