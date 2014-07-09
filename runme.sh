@@ -455,9 +455,9 @@ then
 		echo "now, removing OTA software"
 		adb wait-for device
 		adb shell
-		su
+		su 
 		mount -o remount rw, /system
-		cd/system/app/
+		cd system/app
 		rm com.amazon.dcp.apk
 		rm com.amazon.dcp.odex
 		rm *dtcp*
@@ -483,14 +483,11 @@ then
 	read gappscont
 	if [ "$gappscont" = "y" ] ;
 	then
-		if [ ! -f ./kindlesuite/resources/gaaps/Lu*]
-		then
-			echo "downloading Gapps"
-			wget -P ./kindlesuite/resources http://dl.kfsowi.com/tools/kindlesuite/gapps.zip
-			echo "decompacting Gapps"
-			unzip ./kindlesuite/resources/gapps.zip
-			rm ./kindlesuite/resources/gapps.zip
-		fi
+		echo "downloading Gapps"
+		wget -P ./kindlesuite/resources http://dl.kfsowi.com/tools/kindlesuite/gapps.zip
+		echo "decompacting Gapps"
+		unzip ./kindlesuite/resources/gapps.zip -d ./kindlesuite/resources/
+		rm ./kindlesuite/resources/gapps.zip
 		clear
 		echo "Plug kindle into regular cable with ADB Debugging enabled..."
 		adb wait-for-device
@@ -582,15 +579,12 @@ then
 	clear
 	if [ "$aappscont" = "y" ] ;
 	then
-		if [ ! -f ./kindlesuite/resources/tools/dlps/dlpc];
-		then
-			echo "Downloading DLPC..."
-			wget -P ./kindlesuite/resources/tools http://dl.kfsowi.com/tools/legacy/appstore_switcher.zip
-			echo "unzipping tools..."
-			unzip ./kindlesuite/resources/tools/appstore_switcher.zip
-			mv ./kindlesuite/resource/tools/appstore_switcher ./resources/tools/dlpc
-			rm ./kindlesuite/resources/tools/apstore_switcher.zip
-		fi
+		echo "Downloading DLPC..."
+		wget -P ./kindlesuite/resources/tools http://dl.kfsowi.com/tools/legacy/appstore_switcher.zip
+		echo "unzipping tools..."
+		mkdir -p ./kindlesuite/resources/tools/dlpc
+		unzip ./kindlesuite/resources/tools/appstore_switcher.zip -d ./kindlesuite/resources/tools/dlpc
+		rm ./kindlesuite/resources/tools/appstore_switcher.zip
 		clear
 		echo "Installing dlpc..."
 		echo "Plug kindle into regular cable with ADB Debugging enabled..."
@@ -604,9 +598,9 @@ then
 		adb push ./kindlesuite/resources/tools/dlpc/DownloadProviderUi.odex /sdcard/dlpc
 		adb push ./kindlesuite/resources/tools/dlpc/DownloadProvider.apkgg /sdcard/dlpc
 		adb push ./kindlesuite/resources/tools/dlpc/DownloadProviderUi.apkgg /sdcard/dlpc
-		adb push ./kindlesuite/resources/tools/dlpc/dlpc.x /sdcard/dlpc
-		adb push ./kindlesuite/resources/tools/dlpc/dlp.x /sdcard/dlpc
-		adb push ./kindlesuite/resources/tools/dlpc/hotreboot.x /sdcard/dlpc
+		adb push ./kindlesuite/resources/tools/dlpc/dlpc /sdcard/dlpc
+		adb push ./kindlesuite/resources/tools/dlpc/dlp /sdcard/dlpc
+		adb push ./kindlesuite/resources/tools/dlpc/hotreboot /sdcard/dlpc
 		echo
 		echo
 		adb shell su -c "mount -o remount rw, /cache"
@@ -615,9 +609,6 @@ then
 		adb shell su -c "mkdir /cache/dlpc"
 		adb shell su -c "cp /sdcard/dlpc/* /cache/dlpc"
 		adb shell su -c "rm -rf /sdcard/dlpc"
-		adb shell su -c "mv /cache/dlpc/dlpc.x /cache dlpc/dlpc"
-		adb shell su -c "mv /cache/dlpc/dlp.x /cache/dlpc/dlp"
-		adb shell su -c "mv /cache/dlpc/hotrebot.x /cache/dlpc/hotreboot"
 		adb shell su -c "chown 0.2000 /cache/dlpc/dlpc"
 		adb shell su -c "chown 0.2000 /cache/dlpc/dlp"
 		adb shell su -c "chown 0.2000 /cache/dlpc/hotreboot"
@@ -635,17 +626,16 @@ then
 		adb shell su -c "rm /sysytem/bin/DownloadProvider*"
 		adb shell su -c "cp /cache/dlpc/dlpc /system/bin"
 		adb shell su -c "cp /cache/dlpc/dlp /system/bin"
-		adb shell su -c "cp /cache/dlcp/hotreboot /system/bin"
+		adb shell su -c "cp /cache/dlpc/hotreboot /system/bin"
 		adb shell su -c "chmod 770 /cache"
 		adb shell su -c "mount -o remount rw, /cache"
 		adb shell su -c "mount -o remount rw, /system"
 		clear
 		echo "dlpc installed"
 		echo
-		echo"To check current run: dlp"
-		echo"To change        run: dlpc"
-		echo
-		echo" via terminal emulator on Android itself"
+		echo "To check current run: dlp"
+		echo "To change        run: dlpc"
+		echo " via terminal emulator on Android itself"
 		sleep 10
 		echo "reloading script"
 		sleep 2
@@ -710,7 +700,7 @@ then
 		fi
 		if [ ! -f ./kindlesuite/resources/rom/ice/*.img] ;
 		then
-			unzip  ./kindlesuite/resources/rom/ice/ice.zip ./kindlesuite/resources/rom/ice/
+			unzip  ./kindlesuite/resources/rom/ice/ice.zip -d ./kindlesuite/resources/rom/ice/
 			mv ./kindlesuite/resources/rom/ice/ice*.img ./kindlesuite/resources/rom/ice/ice.img
 		fi
 		echo
@@ -763,7 +753,7 @@ then
 		echo Unzipping hellfire...
 		if [ ! -f ./kindlesuite/resources/rom/hellfire/hellfire.img ] ;
 		then
-			unzip  ./kindlesuite/resources/rom/hellfire/hellfire.zip ./kindlesuite/resources/rom/hellfire/
+			unzip  ./kindlesuite/resources/rom/hellfire/hellfire.zip -d ./kindlesuite/resources/rom/hellfire/
 			mv ./kindlesuite/resources/rom/hellfire/hellfire* ./kindlesuite/resources/rom/hellfire/hellfire.img
 		fi
 		echo
@@ -816,7 +806,7 @@ then
 		echo Unzipping plasma...
 		if [ ! -f ./kindlesuite/resources/rom/plasma/plasma.img ] ;
 		then
-			unzip  ./kindlesuite/resources/rom/plasma/plasma.zip ./kindlesuite/resources/rom/plasma/
+			unzip  ./kindlesuite/resources/rom/plasma/plasma.zip -d ./kindlesuite/resources/rom/plasma/
 			mv ./kindlesuite/resources/rom/plasma/plasma* ./kindlesuite/resources/rom/plasma/plasma.img
 		fi
 		echo
