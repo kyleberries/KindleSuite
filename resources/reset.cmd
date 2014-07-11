@@ -1,2 +1,2 @@
-del resources\console.txt
+echo Console Reset >resources\console.txt
 exit

@@ -76,6 +76,10 @@ function reloadIFrame() {
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\devices.cmd>resources\console.txt", 0, false
       </SCRIPT>
+<SCRIPT FOR="reset" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\reset.cmd", 0, false
+      </SCRIPT>
 <title>
 KindleSuite
 </title>
@@ -160,6 +164,7 @@ Welcome to KindleSuite 4.0
 </div>
 
 <div id="console_wrap" class="console">
+<input type='button' value="Reset Console" id='reset' name='reset' />
 <iframe id="console" onLoad="scroller()" src="resources\console.txt" application="yes"></iframe>
 </div>
 
