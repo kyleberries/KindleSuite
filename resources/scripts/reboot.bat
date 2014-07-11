@@ -1,0 +1,1 @@
+resources\tools\adb reboot
