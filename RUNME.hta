@@ -48,14 +48,14 @@ font-family:helvetica;
 	   }
 </style>
 <script language="javascript" type="text/javascript">
-window.setInterval("reloadIFrame();", 3000);
+window.setInterval("reloadIFrame();", 100);
 
 function reloadIFrame() {
  document.frames["console"].location.reload();
  }
  
  function scroller() {
-  document.frames["console"].scrollBy(0,5000000000);
+  document.frames["console"].scrollBy(0,500*10^100);
   }
 </script>
 <html>
@@ -74,7 +74,7 @@ function reloadIFrame() {
 </SCRIPT>
 <SCRIPT FOR="update" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
-        WshShell.Run "cmd /k resources\scripts\devices.bat>resources\console", 0, false
+        WshShell.Run "cmd /k resources\scripts\devices.cmd>resources\console.txt", 0, false
       </SCRIPT>
 <title>
 KindleSuite
@@ -160,7 +160,7 @@ Welcome to KindleSuite 4.0
 </div>
 
 <div id="console_wrap" class="console">
-<iframe id="console" onLoad="scroller()" src="resources\console" application="yes"></iframe>
+<iframe id="console" onLoad="scroller()" src="resources\console.txt" application="yes"></iframe>
 </div>
 
 </body>
