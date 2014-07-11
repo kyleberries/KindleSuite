@@ -2,16 +2,5 @@
 resources\tools\adb start-server >/NUL
 resources\tools\adb devices
 resources\tools\adb kill-server
-timeout 5
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo complete
+choice /d y /t 5 > nul
 exit

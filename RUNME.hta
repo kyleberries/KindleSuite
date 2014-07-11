@@ -21,8 +21,8 @@ font-family:helvetica;
 			overflow:hidden;
 			}
 	div.console{
-	        margin-top:20px;
-			height:140px;
+	        margin-top:10px;
+			height:150px;
 			margin-left:380px;
 			width:510px;
 			overflow:hidden;
@@ -32,7 +32,7 @@ font-family:helvetica;
 	        }
 	iframe {
 	        width:475px;
-			height:120px;
+			height:110px;
 			margin-left:7px;
 			overflow:hidden;
 			}
@@ -76,9 +76,13 @@ function reloadIFrame() {
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\devices.cmd>resources\console.txt", 0, false
       </SCRIPT>
+<SCRIPT FOR="reboot" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\reboot.cmd>resources\console.txt", 0, false
+      </SCRIPT>
 <SCRIPT FOR="reset" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
-        WshShell.Run "cmd /k resources\reset.cmd", 0, false
+        WshShell.Run "cmd /k resources\scripts\reset.cmd", 0, false
       </SCRIPT>
 <title>
 KindleSuite
@@ -86,25 +90,25 @@ KindleSuite
 </head>
 <body>
 <map name="contentmap">
-  <area id=update name="update" shape="rect" coords="922,0,1000,40" alt="Check for Updates" onclick="javascript:alert('KS is up to date!')">
+  <area href="#" id=update name="update" shape="rect" coords="922,0,1000,40" alt="Check for Updates" onclick="javascript:alert('KS is up to date!')">
 
-<area name="driver" shape="rect" coords="75,90,355,130" alt="Make sure your PC can communicate with your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='block';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="adriver" shape="rect" coords="75,90,355,130" alt="Make sure your PC can communicate with your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='block';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
 
-<area name="backup" shape="rect" coords="75,131,355,168" alt="Backup and Restore your Personal data" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='block';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="abackup" shape="rect" coords="75,131,355,168" alt="Backup and Restore your Personal data" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='block';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
 
-<area name="reboot" shape="rect" coords="75,168,355,208" alt="Reboot or Factory Reset your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='block';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="areboot" shape="rect" coords="75,168,355,208" alt="Reboot or Factory Reset your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='block';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
 
-<area name="root" shape="rect" coords="75,270,355,309" alt="Root your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='block';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="aroot" shape="rect" coords="75,270,355,309" alt="Root your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='block';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
 
-<area name="restore" shape="rect" coords="75,310,355,347" alt="Restore your Kindle to 11.3.2.4 Factory Image(no root)" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='block';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="arestore" shape="rect" coords="75,310,355,347" alt="Restore your Kindle to 11.3.2.4 Factory Image(no root)" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='block';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
 
-<area name="gapps" shape="rect" coords="75,347,355,385" alt="Install Google Play on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='block';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="agapps" shape="rect" coords="75,347,355,385" alt="Install Google Play on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='block';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
 
-<area name="ice" shape="rect" coords="75,426,355,461" alt="Install the Ice ROM on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='block';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="aice" shape="rect" coords="75,426,355,461" alt="Install the Ice ROM on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='block';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='none'">
 
-<area name="hellfire" shape="rect" coords="75,462,355,498" alt="Install the HellFire ROM on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='block';document.getElementById('plasma').style.display ='none'">
+<area href="#" name="ahellfire" shape="rect" coords="75,462,355,498" alt="Install the HellFire ROM on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='block';document.getElementById('plasma').style.display ='none'">
 
-<area name="plasma" shape="rect" coords="75,499,355,535" alt="Install the Plasma ROM on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('reboot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='block'">
+<area href="#" name="aplasma" shape="rect" coords="75,499,355,535" alt="Install the Plasma ROM on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='block'">
 </map>
 
 <img class="bg" src="http://dl.kfsowi.com/tools/kindlesuite/resources/bg.jpg" usemap="#contentmap"/>
@@ -119,13 +123,13 @@ Welcome to KindleSuite 4.0
 
 <div id="backup" class="content" style="display:'none'">
 <h3>Backup/Restore Personal Data</h3><hr />
-<input type='button' id='backup' value='Backup Device' />
+<input type='button' id='backup' value='Backup Device' /><br /><br />
 <input type='button' id='bak_restore' value='Restore Backup' />
 <br /><h4>Last Backup:</h4><br />
-<span id='bak_date'>No Backup Available</span>
+<span style="color:red;" id='bak_date'>No Backup Available</span>
 </div>
 
-<div id="reboot" class="content" style="display:'none'">
+<div id="boot" class="content" style="display:'none'">
 <h3>Reboot Device</h3><hr />
 <input type='button' id='reboot' value='Reboot' />
 <input type='button' id='recovery' value='Reboot Recovery' />
