@@ -12,7 +12,7 @@ resources\tools\adb wait-for-device
 echo.
 echo Installing Lucky Patcher...
 resources\tools\adb install resources\scripts\gapps\files\Lucky-Patcher-v4.1.9.apk
-resources\tools\adb install resources\scripts\gapps\files\amazon_appstore.zpk
+resources\tools\adb install resources\scripts\gapps\files\amazon_appstore.apk
 echo.
 echo Making temporary directories...
 resources\tools\adb shell mkdir /sdcard/gapps
