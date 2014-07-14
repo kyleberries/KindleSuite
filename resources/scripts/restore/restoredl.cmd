@@ -6,5 +6,5 @@ echo.
 cd resources/scripts/restore
 rename *.bin update.zip
 cd ..\..\..\
-start resources\scripts\restore\restore.bat
+start resources\scripts\restore\restore.cmd
 exit
