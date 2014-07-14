@@ -21,7 +21,7 @@ echo "KyleBerry.Graphics"
 echo "Jonatahn Lyng for unix script"
 echo 
 echo "------------------------------------------------------------"
-echo blub
+echo blub blub
 echo
 sleep 2
 echo
