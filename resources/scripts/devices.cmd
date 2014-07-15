@@ -1,6 +1,18 @@
 @echo off
-resources\tools\adb start-server >/NUL
-resources\tools\adb devices
+echo Please wait...>resources\console.txt
+resources\tools\adb start-server
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+resources\tools\adb devices >resources\console.txt
 resources\tools\adb kill-server
-choice /d y /t 5 > nul
 exit

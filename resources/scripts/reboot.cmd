@@ -1,5 +1,5 @@
-@echo off
-resources\tools\adb reboot
+echo Waiting For Device...>resources\console.txt
+resources\tools\adb wait-for-device reboot
 resources\tools\adb kill-server
-echo Reboot Complete...
+echo Reboot Complete.>resources\console.txt
 exit

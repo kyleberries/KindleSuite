@@ -48,7 +48,7 @@ font-family:helvetica;
 	   }
 </style>
 <script language="javascript" type="text/javascript">
-window.setInterval("reloadIFrame();", 100);
+window.setInterval("reloadIFrame();", 50);
 
 function reloadIFrame() {
  document.frames["console"].location.reload();
@@ -57,10 +57,11 @@ function reloadIFrame() {
  function scroller() {
   document.frames["console"].scrollBy(0,500*10^100);
   }
+  
   function getLastMod(){
 var myFrm = document.getElementById('backupmod');
 var lastModif = new Date(myFrm.contentWindow.document.lastModified);
-if (myFrm.contentWindow.document.body.innerHTML == "test"){
+if (myFrm.className == "test"){
 document.getElementById('backupmodwrite').innerHTML = "No Backup Available";
    }
  else {
@@ -84,11 +85,11 @@ document.getElementById('backupmodwrite').innerHTML = lastModif.toLocaleString()
 </SCRIPT>
 <SCRIPT FOR="update" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
-        WshShell.Run "cmd /k resources\scripts\devices.cmd>resources\console.txt", 0, false
+        WshShell.Run "cmd /k resources\scripts\devices.cmd", 0, false
       </SCRIPT>
 <SCRIPT FOR="reboot" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
-        WshShell.Run "cmd /k resources\scripts\reboot.cmd>resources\console.txt", 0, false
+        WshShell.Run "cmd /k resources\scripts\reboot.cmd", 0, false
       </SCRIPT>
 <SCRIPT FOR="reset" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
@@ -98,6 +99,22 @@ document.getElementById('backupmodwrite').innerHTML = lastModif.toLocaleString()
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\backup\backupdel.cmd", 0, false
       </SCRIPT>
+<SCRIPT FOR="cancel" EVENT="onClick" LANGUAGE="VBScript">	  
+	  Const strComputer = "." 
+  Dim objWMIService, colProcessList
+  Set objWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
+  Set colProcessList = objWMIService.ExecQuery("SELECT * FROM Win32_Process WHERE Name = 'conhost.exe'")
+  For Each objProcess in colProcessList 
+    objProcess.Terminate() 
+	Next
+		  Const strComputerDos = "." 
+  Dim objWMIServiceDos, colProcessListDos
+  Set objWMIServiceDos = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\" & strComputerDos & "\root\cimv2")
+  Set colProcessListDos = objWMIServiceDos.ExecQuery("SELECT * FROM Win32_Process WHERE Name = 'adb.exe'")
+  For Each objProcess in colProcessListDos 
+    objProcess.Terminate() 
+  Next 
+</script>  
 <title>
 KindleSuite
 </title>
@@ -146,7 +163,7 @@ Welcome to KindleSuite 4.0
 
 <div id="boot" class="content" style="display:'none'">
 <h3>Reboot Device</h3><hr />
-<input type='button' id='reboot' value='Reboot' />
+<input type='button' id='reboot' name='reboot' value='Reboot' />
 <input type='button' id='recovery' value='Reboot Recovery' />
 </div>
 
@@ -183,12 +200,13 @@ Welcome to KindleSuite 4.0
 </div>
 
 <div id="console_wrap" class="console">
-<a id='reset' name='reset'>Reset Console</a>
+<a id='reset' name='reset'>Reset Console</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a id='cancel' name='cancel'>Cancel</a>
 <iframe id="console" onLoad="scroller()" src="resources\console.txt" application="yes"></iframe>
 </div>
 
-<iframe id="backupmod" onload="getLastMod()" src="resources\scripts\backup\backup.ab" style="display:none;">
-</iframe>
+<iframe class="tst" id="backupmod" onload="getLastMod()" src="resources\scripts\backup\backup.ab" style="display:none;">
+</ifram"e>
 
 
 </body>
