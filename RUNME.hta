@@ -57,6 +57,16 @@ function reloadIFrame() {
  function scroller() {
   document.frames["console"].scrollBy(0,500*10^100);
   }
+  function getLastMod(){
+var myFrm = document.getElementById('backupmod');
+var lastModif = new Date(myFrm.contentWindow.document.lastModified);
+if (myFrm.contentWindow.document.body.innerHTML == "test"){
+document.getElementById('backupmodwrite').innerHTML = "No Backup Available";
+   }
+ else {
+document.getElementById('backupmodwrite').innerHTML = lastModif.toLocaleString();
+}
+}
 </script>
 <html>
 <HTA:APPLICATION 
@@ -83,6 +93,10 @@ function reloadIFrame() {
 <SCRIPT FOR="reset" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\reset.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="backupdel" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\backup\backupdel.cmd", 0, false
       </SCRIPT>
 <title>
 KindleSuite
@@ -126,7 +140,8 @@ Welcome to KindleSuite 4.0
 <input type='button' id='backup' value='Backup Device' /><br /><br />
 <input type='button' id='bak_restore' value='Restore Backup' />
 <br /><h4>Last Backup:</h4><br />
-<span style="color:red;" id='bak_date'>No Backup Available</span>
+<span id="backupmodwrite" style="color:red;" id='bak_date'>No Backup Available</span>
+<input type="button" id="backupdel" value="Delete Backup" />
 </div>
 
 <div id="boot" class="content" style="display:'none'">
@@ -171,6 +186,10 @@ Welcome to KindleSuite 4.0
 <a id='reset' name='reset'>Reset Console</a>
 <iframe id="console" onLoad="scroller()" src="resources\console.txt" application="yes"></iframe>
 </div>
+
+<iframe id="backupmod" onload="getLastMod()" src="resources\scripts\backup\backup.ab" style="display:none;">
+</iframe>
+
 
 </body>
 </html>
