@@ -145,11 +145,38 @@ KindleSuite
 <img class="bg" src="http://dl.kfsowi.com/tools/kindlesuite/resources/bg.jpg" usemap="#contentmap"/>
 
 <div class="pages">
+
 <div id="home" class="content">
 Welcome to KindleSuite 4.0
-</div>
+<hr /><p style="text-indent:50px;">
+KindleSuite is a program designed to give you the most free Android experience on your Kindle. This program is designed, and will only work for the 2013 Kindle Fire HD 7" (KFSOWI).<br />
+For KindleSuite to work, you will have to have these things...
+<ul>
+<li>Kindle (KFSOWI)</li>
+<li>Fastboot Cable</li>
+<li>Network Connection</li>
+<li>Some ADB experience</li>
+</ul>
+</p></div>
 
 <div id="drivers" class="content" style="display:'none'">
+<h3>Check/Install Driver</h3><hr />
+<div style="overflow:auto;height:120px">
+<p style="text-indent:50px">
+KindleSuite uses ADB to communicate with your Kindle. If the ADB driver is not installed, or malfunctioning nothing included in this program will work.
+Sometimes Windows will "forget" how to use the driver correctly. If this happens, or if you are instructed check your driver at any time, do the following...
+<ul>
+<li>Open the Windows Device Manager</li>
+<li>Under Kindle, right-click the ADB driver and click update.</li>
+<li>In the popup window, select Browse</li>
+<li>Select 'Pick From List'</li>
+<li>Select and install ADB Composite Driver</li>
+</ul>
+After this KindleSuite should begin working again.<br />
+Click Check Driver below to see if the driver is installed and/or working. If the console does not list your Kindles serial number, try the above steps. If that is unsuccessful, then click the install Driver button.
+</p></div><br />
+<input type="button" id="devices" value="Check Driver" /><br /><br />
+<input type="button" id="adbinstaller" value="Install Driver" />
 </div>
 
 <div id="backup" class="content" style="display:'none'">
@@ -163,23 +190,36 @@ Welcome to KindleSuite 4.0
 
 <div id="boot" class="content" style="display:'none'">
 <h3>Reboot Device</h3><hr />
-<input type='button' id='reboot' name='reboot' value='Reboot' />
+<p style="text-indent:50px">
+Select Reboot to restart your Kindle, or Reboot Recovery to boot into recovery mode, and Factory Reset your Kindle.
+</p>
+<input type='button' id='reboot' name='reboot' value='Reboot' /><br /><br />
 <input type='button' id='recovery' value='Reboot Recovery' />
 </div>
 
 <div id="root" class="content" style="display:'none'">
 <h3>Root Device</h3><hr />
 <h5>Currently KS supports FireOS up to version 11.3.2.4</h5>
+<p style="text-indent:50px">
+Rooting your Kindle is the first step to getting rid of that ugly FireOS look.
+Rooting your Kindle won't actually change the way it looks or works, but it will give you administrative access to the system so that you can make changes like installing Google Play or a ROM.
+</p>
 <input type='button' id='root' value='Root Device' />
 </div>
 
 <div id="restore" class="content" style="display:'none'">
-<h3>Restore to 11324</h3><hr />
+<h3>Restore to 11.3.2.4</h3><hr />
+<p style="text-indent:50px">
+The Restore feature will reset your Kindle all the way back to Factory Settings and Files. Essentially it will rip out everything thats in your Kindle now and replace it with the original software. This feature will UNroot your device so be aware that if you are trying to fix an error, you will have to root it again to modify it further.
+</p>
 <input type='button' id='restore' value='restore' />
 </div>
 
 <div id="gapps" class="content" style="display:'none'">
 <h3>Install the Google Play Store & assoc. apps</h3><hr />
+<p style="text-indent:50px">
+When you use this feature to install Google Play, the Amazon AppStore and Video will stop working. We recommend switching fully to Google services, but if you want to be able to switch back and forth this script also installs a tool called DLPC. DLPC allows you to switch appstores with a simple reboot. Look in  your app drawer for DLPC after install.
+</p>
 <input type='button' id='gapps' value='Install Google Play' />
 </div>
 
