@@ -1,4 +1,48 @@
 <style>
+.button {
+	-moz-box-shadow:inset -1px -1px 11px -3px #bee2f9;
+	-webkit-box-shadow:inset -1px -1px 11px -3px #bee2f9;
+	box-shadow:inset -1px -1px 11px -3px #bee2f9;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf) );
+	background:-moz-linear-gradient( center top, #63b8ee 5%, #468ccf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf');
+	background-color:#63b8ee;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0px;
+	border:2px solid #3866a3;
+	display:inline-block;
+	color:#14396a;
+	font-family:Trebuchet MS;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	height:24px;
+	line-height:24px;
+	width:94px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:2px 2px 0px #7cacde;
+}
+.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee) );
+	background:-moz-linear-gradient( center top, #468ccf 5%, #63b8ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee');
+	background-color:#468ccf;
+}.button:active {
+	position:relative;
+	top:1px;
+}
 body{
 background-color:black;
 color:#b2d1e0;
@@ -175,17 +219,17 @@ Sometimes Windows will "forget" how to use the driver correctly. If this happens
 After this KindleSuite should begin working again.<br />
 Click Check Driver below to see if the driver is installed and/or working. If the console does not list your Kindles serial number, try the above steps. If that is unsuccessful, then click the install Driver button.
 </p></div><br />
-<input type="button" id="devices" value="Check Driver" /><br /><br />
-<input type="button" id="adbinstaller" value="Install Driver" />
+<input type="button" class="button" id="devices" value="Check Driver" /><br /><br />
+<input type="button" class="button" id="adbinstaller" value="Install Driver" />
 </div>
 
 <div id="backup" class="content" style="display:'none'">
 <h3>Backup/Restore Personal Data</h3><hr />
-<input type='button' id='backup' value='Backup Device' /><br /><br />
-<input type='button' id='bak_restore' value='Restore Backup' />
+<input type='button' class="button" id='backup' value='Backup Device' /><br /><br />
+<input type='button' class="button" id='bak_restore' value='Restore Backup' />
 <br /><h4>Last Backup:</h4><br />
 <span id="backupmodwrite" style="color:red;" id='bak_date'>No Backup Available</span>
-<input type="button" id="backupdel" value="Delete Backup" />
+<input type="button" class="button" id="backupdel" value="Delete Backup" />
 </div>
 
 <div id="boot" class="content" style="display:'none'">
@@ -193,8 +237,8 @@ Click Check Driver below to see if the driver is installed and/or working. If th
 <p style="text-indent:50px">
 Select Reboot to restart your Kindle, or Reboot Recovery to boot into recovery mode, and Factory Reset your Kindle.
 </p>
-<input type='button' id='reboot' name='reboot' value='Reboot' /><br /><br />
-<input type='button' id='recovery' value='Reboot Recovery' />
+<input type='button' class="button" id='reboot' name='reboot' value='Reboot' /><br /><br />
+<input type='button' class="button" id='recovery' value='Reboot Recovery' />
 </div>
 
 <div id="root" class="content" style="display:'none'">
@@ -204,7 +248,7 @@ Select Reboot to restart your Kindle, or Reboot Recovery to boot into recovery m
 Rooting your Kindle is the first step to getting rid of that ugly FireOS look.
 Rooting your Kindle won't actually change the way it looks or works, but it will give you administrative access to the system so that you can make changes like installing Google Play or a ROM.
 </p>
-<input type='button' id='root' value='Root Device' />
+<input type='button' class="button" id='root' value='Root Device' />
 </div>
 
 <div id="restore" class="content" style="display:'none'">
@@ -212,7 +256,7 @@ Rooting your Kindle won't actually change the way it looks or works, but it will
 <p style="text-indent:50px">
 The Restore feature will reset your Kindle all the way back to Factory Settings and Files. Essentially it will rip out everything thats in your Kindle now and replace it with the original software. This feature will UNroot your device so be aware that if you are trying to fix an error, you will have to root it again to modify it further.
 </p>
-<input type='button' id='restore' value='restore' />
+<input type='button' class="button" id='restore' value='restore' />
 </div>
 
 <div id="gapps" class="content" style="display:'none'">
@@ -220,22 +264,22 @@ The Restore feature will reset your Kindle all the way back to Factory Settings 
 <p style="text-indent:50px">
 When you use this feature to install Google Play, the Amazon AppStore and Video will stop working. We recommend switching fully to Google services, but if you want to be able to switch back and forth this script also installs a tool called DLPC. DLPC allows you to switch appstores with a simple reboot. Look in  your app drawer for DLPC after install.
 </p>
-<input type='button' id='gapps' value='Install Google Play' />
+<input type='button' class="button" class="button" id='gapps' value='Install Google Play' />
 </div>
 
 <div id="ice" class="content" style="display:'none'">
 <h3>Install ICE</h3><hr />
-<input type='button' id='ice' value='Begin Install' />
+<input type='button' class="button" id='ice' value='Begin Install' />
 </div>
 
 <div id="hellfire" class="content" style="display:'none'">
-<h3>Install Hellfire</h3>
-<input type='button' id='hellfire' value='Begin Install' />
+<h3>Install Hellfire</h3><hr />
+<input type='button' class="button" id='hellfire' value='Begin Install' />
 </div>
 
 <div id="plasma" class="content" style="display:'none'">
 <h3>Install Plasma</h3><hr />
-<input type='button' id='plasma' value='Begin Install' />
+<input type='button' class="button" id='plasma' value='Begin Install' />
 </div>
 </div>
 
