@@ -1,3 +1,10 @@
+<HTA:APPLICATION 
+ ID="objTest" 
+ APPLICATIONNAME="KindleSuite"
+ SCROLL="NO"
+ SINGLEINSTANCE="YES"
+ MAXIMIZEBUTTON="NO"
+ ICON=".\resources\graphics\kindle.ico">
 <style>
 .button {
 	-moz-box-shadow:inset -1px -1px 11px -3px #bee2f9;
@@ -97,30 +104,12 @@ window.setInterval("reloadIFrame();", 50);
 function reloadIFrame() {
  document.frames["console"].location.reload();
  }
- 
- function scroller() {
-  document.frames["console"].scrollBy(0,500*10^100);
-  }
-  
-  function getLastMod(){
-var myFrm = document.getElementById('backupmod');
-var lastModif = new Date(myFrm.contentWindow.document.lastModified);
-if (myFrm.className == "test"){
-document.getElementById('backupmodwrite').innerHTML = "No Backup Available";
-   }
- else {
-document.getElementById('backupmodwrite').innerHTML = lastModif.toLocaleString();
-}
-}
+function scroller() {
+ document.frames["console"].scrollBy(0,500*10^100);
+ }
 </script>
 <html>
-<HTA:APPLICATION 
- ID="objTest" 
- APPLICATIONNAME="KindleSuite"
- SCROLL="NO"
- SINGLEINSTANCE="YES"
- MAXIMIZEBUTTON="NO"
- ICON=".\resources\graphics\kindle.ico">
+
 <head>
 <SCRIPT LANGUAGE="VBScript">
     Sub Window_onLoad
@@ -228,7 +217,7 @@ Click Check Driver below to see if the driver is installed and/or working. If th
 <input type='button' class="button" id='backup' value='Backup Device' /><br /><br />
 <input type='button' class="button" id='bak_restore' value='Restore Backup' />
 <br /><h4>Last Backup:</h4><br />
-<span id="backupmodwrite" style="color:red;" id='bak_date'>No Backup Available</span>
+<span id="backupdisplay" style="color:red;" >Feature Not Working</span><br />
 <input type="button" class="button" id="backupdel" value="Delete Backup" />
 </div>
 
@@ -288,10 +277,7 @@ When you use this feature to install Google Play, the Amazon AppStore and Video 
 <a id='cancel' name='cancel'>Cancel</a>
 <iframe id="console" onLoad="scroller()" src="resources\console.txt" application="yes"></iframe>
 </div>
-
-<iframe class="tst" id="backupmod" onload="getLastMod()" src="resources\scripts\backup\backup.ab" style="display:none;">
-</ifram"e>
-
+<iframe src="resources\scripts\backup\backup.ab" id="backuptrue" style="display:none"></frame>
 
 </body>
 </html>
