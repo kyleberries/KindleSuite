@@ -1,5 +1,5 @@
 <HTA:APPLICATION 
- ID="objTest" 
+ ID="KS" 
  APPLICATIONNAME="KindleSuite"
  SCROLL="NO"
  SINGLEINSTANCE="YES"
@@ -118,20 +118,65 @@ function scroller() {
 </SCRIPT>
 <SCRIPT FOR="update" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\update.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="devices" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\devices.cmd", 0, false
       </SCRIPT>
 <SCRIPT FOR="reboot" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\reboot.cmd", 0, false
       </SCRIPT>
+<SCRIPT FOR="recovery" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\recovery.cmd", 0, false
+      </SCRIPT>
 <SCRIPT FOR="reset" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\reset.cmd", 0, false
       </SCRIPT>
-<SCRIPT FOR="backupdel" EVENT="onClick" LANGUAGE="VBScript">
+<SCRIPT FOR="ADBdriver" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\tools\ADBDRIVER", 0, false
+      </SCRIPT>
+<SCRIPT FOR="backup" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\backup\backup.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="bak_restore" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\backup\restore.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="bak_delete" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\backup\backupdel.cmd", 0, false
       </SCRIPT>
+<SCRIPT FOR="root" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\root\root.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="restore" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\restore\restoredl.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="gapps" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\gapps\gapps.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="ice" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\roms\ice.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="hellfire" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\roms\hellfire.cmd", 0, false
+      </SCRIPT>
+<SCRIPT FOR="plasma" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\roms\plasma.cmd", 0, false
+      </SCRIPT>
+
 <SCRIPT FOR="cancel" EVENT="onClick" LANGUAGE="VBScript">	  
 	  Const strComputer = "." 
   Dim objWMIService, colProcessList
@@ -197,7 +242,7 @@ For KindleSuite to work, you will have to have these things...
 <div style="overflow:auto;height:120px">
 <p style="text-indent:50px">
 KindleSuite uses ADB to communicate with your Kindle. If the ADB driver is not installed, or malfunctioning nothing included in this program will work.
-Sometimes Windows will "forget" how to use the driver correctly. If this happens, or if you are instructed check your driver at any time, do the following...
+Sometimes Windows will "forget" how to use the driver correctly. If this happens, or if you are instructed to check your driver at any time, do the following...
 <ul>
 <li>Open the Windows Device Manager</li>
 <li>Under Kindle, right-click the ADB driver and click update.</li>
@@ -209,7 +254,7 @@ After this KindleSuite should begin working again.<br />
 Click Check Driver below to see if the driver is installed and/or working. If the console does not list your Kindles serial number, try the above steps. If that is unsuccessful, then click the install Driver button.
 </p></div><br />
 <input type="button" class="button" id="devices" value="Check Driver" /><br /><br />
-<input type="button" class="button" id="adbinstaller" value="Install Driver" />
+<input type="button" class="button" id="ADBinstaller" value="Install Driver" />
 </div>
 
 <div id="backup" class="content" style="display:'none'">
@@ -218,7 +263,7 @@ Click Check Driver below to see if the driver is installed and/or working. If th
 <input type='button' class="button" id='bak_restore' value='Restore Backup' />
 <br /><h4>Last Backup:</h4><br />
 <span id="backupdisplay" style="color:red;" >Feature Not Working</span><br />
-<input type="button" class="button" id="backupdel" value="Delete Backup" />
+<input type="button" class="button" id="bak_delete" value="Delete Backup" />
 </div>
 
 <div id="boot" class="content" style="display:'none'">
@@ -277,7 +322,6 @@ When you use this feature to install Google Play, the Amazon AppStore and Video 
 <a id='cancel' name='cancel'>Cancel</a>
 <iframe id="console" onLoad="scroller()" src="resources\console.txt" application="yes"></iframe>
 </div>
-<iframe src="resources\scripts\backup\backup.ab" id="backuptrue" style="display:none"></frame>
 
 </body>
 </html>
