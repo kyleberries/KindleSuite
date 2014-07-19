@@ -48,5 +48,6 @@ echo Successfull installed>resources\console.txt
 
 echo Open Lucky Patcher on Kindle and select toolbox at bottom...>resources\console.txt
 echo Select patch to android. Select disable signature verification in pkg manager...>resources\console.txt
+
 pause
 exit
