@@ -28,8 +28,5 @@ exit )
 echo Extracting Gapps...>resources\console.txt
 if not exist resources\scripts\gapps\package\gapps resources\tools\FBZip -e resources\scripts\gapps\package\gapps.zip resources\scripts\gapps\package\
 
-echo Starting installer...>resources\console.txt
-start resources\scripts\gapps\installer\gapps.cmd
-
 pause
 exit
