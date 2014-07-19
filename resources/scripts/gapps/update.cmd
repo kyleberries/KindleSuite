@@ -1,4 +1,6 @@
 @echo off
+echo Plug kindle into regular cable with ADB Debugging enabled...>resources\console.txt
+resources\tools\adb wait-for-device
 
 echo Prepairing directories...>resources\console.txt
 if not exist resources\scripts\gapps mkdir resources\scripts\gapps
