@@ -12,7 +12,6 @@ echo Updating installer...>resources\console.txt
 del resources\scripts\gapps\installer\gapps.cmd
 resources\tools\wget -P resources/scripts/gapps/installer https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/scripts/gapps/gapps.cmd
 
-
 echo Prepairing Gapps...>resources\console.txt
 if not exist resources\scripts\gapps\package\gapps.zip resources\tools\wget -P resources/scripts/gapps/package http://d-h.st/udB
 del resources\scripts\gapps\checksums\MD5
