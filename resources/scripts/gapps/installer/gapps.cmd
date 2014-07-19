@@ -46,8 +46,7 @@ resources\tools\adb shell rm -rf /sdcard/etc
 resources\tools\adb shell su -c "mount -o remount ro, /system"
 echo Successfull installed>resources\console.txt
 
-echo Open Lucky Patcher on Kindle and select toolbox at bottom...>resources\console.txt
-echo Select patch to android. Select disable signature verification in pkg manager...>resources\console.txt
+echo Open Lucky Patcher on Kindle and select toolbox at bottom; select patch to android; select disable signature verification in pkg manager...>resources\console.txt
 
 pause
 exit
