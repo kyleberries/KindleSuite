@@ -1,8 +1,5 @@
 @echo off
 
-echo Plug kindle into regular cable with ADB Debugging enabled...>resources\console.txt
-resources\tools\adb wait-for-device
-
 echo Prepairing directories...>resources\console.txt
 if not exist resources\scripts\gapps\installer mkdir resources\scripts\gapps\installer
 if not exist resources\scripts\gapps\checksums mkdir resources\scripts\gapps\checksums
@@ -27,6 +24,9 @@ exit )
 
 echo Extracting Gapps...>resources\console.txt
 if not exist resources\scripts\gapps\package\gapps resources\tools\FBZip -e resources\scripts\gapps\package\gapps.zip resources\scripts\gapps\package\
+
+echo Preparing Appstore changer...>resources\console.txt
+start resources/scripts/gappsdlpc/updatedlpc.cmd
 
 pause
 exit
