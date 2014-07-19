@@ -1,6 +1,4 @@
 @echo off
-echo Plug kindle into regular cable with ADB Debugging enabled...>resources\console.txt
-resources\tools\adb wait-for-device
 
 echo Installing Lucky Patcher...>resources\console.txt
 resources\tools\adb install resources\scripts\gapps\package\gapps\Lucky-Patcher-v4.4.3.apk
