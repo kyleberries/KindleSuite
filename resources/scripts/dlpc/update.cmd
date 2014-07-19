@@ -16,7 +16,7 @@ echo Prepairing Appstore changer...>resources\console.txt
 if not exist resources\scripts\dlpc\package\dlpc.zip resources\tools\wget -P resources/scripts/dlpc/package http://d-h.st/U2S
 del resources\scripts\dlpc\checksums\MD5
 del resources\scripts\dlpc\checksums\MD5local
-resources\tools\wget -P resources/scripts/dlpc/checksums https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/updater/dlpc/MD5
+resources\tools\wget -P resources/scripts/dlpc/checksums https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/updater/dlpc/MD5
 if not exist resources\scripts\dlpc\checksums\MD5local resources\tools\md5sums -u resources\scripts\dlpc\package\dlpc.zip > resources\scripts\dlpc\checksums\MD5local
 set /p md5=<resources\scripts\dlpc\checksums\MD5
 set /p md5local=<resources\scripts\dlpc\checksums\MD5local
