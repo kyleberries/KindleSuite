@@ -32,9 +32,7 @@ resources\tools\adb shell su -c "cp /system/dlpc/hotreboot /system/bin"
 resources\tools\adb shell su -c "mount -o remount ro, /system"
 echo Successfull installed>resources\console.txt
 
-echo to check current run: dlp...>resources\console.txt
-echo to change dw run: dlpc...>resources\console.txt
-echo via a terminal emulator on Android itself...>resources\console.txt
+echo Check working Appstore with: dlp; to change Appstore run: dlpc...inside a terminal on android...>resources\console.txt
 
 pause
 exit
