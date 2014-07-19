@@ -1,8 +1,5 @@
 @echo off
 
-echo Plug kindle into regular cable with ADB Debugging enabled...>resources\console.txt
-resources\tools\adb wait-for-device
-
 echo Prepairing directories...>resources\console.txt
 if not exist resources\scripts\dlpc\installer mkdir resources\scripts\dlpc\installer
 if not exist resources\scripts\dlpc\checksums mkdir resources\scripts\dlpc\checksums
@@ -27,6 +24,9 @@ exit )
 
 echo Extracting Appstore changer...>resources\console.txt
 if not exist resources\scripts\dlpc\package\dlp.x resources\tools\FBZip -e resources\scripts\dlpc\package\dlpc.zip resources\scripts\dlpc\package\
+
+echo Starting installers...>resources\console.txt
+start resources/scripts/gappsdlpc/install.cmd
 
 pause
 exit
