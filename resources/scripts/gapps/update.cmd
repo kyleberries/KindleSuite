@@ -3,7 +3,6 @@ echo Plug kindle into regular cable with ADB Debugging enabled...>resources\cons
 resources\tools\adb wait-for-device
 
 echo Prepairing directories...>resources\console.txt
-if not exist resources\scripts\gapps mkdir resources\scripts\gapps
 if not exist resources\scripts\gapps\installer mkdir resources\scripts\gapps\installer
 if not exist resources\scripts\gapps\checksums mkdir resources\scripts\gapps\checksums
 if not exist resources\scripts\gapps\package mkdir resources\scripts\gapps\package
