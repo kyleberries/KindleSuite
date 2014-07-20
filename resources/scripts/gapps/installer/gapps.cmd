@@ -18,7 +18,7 @@ resources\tools\adb push resources\scripts\gapps\package\gapps\etc\g.prop /sdcar
 resources\tools\adb push resources\scripts\gapps\package\gapps\etc\permissions /sdcard/etc/permissions
 
 echo Installing and setting permissions...>resources\console.txt
-resources\tools\adb shell su -c "mount -o remount rw, /system"
+resources\tools\adb shell su -c "mount -o remount,rw /system"
 resources\tools\adb shell su -c "mkdir /system/dlpc"
 resources\tools\adb shell su -c "cp /system/app/DownloadProvider*.* /system/dlpc"
 resources\tools\adb shell su -c "rm /system/app/DownloadProvider*.*"
@@ -43,7 +43,7 @@ resources\tools\adb shell rm -rf /sdcard/gapps
 resources\tools\adb shell rm -rf /sdcard/lib
 resources\tools\adb shell rm -rf /sdcard/framework
 resources\tools\adb shell rm -rf /sdcard/etc
-resources\tools\adb shell su -c "mount -o remount ro, /system"
+resources\tools\adb shell su -c "mount -o remount,ro /system"
 echo Successfull installed>resources\console.txt
 
 echo Open Lucky Patcher on Kindle and select toolbox at bottom; select patch to android; select disable signature verification in pkg manager...>resources\console.txt
