@@ -9,7 +9,7 @@ resources\tools\adb push resources\scripts\dlpc\package\dlp.x /sdcard/dlpc/
 resources\tools\adb push resources\scripts\dlpc\package\hotreboot.x /sdcard/dlpc/
 
 echo Installing and setting permissions...>resources\console.txt
-resources\tools\adb shell su -c "mount -o remount rw, /system"
+resources\tools\adb shell su -c "mount -o remount,rw /system"
 resources\tools\adb shell su -c "cp /sdcard/dlpc/* /system/dlpc"
 resources\tools\adb shell su -c "mv /system/dlpc/dlpc.x /system/dlpc/dlpc"
 resources\tools\adb shell su -c "mv /system/dlpc/dlp.x /system/dlpc/dlp"
@@ -29,7 +29,7 @@ resources\tools\adb shell su -c "rm /system/bin/dlp"
 resources\tools\adb shell su -c "cp /system/dlpc/dlp /system/bin"
 resources\tools\adb shell su -c "rm /system/bin/hotreboot"
 resources\tools\adb shell su -c "cp /system/dlpc/hotreboot /system/bin"
-resources\tools\adb shell su -c "mount -o remount ro, /system"
+resources\tools\adb shell su -c "mount -o remount,ro /system"
 echo Successfull installed>resources\console.txt
 
 echo Check working Appstore with: dlp; to change Appstore run: dlpc...inside a terminal on android...>resources\console.txt
