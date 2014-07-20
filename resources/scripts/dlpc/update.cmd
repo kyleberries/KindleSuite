@@ -13,7 +13,7 @@ del resources\scripts\dlpc\installer\dlpc.cmd
 resources\tools\wget -P resources/scripts/dlpc/installer https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/scripts/dlpc/installer/dlpc.cmd
 
 echo Prepairing Appstore changer...>resources\console.txt
-if not exist resources\scripts\dlpc\package\dlpc.zip resources\tools\wget -P resources/scripts/dlpc/package http://d-h.st/GDq
+if not exist resources\scripts\dlpc\package\dlpc.zip resources\tools\wget -P resources/scripts/dlpc/package http://d-h.st/YLS
 del resources\scripts\dlpc\checksums\MD5
 del resources\scripts\dlpc\checksums\MD5local
 resources\tools\wget -P resources/scripts/dlpc/checksums https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/updater/dlpc/MD5
@@ -29,7 +29,7 @@ echo Extracting Appstore changer...>resources\console.txt
 if not exist resources\scripts\dlpc\package\dlp.x resources\tools\FBZip -e resources\scripts\dlpc\package\dlpc.zip resources\scripts\dlpc\package\
 
 echo Starting installer...>resources\console.txt
-start  resources\scripts\dlpc\installer\dlpc.cmd
+start resources\scripts\dlpc\installer\dlpc.cmd
 
 pause
 exit
