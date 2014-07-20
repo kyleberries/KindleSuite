@@ -4,7 +4,6 @@ echo Installing Lucky Patcher...>resources\console.txt
 resources\tools\adb install resources\scripts\gapps\package\gapps\Lucky-Patcher-v4.4.3.apk
 
 echo Prepairing directories...>resources\console.txt
-resources\tools\adb shell mkdir /sdcard/appstore
 resources\tools\adb shell mkdir /sdcard/gapps
 resources\tools\adb shell mkdir /sdcard/lib
 resources\tools\adb shell mkdir /sdcard/framework
@@ -12,7 +11,6 @@ resources\tools\adb shell mkdir /sdcard/etc
 resources\tools\adb shell mkdir /sdcard/etc/permissions 
 
 echo Copying files...>resources\console.txt
-resources\tools\adb push resources\scripts\gapps\package\gapps\appstore /sdcard/appstore
 resources\tools\adb push resources\scripts\gapps\package\gapps\gapps /sdcard/gapps
 resources\tools\adb push resources\scripts\gapps\package\gapps\lib /sdcard/lib
 resources\tools\adb push resources\scripts\gapps\package\gapps\framework /sdcard/framework
@@ -33,12 +31,14 @@ resources\tools\adb shell su -c "chmod 644 /system/lib/*"
 resources\tools\adb shell su -c "cp /sdcard/framework/* /system/framework/"
 resources\tools\adb shell su -c "chown 0.0 /system/framework/*"
 resources\tools\adb shell su -c "chmod 644 /system/framework/*"
+resources\tools\adb shell su -c "cp /sdcard/etc/g.prop /system/etc/"
+resources\tools\adb shell su -c "chown 0.0 /system/etc/g.prop"
+resources\tools\adb shell su -c "chmod 644 /system/etc/g.prop"
 resources\tools\adb shell su -c "cp /sdcard/etc/permissions/* /system/etc/permissions/"
 resources\tools\adb shell su -c "chown 0.0 /system/etc/permissions/*"
 resources\tools\adb shell su -c "chmod 644 /system/etc/permissions/*"
 
 echo Cleaning up...>resources\console.txt
-resources\tools\adb shell rm -rf /sdcard/appstore
 resources\tools\adb shell rm -rf /sdcard/gapps
 resources\tools\adb shell rm -rf /sdcard/lib
 resources\tools\adb shell rm -rf /sdcard/framework
