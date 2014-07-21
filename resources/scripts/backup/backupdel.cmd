@@ -1,2 +1,4 @@
-del resources\scripts\backup\backup.ab
+@echo off
+echo Backup Deleted.>resources/console.txt
+del resources\scripts\backup\backup.
 exit

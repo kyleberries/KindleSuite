@@ -1,6 +1,9 @@
 @echo off
-echo This will restore your data , so be prepared for a long wait. this screen will inform you when the restore is complete>resources\console.txt
+IF EXIST resources\scripts\backup\backup.ab (
+echo Restoring Backup. Please confirm on Kindle's screen...>resources\console.txt
 resources\tools\adb restore resources\scripts\backup\backupdata.ab
-echo restore complete>resources\console.txt
-del resources\scripts\backup\backupdata.ab
+echo Restore complete.>resources\console.txt
 exit
+) ELSE (
+echo No Backup Available...>resources\console.txt
+exit )

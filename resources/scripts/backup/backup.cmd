@@ -1,5 +1,5 @@
 @echo off
-echo This will backup the ENTIRE device (except system), so be prepared for a long wait. this screen will inform you when the backup is complete>resources\console.txt
+echo Backup beginning. Please confirm on Kindle's screen...>resources\console.txt
 resources\tools\adb backup -apk -shared -all -nosystem -f resources\scripts\backup\backup.ab
-echo backup complete>resources\console.txt
+echo Backup complete>resources\console.txt
 exit
