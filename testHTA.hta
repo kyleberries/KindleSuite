@@ -107,19 +107,6 @@ function reloadIFrame() {
 function scroller() {
  document.frames["console"].scrollBy(0,500*10^100);
  }
- var backupcheck = document.frames["backupcheck"];
- 
-function backupCheck(){
-var myFrm = document.getElementById('backupcheck');
-var lastModif = new Date(myFrm.contentWindow.document.lastModified);
-if (document.getElementById('backupswitch').className == "true") {
-document.getElementById('backupdisplay').innerHTML = lastModif.toLocaleString();
-   }
- else {
-  document.getElementById('backupdisplay').innerHTML = "No Backup Available";
-     }
-}
- 
 </script>
 <html>
 <head>
@@ -230,7 +217,7 @@ KindleSuite
 
 <area href="#" name="aplasma" shape="rect" coords="75,499,355,535" alt="Install the Plasma ROM on your Kindle" onclick="javascript:document.getElementById('home').style.display ='none';document.getElementById('drivers').style.display ='none';document.getElementById('backup').style.display ='none';document.getElementById('boot').style.display ='none';document.getElementById('root').style.display ='none';document.getElementById('restore').style.display ='none';document.getElementById('gapps').style.display ='none';document.getElementById('ice').style.display ='none';document.getElementById('hellfire').style.display ='none';document.getElementById('plasma').style.display ='block'">
 </map>
-<img class="bg" src="http://dl.kfsowi.com/tools/kindlesuite/resources/bg.jpg" usemap="#contentmap"/>
+<img class="bg" src="devtemp/bg2.jpg" usemap="#contentmap" />
 <div class="pages">
 <div id="home" class="content">
 Welcome to KindleSuite 4.0
@@ -265,11 +252,11 @@ Click Check Driver below to see if the driver is installed and/or working. If th
 </div>
 <div id="backup" class="content" style="display:'none'">
 <h3>Backup/Restore Personal Data</h3><hr />
-<input type='button' onclick="Javascript:document.getElementById('backupswitch').setAttribute('class','true')" class="button" id='backup' value='Backup Device' /><br /><br />
+<p style="text-indent:50px">
+Here you can backup your personal data which includes everything on your SD Card, but not any of your apps.
+</p>
+<input type='button' class="button" id='backup' value='Backup Device' /><br /><br />
 <input type='button' class="button" id='bak_restore' value='Restore Backup' />
-<br /><h4>Current Backup:</h4>
-<span id="backupdisplay" style="color:red;" >No Backup</span><br />
-<input type="button" class="button" id="bak_delete" value="Delete Backup" />
 </div>
 <div id="boot" class="content" style="display:'none'">
 <h3>Reboot Device</h3><hr />
@@ -301,6 +288,9 @@ The Restore feature will reset your Kindle all the way back to Factory Settings 
 When you use this feature to install Google Play, the Amazon AppStore and Video will stop working. We recommend switching fully to Google services, but if you want to be able to switch back and forth this script also installs a tool called DLPC. DLPC allows you to switch appstores with a simple reboot. Look in  your app drawer for DLPC after install.
 </p>
 <input type='button' class="button" class="button" id='gapps' value='Install Google Play' />
+</div>
+<div id="mods" class="content" style="display:'none'">
+
 </div>
 <div id="ice" class="content" style="display:'none'">
 <h3>Install ICE</h3><hr />
