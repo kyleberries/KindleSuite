@@ -139,10 +139,6 @@ function scroller() {
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\backup\backup.cmd", 0, false
       </SCRIPT>
-<SCRIPT FOR="bak_restore" EVENT="onClick" LANGUAGE="VBScript">
-        Set WshShell = CreateObject("WScript.Shell")
-        WshShell.Run "cmd /k resources\scripts\backup\restore.cmd", 0, false
-      </SCRIPT>
 <SCRIPT FOR="bak_delete" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\backup\backupdel.cmd", 0, false
@@ -253,10 +249,11 @@ Click Check Driver below to see if the driver is installed and/or working. If th
 <div id="backup" class="content" style="display:'none'">
 <h3>Backup/Restore Personal Data</h3><hr />
 <p style="text-indent:50px">
-Here you can backup your personal data which includes everything on your SD Card, but not any of your apps.
+Here you can backup your personal data which includes everything on your SD Card, plus your downloaded apps and appdata.<br />
+For both backup and restore you will need to confirm the action ON YOUR KINDLE.
 </p>
-<input type='button' class="button" id='backup' value='Backup Device' /><br /><br />
-<input type='button' class="button" id='bak_restore' value='Restore Backup' />
+<input type='button' class="button" id='backup' value='Backup/Restore Device' /><br /><br />
+<input type='button' class="button" id='bak_del' value='Delete existing backup' />
 </div>
 <div id="boot" class="content" style="display:'none'">
 <h3>Reboot Device</h3><hr />
