@@ -131,10 +131,6 @@ function scroller() {
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\scripts\recovery.cmd", 0, false
       </SCRIPT>
-<SCRIPT FOR="reset" EVENT="onClick" LANGUAGE="VBScript">
-        Set WshShell = CreateObject("WScript.Shell")
-        WshShell.Run "cmd /k resources\scripts\reset.cmd", 0, false
-      </SCRIPT>
 <SCRIPT FOR="ADBdriver" EVENT="onClick" LANGUAGE="VBScript">
         Set WshShell = CreateObject("WScript.Shell")
         WshShell.Run "cmd /k resources\tools\ADBDRIVER", 0, false
@@ -190,6 +186,8 @@ function scroller() {
   For Each objProcess in colProcessListDos 
     objProcess.Terminate() 
   Next 
+         Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd /k resources\scripts\reset.cmd", 0, false
 </script>  
 <title>
 KindleSuite
@@ -306,7 +304,6 @@ TEST
 <input type='button' class="button" id='plasma' value='Begin Install' />
 </div>
 <div id="console_wrap" class="console">
-<a id='reset' name='reset'>Reset Console</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a id='cancel' name='cancel'>Cancel</a>
 <iframe id="console" onLoad="scroller()" src="resources\console.txt" application="yes"></iframe>
 </div>
