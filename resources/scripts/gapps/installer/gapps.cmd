@@ -1,5 +1,7 @@
 @echo off
 
+resources\tools\adb start-server
+
 echo Installing Lucky Patcher...>resources\console.txt
 resources\tools\adb install resources\scripts\gapps\package\gapps\Lucky-Patcher-v4.4.3.apk
 
@@ -47,6 +49,8 @@ resources\tools\adb shell su -c "mount -o remount,ro /system"
 echo Successfull installed>resources\console.txt
 
 echo Open Lucky Patcher on Kindle and select toolbox at bottom; select patch to android; select disable signature verification in pkg manager...>resources\console.txt
+
+resources\tools\adb kill-server
 
 pause
 exit
