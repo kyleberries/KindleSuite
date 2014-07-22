@@ -1,5 +1,7 @@
 @echo off
 
+resources\tools\adb start-server
+
 echo Prepairing directories...>resources\console.txt
 resources\tools\adb shell mkdir /sdcard/dlpc
 
@@ -33,6 +35,8 @@ resources\tools\adb shell su -c "mount -o remount,ro /system"
 echo Successfull installed>resources\console.txt
 
 echo Check working Appstore with: dlp; to change Appstore run: dlpc...inside a terminal on android...>resources\console.txt
+
+resources\tools\adb kill-server
 
 pause
 exit
