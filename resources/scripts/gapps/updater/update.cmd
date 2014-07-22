@@ -18,7 +18,7 @@ echo Prepairing Gapps...>resources\console.txt
 if not exist resources\scripts\gapps\package\gapps.zip resources\tools\wget -P resources/scripts/gapps/package http://d-h.st/zTY
 del resources\scripts\gapps\checksums\MD5
 del resources\scripts\gapps\checksums\MD5local
-resources\tools\wget -P resources/scripts/gapps/checksums https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/updater/gapps/MD5
+resources\tools\wget -P resources/scripts/gapps/checksums https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/scripts/gapps/updater/MD5
 if not exist resources\scripts\gapps\checksums\MD5local resources\tools\md5sums -u resources\scripts\gapps\package\gapps.zip > resources\scripts\gapps\checksums\MD5local
 set /p md5=<resources\scripts\gapps\checksums\MD5
 set /p md5local=<resources\scripts\gapps\checksums\MD5local
