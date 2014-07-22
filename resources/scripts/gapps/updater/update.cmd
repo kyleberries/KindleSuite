@@ -1,5 +1,7 @@
 @echo off
 
+resources\tools\adb start-server
+
 echo Plug kindle into regular cable with ADB Debugging enabled...>resources\console.txt
 resources\tools\adb wait-for-device
 
@@ -30,6 +32,8 @@ if not exist resources\scripts\gapps\package\gapps resources\tools\FBZip -e reso
 
 echo Starting installer...>resources\console.txt
 start resources\scripts\gapps\installer\gapps.cmd
+
+resources\tools\adb kill-server
 
 pause
 exit
