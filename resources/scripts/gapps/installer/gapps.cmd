@@ -21,9 +21,10 @@ resources\tools\adb push resources\scripts\gapps\package\gapps\etc\permissions /
 
 echo Installing and setting permissions...>resources\console.txt
 resources\tools\adb shell su -c "mount -o remount,rw /system"
-resources\tools\adb shell su -c "mkdir /system/dlpc"
-resources\tools\adb shell su -c "cp /system/app/DownloadProvider*.* /system/dlpc"
-resources\tools\adb shell su -c "rm /system/app/DownloadProvider*.*"
+resources\tools\adb shell su -c "cp /system/app/DownloadProvider.apk /system/app/DownloadProvider.apkama"
+resources\tools\adb shell su -c "cp /system/app/DownloadProvider.odex /system/app/DownloadProvider.odexama"
+resources\tools\adb shell su -c "cp /system/app/DownloadProviderUi.apk /system/app/DownloadProviderUi.apkama"
+resources\tools\adb shell su -c "cp /system/app/DownloadProviderUi.odex /system/app/DownloadProviderUi.odexama"
 resources\tools\adb shell su -c "cp /sdcard/gapps/* /system/app/"
 resources\tools\adb shell su -c "chown 0.0 /system/app/*"
 resources\tools\adb shell su -c "chmod 644 /system/app/*"
