@@ -15,7 +15,7 @@ del resources\scripts\dlpc\installer\dlpc.cmd
 resources\tools\wget -P resources/scripts/dlpc/installer https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/scripts/dlpc/installer/dlpc.cmd
 
 echo Prepairing Appstore changer...>resources\console.txt
-if not exist resources\scripts\dlpc\package\dlpc.zip resources\tools\wget -P resources/scripts/dlpc/package http://d-h.st/YLS
+if not exist resources\scripts\dlpc\package\dlpc.zip resources\tools\wget -P resources/scripts/dlpc/package http://d-h.st/QpK
 del resources\scripts\dlpc\checksums\MD5
 del resources\scripts\dlpc\checksums\MD5local
 resources\tools\wget -P resources/scripts/dlpc/checksums https://raw.githubusercontent.com/secretdevwork/KindleSuite/master/resources/scripts/dlpc/updater/MD5
