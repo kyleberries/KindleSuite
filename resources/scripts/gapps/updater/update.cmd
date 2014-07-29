@@ -23,8 +23,11 @@ if not exist resources\scripts\gapps\checksums\MD5local resources\tools\md5sums 
 set /p md5=<resources\scripts\gapps\checksums\MD5
 set /p md5local=<resources\scripts\gapps\checksums\MD5local
 if not "%md5%" == "%md5local%" (
-echo. Update avaible. Please run the installer again...>resources\console.txt
+echo. Update avaible. restarting updater...>resources\console.txt
 rmdir resources\scripts\gapps\package /s /q
+start resources/scripts/gapps/runme.cmd
+resources\tools\adb kill-server
+pause
 exit )
 
 echo Extracting Gapps...>resources\console.txt
