@@ -23,8 +23,11 @@ if not exist resources\scripts\dlpc\checksums\MD5local resources\tools\md5sums -
 set /p md5=<resources\scripts\dlpc\checksums\MD5
 set /p md5local=<resources\scripts\dlpc\checksums\MD5local
 if not "%md5%" == "%md5local%" (
-echo. Update avaible. Please run the installer again...>resources\console.txt
+echo. Update avaible. restarting updater...>resources\console.txt
 rmdir resources\scripts\dlpc\package /s /q
+start resources/scripts/dlpc/updater/update.cmd
+resources\tools\adb kill-server
+pause
 exit )
 
 echo Extracting Appstore changer...>resources\console.txt
