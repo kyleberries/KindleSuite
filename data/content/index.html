@@ -1,9 +1,9 @@
 ﻿<!doctype html>
 <html>
-		<script type="text/javascript" src="scripts/navigation.js"></script>
 	<head>
 		<meta charset="utf-8">
 		<title>KindleSuite</title>
+	    <script type="text/javascript" src="scripts/navigation.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
     </head>
 <body>
@@ -11,7 +11,12 @@
 <div id="container">
 <div id="navigation" style="float:left;width:100px;height:450px">
 <ul>
-<li><a href="#" onclick="adbBtn()" id="btn_adb">adb</a></li><br><br>
+<li><a href="#" onclick="driverBtn()">Drivers</a></li><br><br>
+<li><a href="#" onclick="rootBtn()">Root</a></li><br><br>
+<li><a href="#" onclick="restoreBtn()">Restore</a></li><br><br>
+<li><a href="#" onclick="gappsBtn()">Google Play</a></li><br><br>
+<li><a href="#" onclick="romsBtn()">Roms</a></li><br><br>
+<li><a href="#" onclick="extrasBtn()">Extras</a></li><br><br>
 </ul>
 </div>
 <div class="pages">
@@ -20,6 +25,21 @@
 </div>
 <div id="drivers" class="content" style="display:none">
 <span>Testing</span>
+</div>
+<div id="root" class="content" style="display:none">
+<span>Testing2</span>
+</div>
+<div id="restore" class="content" style="display:none">
+<span>Testing3</span>
+</div>
+<div id="gapps" class="content" style="display:none">
+<span>Testing4</span>
+</div>
+<div id="roms" class="content" style="display:none">
+<span>Testing5</span>
+</div>
+<div id="extras" class="content" style="display:none">
+<span>Testing6</span>
 </div>
 </div>
 </div>
