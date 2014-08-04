@@ -93,7 +93,7 @@ background: linear-gradient(white, grey); /* Standard syntax (must be last) */
 }
 #panel
 {
-display:none
+display:block
 }
 .navigation
 {

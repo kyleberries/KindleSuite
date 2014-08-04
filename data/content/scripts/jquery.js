@@ -3,7 +3,7 @@ $(document).ready(function(){
   });
   
   $(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel").slideToggle("slow");
+  $("a.link").hover(function(){
+    $("this").css("background-color","grey");
   });
 });
