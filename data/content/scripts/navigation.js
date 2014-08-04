@@ -1,4 +1,8 @@
 $(document).ready(function(){
+ $(".title1").fadeOut(0);
+ $(".title1").load($(".title1").fadeIn(2000));
+ $(".title2").fadeOut(0);
+ $(".title2").load($(".title2").fadeIn(2000));
   $("#driverBtn").click(function(){
     $("#home").hide(1000);
     $("#drivers").show(1000);
