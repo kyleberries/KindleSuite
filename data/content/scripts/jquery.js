@@ -1,4 +1,4 @@
 $(document).ready(function(){
-    $("html").fadeIn(3000);
+    $("html").fadeIn(500);
   });
   
