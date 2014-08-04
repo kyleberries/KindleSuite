@@ -29,25 +29,8 @@ window.on('create', function(){
 // the window is ready when the DOM is loaded
 window.on('ready', function(){
   console.log("Window Ready");
-  
   window.sysinfo=osutils;
   
-  window.commands={
-	maximize:function(){
-		window.frame.maximize();
-		return 'restore';
-	},restore:function(){
-		window.frame.restore();
-		return 'maximize';
-	},minimize:function(){
-		window.frame.minimize();
-		return 'minimize';
-	},close:function(){
-		window.frame.destroy();
-		return 'close';
-	}
-  };
-
   window.addEventListener('keydown', function(e){
     // show chrome devtools on f12 or commmand+option+j
     if (e.keyIdentifier === 'F12' || e.keyCode === 74 && e.metaKey && e.altKey) {
