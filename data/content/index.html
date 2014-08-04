@@ -7,22 +7,24 @@
 	    <script type="text/javascript" src="scripts/navigation.js"></script>
 	    <script type="text/javascript" src="scripts/jquery.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
     </head>
 <body>
 <span class="title">KindleSuite alpha</span><hr />
 <div id="container">
 <div class="navigation">
-<div id="flip">Navigation</div>
+<div id="flip"><a href="#">Navigation</a></div>
 <div id="panel">
-<a href="#" onclick="driverBtn()">Drivers</a><hr />
-<a href="#" onclick="rootBtn()">Root</a><hr />
-<a href="#" onclick="restoreBtn()">Restore</a><hr />
-<a href="#" onclick="gappsBtn()">Google Play</a><hr />
-<a href="#" onclick="romsBtn()">Roms</a><hr />
-<a href="#" onclick="extrasBtn()">Extras</a><br /><br />
+<hr />
+<a href="#" id="driverBtn">Drivers</a><hr />
+<a href="#" id="rootBtn">Root</a><hr />
+<a href="#" id="restoreBtn">Restore</a><hr />
+<a href="#" id="gappsBtn">Google Play</a><hr />
+<a href="#" id="romsBtn">Roms</a><hr />
+<a href="#" id="extrasBtn">Extras</a><br /><br />
 </div>
 </div>
-<div class="pages">
+<div class="pages"><br /><br />
 <div id="home" class="content">
 It is important to us that you understand that while this Tool is tested before release, it is not guaranteed in any way and is not offered with any implied warranty or guarantee. It isnt recommended that you use this tool if you dont have some understanding of how ADB works. This tool is designed to get the newest resources to you as soon as possible, and as such bugs are possible within the tool. If you are uncertain about your ability to troubleshoot potential issues DO NOT use this tool.<br /><br />
 Check out our new <a href="https://github.com/secretdevwork/KindleSuite/wiki">GITHUB WIKI</a> for more info on our tools and ROMs.
@@ -30,22 +32,34 @@ Check out our new <a href="https://github.com/secretdevwork/KindleSuite/wiki">GI
 If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com
 </div>
 <div id="drivers" class="content" style="display:none">
-<span>Drivers</span>
+<span>Drivers
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at interdum sapien, et vestibulum turpis. Duis condimentum lectus scelerisque purus pharetra, sit amet dictum nibh ullamcorper. Sed non suscipit dolor, sed vestibulum nulla. Vestibulum tincidunt eu eros in imperdiet. Curabitur posuere magna in tortor blandit fermentum. Aenean gravida tincidunt sem, at luctus nibh lobortis id. Proin pharetra lectus ut pulvinar semper. Sed purus justo, tristique et tincidunt nec, ultricies eu mauris. Pellentesque massa nunc, scelerisque tempor magna quis, sodales suscipit velit. Nam aliquet fermentum neque, vel tempor lacus venenatis vel. Donec consectetur nisi at augue sollicitudin vulputate non at metus. Pellentesque a nisl ut eros tincidunt eleifend eu eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec euismod leo eget lectus convallis, ullamcorper molestie neque eleifend. Fusce imperdiet eu lectus ac tincidunt.
+</span>
 </div>
 <div id="root" class="content" style="display:none">
-<span>Root</span>
+<span>Root
+Sed tempus eros ut quam ultrices pellentesque tristique non massa. Nam at elit vel sapien facilisis pellentesque eu non erat. Nunc vitae vestibulum nulla. Cras eleifend metus tortor, quis egestas elit congue at. Curabitur pellentesque ut nisl vitae condimentum. Donec et tincidunt justo. Duis ullamcorper tortor at nisi pellentesque semper. Mauris id risus mattis, porttitor arcu vitae, euismod odio. Aliquam erat volutpat. Nulla a est at enim malesuada sollicitudin.
+</span>
 </div>
 <div id="restore" class="content" style="display:none">
-<span>Restore</span>
+<span>Restore
+Donec et urna lobortis, convallis erat ac, adipiscing mauris. Proin condimentum felis quis tempus adipiscing. Ut ullamcorper dui elit, rhoncus semper ligula bibendum quis. Praesent eu lorem euismod mauris aliquet molestie. Praesent elit sapien, tincidunt eu aliquam eu, hendrerit et odio. Quisque nisl sapien, consequat vel blandit vitae, sollicitudin vel leo. In hac habitasse platea dictumst. Nunc massa mi, tristique ut elit quis, convallis bibendum eros. Etiam nulla libero, ultricies non lorem eget, mattis pretium magna. Cras congue congue rutrum. Suspendisse sed semper diam, ut adipiscing sem. Donec venenatis lectus vel sapien vestibulum, ac pellentesque odio consectetur. Vestibulum vitae purus ipsum. In sit amet tristique dolor.
+</span>
 </div>
 <div id="gapps" class="content" style="display:none">
-<span>Google Play & DLPC</span>
+<span>Google Play & DLPC
+Ut pulvinar ac lectus sed porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam ac commodo nisl. Vestibulum luctus ullamcorper lacus non dapibus. Nunc nisi libero, sagittis at varius in, gravida at velit. Vivamus viverra ut orci eu elementum. Vestibulum aliquam a arcu ac feugiat. Donec dictum purus sit amet convallis fermentum. Mauris varius turpis at turpis ultricies ullamcorper.
+</span>
 </div>
 <div id="roms" class="content" style="display:none">
-<span>ROMs</span>
+<span>ROMs
+Fusce consectetur tristique sem, ac venenatis orci eleifend et. Nam sed ultrices nisl. Aliquam pretium sit amet leo eu vulputate. Nulla id eleifend ante, ac placerat leo. Maecenas tortor sapien, convallis quis neque vitae, semper tempus nunc. Donec vitae nibh justo. In eu hendrerit sapien, sed ullamcorper erat. Curabitur interdum lorem velit.
+</span>
 </div>
 <div id="extras" class="content" style="display:none">
-<span>Extras</span>
+<span>Extras
+Donec justo dolor, egestas non nibh eget, bibendum porta metus. Donec vel lobortis odio. Donec tristique commodo ligula sed blandit. Quisque condimentum, est vitae fringilla sollicitudin, felis lectus mollis sapien, ut bibendum neque dui non odio. Nulla consequat aliquam mauris, vestibulum molestie lacus facilisis eu. Ut vel scelerisque eros, quis dapibus nulla. Fusce porta cursus mauris, sed aliquet turpis sagittis eget. Vivamus mattis libero sapien, at pharetra nunc accumsan dictum. Morbi convallis sagittis venenatis. Donec feugiat erat id erat pharetra sagittis. Quisque vel sem posuere, commodo ipsum nec, fringilla odio.
+</span>
 </div>
 </div>
 </div>
