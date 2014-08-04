@@ -4,57 +4,27 @@ $(document).ready(function(){
  $(".title2").fadeOut(0);
  $(".title2").load($(".title2").fadeIn(2000));
   $("#driverBtn").click(function(){
-    $("#home").hide(1000);
-    $("#drivers").show(1000);
-    $("#root").hide(1000);
-    $("#restore").hide(1000);
-    $("#gapps").hide(1000);
-    $("#roms").hide(1000);
-    $("#extras").hide(1000);
+    $("div.content").fadeOut(500);
+    $("#drivers").delay(500).fadeIn(500);
   });
    $("#rootBtn").click(function(){
-    $("#home").hide(1000);
-    $("#drivers").hide(1000);
-    $("#root").show(1000);
-    $("#restore").hide(1000);
-    $("#gapps").hide(1000);
-    $("#roms").hide(1000);
-    $("#extras").hide(1000);
+    $("div.content").fadeOut(500);
+    $("#root").delay(500).fadeIn(500);
   });
    $("#restoreBtn").click(function(){
-    $("#home").hide(1000);
-    $("#drivers").hide(1000);
-    $("#root").hide(1000);
-    $("#restore").show(1000);
-    $("#gapps").hide(1000);
-    $("#roms").hide(1000);
-    $("#extras").hide(1000);
+   $("div.content").fadeOut(500);   
+   $("#restore").delay(500).fadeIn(500);
   });
    $("#gappsBtn").click(function(){
-    $("#home").hide(1000);
-    $("#drivers").hide(1000);
-    $("#root").hide(1000);
-    $("#restore").hide(1000);
-    $("#gapps").show(1000);
-    $("#roms").hide(1000);
-    $("#extras").hide(1000);
+    $("div.content").fadeOut(500);
+    $("#gapps").delay(500).fadeIn(500);
   });
    $("#romsBtn").click(function(){
-    $("#home").hide(1000);
-    $("#drivers").hide(1000);
-    $("#root").hide(1000);
-    $("#restore").hide(1000);
-    $("#gapps").hide(1000);
-    $("#roms").show(1000);
-    $("#extras").hide(1000);
+    $("div.content").fadeOut(500);
+    $("#roms").delay(500).fadeIn(500);
   });
    $("#extrasBtn").click(function(){
-    $("#home").hide(1000);
-    $("#drivers").hide(1000);
-    $("#root").hide(1000);
-    $("#restore").hide(1000);
-    $("#gapps").hide(1000);
-    $("#roms").hide(1000);
-    $("#extras").show(1000);
+    $("div.content").fadeOut(500);
+    $("#extras").delay(500).fadeIn(500);
   });
 });
