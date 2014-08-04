@@ -5,6 +5,7 @@ height:100%;
 border:1px solid black;
 -webkit-box-sizing: border-box;
 -webkit-border-radius: 20px;
+display:none;
 }
 body{
 background-color:transparent; 
