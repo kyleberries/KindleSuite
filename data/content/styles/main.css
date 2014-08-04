@@ -1,3 +1,29 @@
+span.title {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    -webkit-animation: myfirst 3s; /* Chrome, Safari, Opera */
+    animation: myfirst 3s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {right:300px; top:0px;}
+    100% {right:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    0%   {right:300px; top:0px;}
+    100% {right:0px; top:0px;}
+}
+@font-face {
+   font-family: myFirstFont;
+   src: url(sansation_light.woff);
+}
+ul {
+    list-style: square url("sqpurple.gif");
+}
 html{
 background-color:transparent;
 width:100%;
