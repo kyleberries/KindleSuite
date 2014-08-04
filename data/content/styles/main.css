@@ -17,13 +17,16 @@ background: linear-gradient(white, grey); /* Standard syntax (must be last) */
 {
 float:left;
 width:100px;
-background-color:grey;
-opacity:0.5;
+background-color:#eeeeee;
+border-style:solid;
+border-color:#cccccc;
+border-width:3px;
+opacity:1;
 border-radius:10px;
 text-align:center;
 font-size:18px;
 margin-right:50px;
-text-shadow: 3px 3px #aaaaaa;
+text-shadow: 1px 1px #ffffff;
 }
 .pages
 {
@@ -33,8 +36,10 @@ margin-right:50px;
 .title
 {
 text-align:center;
-font-family:helvetica;
+font-family:impact;
 text-shadow: 3px 3px #999999;
+margin-left:35%;
+font-size:30px;
 }
 a
 {
