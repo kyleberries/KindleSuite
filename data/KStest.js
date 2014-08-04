@@ -30,7 +30,6 @@ window.on('create', function(){
 window.on('ready', function(){
   console.log("Window Ready");
   window.sysinfo=osutils;
-  window.adb = require('adb-cmd');
   window.addEventListener('keydown', function(e){
     // show chrome devtools on f12 or commmand+option+j
     if (e.keyIdentifier === 'F12' || e.keyCode === 74 && e.metaKey && e.altKey) {
