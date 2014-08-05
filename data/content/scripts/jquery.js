@@ -16,7 +16,7 @@ $(document).ready(function(){
     window.close();
 	});
 	  $(".close").hover(function(){
-    $("html").fadeTo(500, .5);
+    $("html").fadeTo(200, .5);
     },function(){
     $("html").fadeTo(500,.98);
   });
