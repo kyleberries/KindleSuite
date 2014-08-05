@@ -48,9 +48,9 @@ $(document).ready(function(){
     $("#plasma").delay(500).fadeIn(500);
   });
      $("div.navigation").hover(function(){
-    $("div.navigation").fadeTo(400, 1);
+    $("div.navigation").fadeTo(200, 1);
     },function(){
-    $("div.navigation").fadeTo(400, 0.5);
+    $("div.navigation").fadeTo(200, 0.5);
   });
 });
 
