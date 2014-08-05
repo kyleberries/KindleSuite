@@ -65,9 +65,7 @@ html,body {
 }
 #header {
 	padding:-15px;
-	cursor:pointer;
-}
-    
+}   
 #content {
 	padding:10px;
 	padding-bottom:80px;   /* Height of the footer element */
@@ -91,12 +89,12 @@ span.title1 {
 }
 .title1:hover {
     text-shadow:3px 3px #999999;
+	cursor:pointer;
 	}
 a.update:link {
     color:green;
 	font-size:120%;
-}
-    
+}   
 span.title2 {
     width: 100px;
     height: 100px;

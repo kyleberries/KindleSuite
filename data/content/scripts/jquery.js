@@ -1,14 +1,11 @@
 $(document).ready(function(){
  $("html").fadeIn(500);
+ $(".title1").click(function(){location.reload()});
  $(".title1").fadeOut(0);
  $(".title1").load($(".title1").fadeIn(2000));
  $(".title2").fadeOut(0);
  $(".title2").load($(".title2").fadeIn(2000));
    $("#driverBtn").click(function(){
-    $("div.content").fadeOut(500);
-    $("#drivers").delay(500).fadeIn(500);
-  });
-   $("#header").click(function(){
     $("div.content").fadeOut(500);
     $("#home").delay(500).fadeIn(500);
   });
