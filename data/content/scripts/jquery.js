@@ -15,6 +15,11 @@ $(document).ready(function(){
    $("span.close").click(function(){
     window.close();
 	});
+	  $(".close").hover(function(){
+    $("html").fadeTo(500, .5);
+    },function(){
+    $("html").fadeTo(500,.98);
+  });
    $("#rootBtn").click(function(){
     $("div.content").fadeOut(500);
     $("#root").delay(500).fadeIn(500);
