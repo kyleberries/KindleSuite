@@ -8,6 +8,10 @@ $(document).ready(function(){
     $("div.content").fadeOut(500);
     $("#drivers").delay(500).fadeIn(500);
   });
+   $("#header").click(function(){
+    $("div.content").fadeOut(500);
+    $("#home").delay(500).fadeIn(500);
+  });
    $("#rootBtn").click(function(){
     $("div.content").fadeOut(500);
     $("#root").delay(500).fadeIn(500);
@@ -42,6 +46,11 @@ $(document).ready(function(){
     $("#hellfire").fadeOut(500);
 	$("#ice").fadeOut(500);
     $("#plasma").delay(500).fadeIn(500);
+  });
+     $("div.navigation").hover(function(){
+    $("div.navigation").fadeTo(400, 1);
+    },function(){
+    $("div.navigation").fadeTo(400, 0.5);
   });
 });
 

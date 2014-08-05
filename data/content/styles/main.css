@@ -61,8 +61,10 @@ html,body {
 	position:relative;
 }
 #header {
-	padding:10px;
+	padding:-15px;
+	cursor:pointer;
 }
+    
 #content {
 	padding:10px;
 	padding-bottom:80px;   /* Height of the footer element */
@@ -84,6 +86,14 @@ span.title1 {
     position:relative;
 	text-shadow: 1px 1px #999999;
 }
+.title1:hover {
+    text-shadow:3px 3px #999999;
+	}
+a.update:link {
+    color:green;
+	font-size:120%;
+}
+    
 span.title2 {
     width: 100px;
     height: 100px;
@@ -91,7 +101,7 @@ span.title2 {
     animation: title2 3s;
 	text-align:center;
     font-family:montserrat;
-    font-size:30px;
+    font-size:12px;
     position:relative;
 	text-shadow: 1px 1px #999999;
 }
@@ -132,6 +142,7 @@ background: linear-gradient(white, grey); /* Standard syntax (must be last) */
 	background-repeat:no-repeat;
 }
 .navigation{
+    opacity:0.5;
 	-webkit-box-shadow:  8px 6px 6px grey;
 	   -moz-box-shadow:  8px 6px 6px grey;
 	        box-shadow:  8px 6px 6px grey;
@@ -141,7 +152,6 @@ background-color:#dddddd;
 border-style:solid;
 border-color:#cccccc;
 border-width:2px;
-opacity:1;
 border-radius:10px;
 text-align:center;
 font-size:18px;
