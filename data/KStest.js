@@ -16,7 +16,7 @@ var window = appjs.createWindow({
   height: 600,
   alpha:true,
   icons  : __dirname + '/content/icons',
-  showChrome:true
+  showChrome:false
 });
 
 // prepare the window when first created
