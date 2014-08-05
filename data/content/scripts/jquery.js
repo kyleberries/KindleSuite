@@ -7,7 +7,7 @@ $(document).ready(function(){
  $(".title2").load($(".title2").fadeIn(2000));
    $("#driverBtn").click(function(){
     $("div.content").fadeOut(500);
-    $("#home").delay(500).fadeIn(500);
+    $("#drivers").delay(500).fadeIn(500);
   });
    $("#rootBtn").click(function(){
     $("div.content").fadeOut(500);
