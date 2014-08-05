@@ -63,6 +63,7 @@ html,body {
 	border-color:grey;
 	border-radius:20px;
 	opacity:.95;
+	overflow:hidden;
 }
 #wrapper {
 	min-height:100%;
