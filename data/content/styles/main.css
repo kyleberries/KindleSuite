@@ -143,10 +143,10 @@ background: linear-gradient(#dddddd, #555555); /* Standard syntax (must be last)
 	background-repeat:no-repeat;
 }
 .navigation{
-background: -webkit-linear-gradient(white, grey); /* For Safari 5.1 to 6.0 */
-background: -o-linear-gradient(white, grey); /* For Opera 11.1 to 12.0 */
-background: -moz-linear-gradient(white, grey); /* For Firefox 3.6 to 15 */
-background: linear-gradient(white, grey); /* Standard syntax (must be last) */
+background: -webkit-linear-gradient(#eeeeee, #333333); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(#eeeeee, #333333); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#eeeeee, #333333); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#eeeeee, #333333); /* Standard syntax (must be last) */
 opacity:0.5;
 float:left;
 width:100px;
