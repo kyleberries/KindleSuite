@@ -34,7 +34,7 @@ $(document).ready(function(){
     $("#ice").delay(500).fadeIn(500);
   });
      $("#hellfire_show").click(function(){
-    $("#hellfire").fadeOut(500);
+    $("#plasma").fadeOut(500);
 	$("#ice").fadeOut(500);
     $("#hellfire").delay(500).fadeIn(500);
   });
