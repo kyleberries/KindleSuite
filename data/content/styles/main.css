@@ -57,7 +57,8 @@ html,body {
 	width:100%;
 	border-width:50px;
 	border-color:grey;
-	border-radius:10px;
+	border-radius:300px;
+	opacity:.95;
 }
 #wrapper {
 	min-height:100%;

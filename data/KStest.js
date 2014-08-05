@@ -12,7 +12,7 @@ appjs.serveFilesFrom(__dirname + '/content');
 
 // create a window
 var window = appjs.createWindow({
-  width: 800,
+  width: 1000,
   height: 500,
   alpha:true,
   icons  : __dirname + '/content/icons',
