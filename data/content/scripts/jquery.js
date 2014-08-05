@@ -1,6 +1,9 @@
 $(document).ready(function(){
  $("html").fadeIn(500);
- $(".title1").click(function(){location.reload()});
+ $(".title1").click(function(){
+          $("html").fadeOut(300);
+          location.reload();
+	                         });
  $(".title1").fadeOut(0);
  $(".title1").load($(".title1").fadeIn(2000));
  $(".title2").fadeOut(0);
@@ -9,6 +12,9 @@ $(document).ready(function(){
     $("div.content").fadeOut(500);
     $("#drivers").delay(500).fadeIn(500);
   });
+   $("span.close").click(function(){
+    window.close();
+	});
    $("#rootBtn").click(function(){
     $("div.content").fadeOut(500);
     $("#root").delay(500).fadeIn(500);
