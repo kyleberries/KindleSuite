@@ -55,7 +55,6 @@ html,body {
 	padding:0;
 	height:100%;
 	width:100%;
-    background-color:transparent;
 }
 #wrapper {
 	min-height:100%;
@@ -121,9 +120,6 @@ span.title2 {
     100% {left:0px; top:0px; text-shadow: 1px 1px #999999;}
 }
 html{
-border:1px solid black;
--webkit-box-sizing: border-box;
--webkit-border-radius: 20px;
 display:none;
 }
 body{ 
@@ -131,6 +127,9 @@ background: -webkit-linear-gradient(white, grey); /* For Safari 5.1 to 6.0 */
 background: -o-linear-gradient(white, grey); /* For Opera 11.1 to 12.0 */
 background: -moz-linear-gradient(white, grey); /* For Firefox 3.6 to 15 */
 background: linear-gradient(white, grey); /* Standard syntax (must be last) */
+    background-color:transparent;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
 }
 .navigation{
 	-webkit-box-shadow:  8px 6px 6px grey;
