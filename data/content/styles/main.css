@@ -55,6 +55,8 @@ html,body {
 	padding:0;
 	height:100%;
 	width:100%;
+	border-width:1px;
+	border-radius:10px;
 }
 #wrapper {
 	min-height:100%;
@@ -142,22 +144,31 @@ background: linear-gradient(white, grey); /* Standard syntax (must be last) */
 	background-repeat:no-repeat;
 }
 .navigation{
-    opacity:0.5;
-	-webkit-box-shadow:  8px 6px 6px grey;
-	   -moz-box-shadow:  8px 6px 6px grey;
-	        box-shadow:  8px 6px 6px grey;
+background: -webkit-linear-gradient(white, grey); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(white, grey); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(white, grey); /* For Firefox 3.6 to 15 */
+background: linear-gradient(white, grey); /* Standard syntax (must be last) */
+opacity:0.5;
 float:left;
 width:100px;
 background-color:#dddddd;
 border-style:solid;
 border-color:#cccccc;
-border-width:2px;
+border-width:.1px;
 border-radius:10px;
 text-align:center;
 font-size:18px;
 margin-right:50px;
 text-shadow: 1px 1px #ffffff;
+	-webkit-box-shadow:  2px 2px 15px grey;
+	   -moz-box-shadow:  2px 2px 15px grey;
+	        box-shadow:  2px 2px 15px grey;
 }
+.navigation:hover{
+	-webkit-box-shadow:  3px 3px 20px grey;
+	   -moz-box-shadow:  3px 3px 20px grey;
+	        box-shadow:  3px 3px 20px grey;
+			}
 .pages{
 text-indent:25px;
 margin-right:50px;
