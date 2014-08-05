@@ -28,5 +28,20 @@ $(document).ready(function(){
     $("div.content").fadeOut(500);
     $("#extras").delay(500).fadeIn(500);
   });
+   $("#ice_show").click(function(){
+    $("#hellfire").fadeOut(500);
+	$("#plasma").fadeOut(500);
+    $("#ice").delay(500).fadeIn(500);
+  });
+     $("#hellfire_show").click(function(){
+    $("#hellfire").fadeOut(500);
+	$("#ice").fadeOut(500);
+    $("#hellfire").delay(500).fadeIn(500);
+  });
+     $("#plasma_show").click(function(){
+    $("#hellfire").fadeOut(500);
+	$("#ice").fadeOut(500);
+    $("#plasma").delay(500).fadeIn(500);
+  });
 });
 

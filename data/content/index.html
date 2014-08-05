@@ -13,15 +13,15 @@
   <body>
    <div id="wrapper">
     <div id="header">
-    <span class="title1">KindleSuite </span><span class="title2">Alpha 4</span><hr />
+    <span class="title1">KindleSuite </span><span class="title2">Alpha 4.0</span><hr />
 	</div>
     <div id="content">
       <div class="navigation"><hr />
           <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="driverBtn">Drivers</a><hr />
           <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="rootBtn">Root</a><hr />
-          <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="restoreBtn">Restore</a><hr />
           <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="gappsBtn">Google Play</a><hr />
           <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="romsBtn">Roms</a><hr />
+		  <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="restoreBtn">Restore</a><hr />
           <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="extrasBtn">Extras</a><br /><hr />
         </div>
       <div class="pages"><br /><br />
@@ -32,29 +32,40 @@ Check out our new <a href="https://github.com/secretdevwork/KindleSuite/wiki">GI
 If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com
         </div>
         <div id="drivers" class="content" style="display:none">
-          <span>Drivers
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at interdum sapien, et vestibulum turpis. Duis condimentum lectus scelerisque purus pharetra, sit amet dictum nibh ullamcorper. Sed non suscipit dolor, sed vestibulum nulla. Vestibulum tincidunt eu eros in imperdiet. Curabitur posuere magna in tortor blandit fermentum. Aenean gravida tincidunt sem, at luctus nibh lobortis id. Proin pharetra lectus ut pulvinar semper. Sed purus justo, tristique et tincidunt nec, ultricies eu mauris. Pellentesque massa nunc, scelerisque tempor magna quis, sodales suscipit velit. Nam aliquet fermentum neque, vel tempor lacus venenatis vel. Donec consectetur nisi at augue sollicitudin vulputate non at metus. Pellentesque a nisl ut eros tincidunt eleifend eu eget enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec euismod leo eget lectus convallis, ullamcorper molestie neque eleifend. Fusce imperdiet eu lectus ac tincidunt.
-           </span>
+          <b>The tools on this page will install:</b><br />
+		  <ul>
+		  <li>The drivers required for your PC to communicate with your Kindle.</li>
+		  <li>The adb and fastboot utilities for manual Kindle modifications.</li>
+		  </ul><br />
+		  <input class="btn" id="drivers_install" type="button" value="Install Drivers" /><br /><br />
+		  <input class="btn" id="adb_install" type="button" value="Install ADB" />
         </div>
         <div id="root" class="content" style="display:none">
-<span>Root
-Sed tempus eros ut quam ultrices pellentesque tristique non massa. Nam at elit vel sapien facilisis pellentesque eu non erat. Nunc vitae vestibulum nulla. Cras eleifend metus tortor, quis egestas elit congue at. Curabitur pellentesque ut nisl vitae condimentum. Donec et tincidunt justo. Duis ullamcorper tortor at nisi pellentesque semper. Mauris id risus mattis, porttitor arcu vitae, euismod odio. Aliquam erat volutpat. Nulla a est at enim malesuada sollicitudin.
-</span>
+          This tool will give you root access on your Kindle which is required to install Gapps or ROMs. Currently KindleSuite supports FireOS versions up to 11.3.2.4<br />
+		  <input style="margin-left:20%;margin-top:10%;width:300px;" type="button" class="btn" value="Root Kindle" />
         </div>
         <div id="restore" class="content" style="display:none">
-<span>Restore
-Donec et urna lobortis, convallis erat ac, adipiscing mauris. Proin condimentum felis quis tempus adipiscing. Ut ullamcorper dui elit, rhoncus semper ligula bibendum quis. Praesent eu lorem euismod mauris aliquet molestie. Praesent elit sapien, tincidunt eu aliquam eu, hendrerit et odio. Quisque nisl sapien, consequat vel blandit vitae, sollicitudin vel leo. In hac habitasse platea dictumst. Nunc massa mi, tristique ut elit quis, convallis bibendum eros. Etiam nulla libero, ultricies non lorem eget, mattis pretium magna. Cras congue congue rutrum. Suspendisse sed semper diam, ut adipiscing sem. Donec venenatis lectus vel sapien vestibulum, ac pellentesque odio consectetur. Vestibulum vitae purus ipsum. In sit amet tristique dolor.
-</span>
+The restore function will erase ALL of your data and apps and restore the Kindle to 11.3.2.4 as well as UNroot it.<br /><br />
+         <input type="button" style="margin-top:10%;margin-left:20%;width:300px" class="btn" value="Restore Kindle" />
         </div>
         <div id="gapps" class="content" style="display:none">
-<span>Google Play & DLPC
-Ut pulvinar ac lectus sed porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam ac commodo nisl. Vestibulum luctus ullamcorper lacus non dapibus. Nunc nisi libero, sagittis at varius in, gravida at velit. Vivamus viverra ut orci eu elementum. Vestibulum aliquam a arcu ac feugiat. Donec dictum purus sit amet convallis fermentum. Mauris varius turpis at turpis ultricies ullamcorper.
-</span>
+This tool will install two things. First it will install Google Play and its associated apps. Second because installing Google Play will cause the Amazon Appstore to stop working, you will also get a new custom binary called dlp and one called dlpc. To use dlp & dlpc open your terminal emulator app (included) and enter <i>dlp</i> to see what appstore is active and <i>su -c "dlpc"</i> to switch appstores and reboot.<br /><br />
+<input type="button" class="btn" style="margin-top:10%;margin-left:20%;width:300px;" value="Install Google Play" />
         </div>
         <div id="roms" class="content" style="display:none">
-<span>ROMs
-Fusce consectetur tristique sem, ac venenatis orci eleifend et. Nam sed ultrices nisl. Aliquam pretium sit amet leo eu vulputate. Nulla id eleifend ante, ac placerat leo. Maecenas tortor sapien, convallis quis neque vitae, semper tempus nunc. Donec vitae nibh justo. In eu hendrerit sapien, sed ullamcorper erat. Curabitur interdum lorem velit.
-</span>
+Choose a Rom<br /><br />
+<input id="ice_show" type="button" value="Ice" class="btn" />
+<input id="hellfire_show" type="button" value="Hellfire" class="btn" />
+<input id="plasma_show" type="button" value="Plasma" class="btn" />
+<div id="ice" class="content" style="display:none">
+Ice
+</div>
+<div id="hellfire" class="content" style="display:none">
+hellfire
+</div>
+<div id="plasma" class="content" style="display:none">
+plasma
+</div>
         </div>
         <div id="extras" class="content" style="display:none">
 <span>Extras
