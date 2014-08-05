@@ -1,6 +1,5 @@
-
 span.close{
-margin-left:15%;
+margin-left:25%;
 cursor:pointer;
 }
 #ice,#hellfire,#plasma{
@@ -62,7 +61,7 @@ html,body {
 	width:100%;
 	border-width:50px;
 	border-color:grey;
-	border-radius:300px;
+	border-radius:20px;
 	opacity:.95;
 }
 #wrapper {
