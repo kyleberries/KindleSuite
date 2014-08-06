@@ -15,9 +15,9 @@ $(document).ready(function(){
     window.close();
 	});
 	  $(".close").hover(function(){
-    $("html").fadeTo(100, .5);
+    $(this).css("background-color","grey");
     },function(){
-    $("html").fadeTo(50,.98);
+    $(this).css("background-color","transparent");
   });
    $("#rootBtn").click(function(){
     $("div.content").fadeOut(150);
