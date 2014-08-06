@@ -70,6 +70,9 @@ $(document).ready(function(){
 	$("#ice").fadeOut(150);
     $("#plasma").delay(150).fadeIn(150);
   });
+       $("#wikiBtn").click(function(){
+      window.open('https://github.com/secretdevwork/KindleSuite/wiki','_blank');
+  });
      $("div.navigation").hover(function(){
     $("div.navigation").fadeTo(150, .7);
     },function(){
