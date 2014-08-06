@@ -1,6 +1,8 @@
 span.close{
 margin-left:25%;
 cursor:pointer;
+border-radius:5px;
+padding:5px;
 }
 #ice,#hellfire,#plasma{
 height:30vh;
