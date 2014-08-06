@@ -98,8 +98,9 @@ span.title1 {
 	cursor:pointer;
 	}
 a.update:link {
-    color:green;
-	font-size:120%;
+    color:red;
+	font-size:90%;
+	cursor:not-allowed;
 }   
 span.title2 {
     width: 100px;
