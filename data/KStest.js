@@ -24,6 +24,7 @@ window.on('create', function(){
   console.log("Window Created");
   // window.frame controls the desktop window
   window.frame.show().center();
+  window.frame.resizable = true;
 });
 
 // the window is ready when the DOM is loaded

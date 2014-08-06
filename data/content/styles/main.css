@@ -1,5 +1,15 @@
 span.close{
-margin-left:25%;
+cursor:pointer;
+border-radius:5px;
+padding:5px;
+}
+span.maximize{
+cursor:pointer;
+border-radius:5px;
+padding:5px;
+}
+span.minimize{
+margin-left:85%;
 cursor:pointer;
 border-radius:5px;
 padding:5px;

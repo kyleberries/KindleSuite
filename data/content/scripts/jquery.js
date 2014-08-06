@@ -11,10 +11,26 @@ $(document).ready(function(){
     $("div.content").fadeOut(150);
     $("#drivers").delay(150).fadeIn(150);
   });
+     $("span.maximize").click(function(){
+    window.frame.maximize();
+	});
+     $("span.minimize").click(function(){
+    window.frame.minimize();
+	});
    $("span.close").click(function(){
     window.close();
 	});
 	  $(".close").hover(function(){
+    $(this).css("background-color","grey");
+    },function(){
+    $(this).css("background-color","transparent");
+  });
+  	  $(".minimize").hover(function(){
+    $(this).css("background-color","grey");
+    },function(){
+    $(this).css("background-color","transparent");
+  });
+  	  $(".maximize").hover(function(){
     $(this).css("background-color","grey");
     },function(){
     $(this).css("background-color","transparent");
