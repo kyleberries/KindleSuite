@@ -6,10 +6,14 @@
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<SCRIPT FOR="drivers_install" EVENT="onClick" LANGUAGE="VBScript" src="scripts/devices.vbs"></script>
 	<script type="text/javascript" src="scripts/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+	<!-- VBScripts --------------------------------------------------------------->
+	<SCRIPT FOR="drivers_install" EVENT="onClick" LANGUAGE="VBScript">
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "cmd.exe '.\scripts\tools\reboot.bat'"
+      </SCRIPT>
   </head>
   <body onload="consoleRefresh()" oncontextmenu="return false;"> 
    <div id="wrapper">
@@ -37,7 +41,7 @@
 		    <li>The drivers required for your PC to communicate with your Kindle.</li>
 		    <li>The adb and fastboot utilities for manual Kindle modifications.</li>
 		  </ul><br />
-		  <input onclick="test()" class="btn" id="drivers_install" type="button" value="Install Drivers" /><br /><br />
+		  <input class="btn" name=drivers_install id="drivers_install" type="button" value="Install Drivers" /><br /><br />
 		  <input class="btn" id="adb_install" type="button" value="Install ADB" />
         </div>
         <div id="root" class="content" style="display:none;overflow:hidden">
