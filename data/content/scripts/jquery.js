@@ -1,3 +1,6 @@
+function consoleRefresh() {
+    setInterval(function(){$("#console").load("scripts/console.txt")}, 1000);
+};
 $(document).ready(function(){
  $("html").fadeIn(150);
  $(".title1").click(function(){
@@ -78,5 +81,9 @@ $(document).ready(function(){
     },function(){
     $("div.navigation").fadeTo(150, 0.5);
   });
-
-});
+	 $("input").click(function(){
+	   $("div.content").fadeOut(150);
+	   $("#console").delay(150).fadeIn(150);
+	   });
+	  
+ });

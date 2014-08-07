@@ -6,11 +6,12 @@
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<SCRIPT FOR="drivers_install" EVENT="onClick" LANGUAGE="VBScript" src="scripts/devices.vbs"></script>
 	<script type="text/javascript" src="scripts/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
   </head>
-  <body oncontextmenu="return false;"> 
+  <body onload="consoleRefresh()" oncontextmenu="return false;"> 
    <div id="wrapper">
     <div id="header">
       <span style="margin-left:35%" onclick="window.reload()" class="title1">KindleSuite </span><span class="title2">Alpha 4.0</span><br /><span class="minimize" >min</span><span class="maximize" >max</span><span class="close">close</span><br /><br />
@@ -36,7 +37,7 @@
 		    <li>The drivers required for your PC to communicate with your Kindle.</li>
 		    <li>The adb and fastboot utilities for manual Kindle modifications.</li>
 		  </ul><br />
-		  <input class="btn" id="drivers_install" type="button" value="Install Drivers" /><br /><br />
+		  <input onclick="test()" class="btn" id="drivers_install" type="button" value="Install Drivers" /><br /><br />
 		  <input class="btn" id="adb_install" type="button" value="Install ADB" />
         </div>
         <div id="root" class="content" style="display:none;overflow:hidden">
@@ -175,11 +176,12 @@
 
             </div>
         </div>
-                                 <div id="extras" class="content" style="display:none;overflow:hidden">
-                                       <span>Extras Donec justo dolor, egestas non nibh eget, bibendum porta metus. Donec vel lobortis odio. Donec tristique commodo ligula sed blandit. Quisque condimentum, est vitae fringilla sollicitudin, felis lectus mollis sapien, ut bibendum neque dui non odio. Nulla consequat aliquam mauris, vestibulum molestie lacus facilisis eu. Ut vel scelerisque eros, quis dapibus nulla. Fusce porta cursus mauris, sed aliquet turpis sagittis eget. Vivamus mattis libero sapien, at pharetra nunc accumsan dictum. Morbi convallis sagittis venenatis. Donec feugiat erat id erat pharetra sagittis. Quisque vel sem posuere, commodo ipsum nec, fringilla odio.
+        <div id="extras" class="content" style="display:none;overflow:hidden">
+		                                       <span>Extras Donec justo dolor, egestas non nibh eget, bibendum porta metus. Donec vel lobortis odio. Donec tristique commodo ligula sed blandit. Quisque condimentum, est vitae fringilla sollicitudin, felis lectus mollis sapien, ut bibendum neque dui non odio. Nulla consequat aliquam mauris, vestibulum molestie lacus facilisis eu. Ut vel scelerisque eros, quis dapibus nulla. Fusce porta cursus mauris, sed aliquet turpis sagittis eget. Vivamus mattis libero sapien, at pharetra nunc accumsan dictum. Morbi convallis sagittis venenatis. Donec feugiat erat id erat pharetra sagittis. Quisque vel sem posuere, commodo ipsum nec, fringilla odio.
                                        </span>
-                                    </div>
-        </div>
+          </div>
+        <div id="console" class="content" style="display:none;overflow:auto"></div>
+		</div>
       </div>
 	<div id="footer">
 Copyright (c) 2014 --
