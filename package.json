@@ -1,4 +1,39 @@
 {
- "name": "KS4-demo",
- "main": ".html/index.html"
+  "main": ".html/index.html",
+  "name": "KindleSuite Alpha 4.0",
+  "description": "development of KS4",
+  "version": "4.0.0",
+  "keywords": [ "KindleSuite", "KFSOWI" ],
+  "window": {
+    "title": "KindleSuite4 demo",
+    "icon": ".icon/16.png",
+    "toolbar": false,
+    "frame": false,
+    "width": 800,
+    "height": 475,
+    "position": "center",
+    "min_width": 700,
+    "min_height": 250,
+	"resizable": true,
+    "bugs": "kyle@kfsowi.com"	
+  },
+  "webkit": {
+    "plugin": false
+  },
+  "maintainers":[ {
+   "name": "Kyle Berry",
+   "email": "kyle@kfsowi.com",
+   "web": "https://plus.google.com/+KyleBerryGraphics"
+                   },
+				   {
+   "name": "Ivo Damjanovic",
+   "email": "ivo@kfsowi.com",
+   "web": "https://plus.google.com/u/0/+IvoDamjanovic"
+                   }],
+	"licenses": [
+   {
+       "type": "GPLv3",
+       "url": "http://www.gnu.org/licenses/gpl.html"
+   }
+]
 }
