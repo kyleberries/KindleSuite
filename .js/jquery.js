@@ -15,10 +15,12 @@ $(document).ready(function(){
     $("#drivers").delay(150).fadeIn(150);
   });
      $("span.maximize").click(function(){
-    window.frame.maximize();
+window.moveTo(0, 0);
+window.resizeTo(screen.availWidth, screen.availHeight);
 	});
      $("span.minimize").click(function(){
-    window.frame.minimize();
+window.resizeTo(800,475);
+window.moveTo(200,200);
 	});
    $("span.close").click(function(){
     window.close();
