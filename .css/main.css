@@ -73,7 +73,6 @@ html,body {
 	width:100%;
 	border-width:50px;
 	border-color:grey;
-	border-radius:20px;
 	opacity:.98;
 	overflow:hidden;
 }
@@ -156,6 +155,10 @@ display:none;
 }
 body{ 
 -webkit-app-region: drag;
+background: -webkit-linear-gradient(#eeeeee, #555555); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(#dddddd, #555555); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#dddddd, #555555); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#dddddd, #555555); /* Standard syntax (must be last) */
     background-color:transparent;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
