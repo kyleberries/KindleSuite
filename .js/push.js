@@ -27,5 +27,5 @@ client.listDevices()
     alert('Done pushing file to all connected devices')
   })
   .catch(function(err) {
-    alert('Something went wrong:', err.stack)
+    alert('No device detected!')
   })};
