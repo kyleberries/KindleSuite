@@ -1,10 +1,17 @@
-body{
-    background-color:grey;
-	font-family:Open Sans Condensed;
-    }
+body{ 
+font-family:Open Sans Condensed;
+background: -webkit-linear-gradient(#eeeeee, #555555); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(#dddddd, #555555); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#dddddd, #555555); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#dddddd, #555555); /* Standard syntax (must be last) */
+    background-color:transparent;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+}
 .header{
 	font-size:36px;
-	margin-left:32%;
+	margin-left:25%;
+	font-family:Montserrat;
 	   }
 .menu{
     float:left;
@@ -23,6 +30,7 @@ body{
 	text-align:center;
 	border:1px dashed;
 	margin-bottom:20px;
+	color:white;
 	    }
 ul{
     list-style-type:none;
@@ -31,3 +39,4 @@ a{
     color:black;
 	text-decoration:none;
  }
+ 
