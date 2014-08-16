@@ -6,6 +6,6 @@ function checkDevices(){
 client.listDevices().then(function(devices){
 if(devices.length != 0) {alert('Device Detected!')}
 else {alert('NO Device Detected! Click KindleSuite title to check again.')}
+client.kill(device);
 })
 };
-
