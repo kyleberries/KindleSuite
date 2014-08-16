@@ -4,6 +4,7 @@ var client = adb.createClient();
 function adbPush(pushFile,pushFileDest){
 client.listDevices()
   .then(function(devices) {
+  if (devices.length <= 0) throw new Error('No device detected!');
     return Promise.map(devices, function(device) {
       return client.push(device.id, pushFile, pushFileDest)
         .then(function(transfer) {
@@ -23,8 +24,8 @@ client.listDevices()
     })
   })
   .then(function() {
-    console.log('Done pushing file to all connected devices')
+    alert('Done pushing file to all connected devices')
   })
   .catch(function(err) {
-    console.error('Something went wrong:', err.stack)
+    alert('Something went wrong:', err.stack)
   })};
