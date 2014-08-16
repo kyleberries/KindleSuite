@@ -35,6 +35,7 @@
           If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com<br />
 		  <input style="width:300px;"type="button" class="btn" value="Check for connected devices" onclick="checkDevices()" /><br />
 		  <input style="width:300px;"type="button" class="btn" value="Push test.txt /sdcard" onclick="adbPush('test.txt','/sdcard/test.txt')" />
+		  <input style="width:300px;"type="button" class="btn" value="shell reboot test" onclick="adbShell(device,'su -c 'reboot'')" /><br />
         </div>
         <div id="drivers" class="content" style="display:none;overflow:hidden">
           <b>The tools on this page will install:</b><br />
