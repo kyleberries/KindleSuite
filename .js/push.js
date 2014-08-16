@@ -26,8 +26,8 @@ client.listDevices()
     })}
   })
   .then(function() {
-    alert('Done pushing file to all connected devices')
+    $('#console').text(pushFile+' pushed to '+pushFileDest)
   })
   .catch(function(err) {
-    alert('No device detected!')
+    $('#console').text('NO Device Detected!')
   })};

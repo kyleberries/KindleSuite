@@ -22,6 +22,13 @@ position:absolute;
 margin-left:150px;
 width:75%;
 }
+.console{
+text-align:center;
+border:dashed grey 1px;
+margin-left:150px;
+margin-right:150px;
+border-radius:5px;
+}
 .btn {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
