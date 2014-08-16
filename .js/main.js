@@ -100,5 +100,6 @@ window.addEventListener('mouseup',function(e){
 		ram.before=ramper;
 	},1000);
 }).call(null);
-
+var Promise = require('bluebird');
+var adb = require('adbkit');
 window.addEventListener('contextmenu',function(e){e.preventDefault();});
