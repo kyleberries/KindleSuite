@@ -1,0 +1,20 @@
+$(document).ready(function(){
+  $("#rootLink").click(function(){
+    $("#content").text(root);
+  });
+  $("#restoreLink").click(function(){
+    $("#content").text(restore);
+  });
+  $("#iceLink").click(function(){
+    $("#content").text(ice);
+  });
+  $("#hellfireLink").click(function(){
+    $("#content").text(hellfire);
+  });
+  $("#plasmaLink").click(function(){
+    $("#content").text(plasma);
+  });
+  $("#extrasLink").click(function(){
+    $("#content").text(extras);
+  });
+});

@@ -25,3 +25,7 @@ body{
 ul{
     list-style-type:none;
   }
+a{
+    color:black;
+	text-decoration:none;
+ }
