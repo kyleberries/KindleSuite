@@ -1,6 +1,6 @@
-var Promise = require('bluebird')
-var adb = require('adbkit')
-var client = adb.createClient()
+var Promise = require('bluebird');
+var adb = require('adbkit');
+var client = adb.createClient();
 function adbPush(pushFile,pushFileDest){
 client.listDevices()
   .then(function(devices) {
