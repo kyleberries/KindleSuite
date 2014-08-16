@@ -1,1 +1,2 @@
-nw ks.nw
+#!/bin/bash
+./nw ./ks.nw
