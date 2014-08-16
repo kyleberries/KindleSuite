@@ -1,0 +1,13 @@
+body{
+    background-color:grey;
+	font-family:Open Sans Condensed;
+    }
+.header{
+	font-size:36px;
+	   }
+.content{
+    float:left;
+	    }
+.menu{
+    float:left;
+	 }

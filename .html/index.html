@@ -13,11 +13,36 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../.js/jquery.js"></script>
 	<script type="text/javascript" src="../.js/push.js"></script>
-    <script type="text/javascript" src="../.js/devices.js"></script>
+    <!--script type="text/javascript" src="../.js/devices.js"></script-->
 	<!--end scripts-->
   </head>
   
-  <body onload="checkDevices()" oncontextmenu="return false;"> 
-  <h1>New GUI coming soon...</h1>
+  <body> <!--onload="checkDevices()"--> 
+     <div id="wrapper" class="wrapper">
+	     <div id="headerWrap" class="headerWrap">
+		     <span class="header" id="header">KindleSuite alpha v4.0.0</span>
+		 </div>
+		 <div id="menuWrap" class="menuWrap">
+		     <ul id="menu" class="menu">
+			     <li>Root</li>
+				 <li>Restore</li>
+				 <li>ROMs
+				     <ul>
+					     <li>Ice</li>
+						 <li>HellFire</li>
+						 <li>Plasma</li>
+					 </ul>
+				 </li>
+				 <li>Extras</li>
+			 </ul>
+			 </ul>
+		 </div>
+		 <div id="contentWrap" class="contentWrap">
+		 <span>This will be the Wiki pages</span>
+		 </div>
+		 <div id="consoleWrap" class="consoleWrap">
+		  <span id="console" class="console">This is the ADB console...</span>
+		 </div>
+	 </div>
   </body> 
 </html>
