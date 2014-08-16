@@ -13,9 +13,11 @@ body{
     width:80%;
 	float:left;
 	margin-top:20px;
+	padding:10px;
 	        }
 .content{
     border:1px solid;
+	min-height:300px;
 	    }
 .console{
 	text-align:center;

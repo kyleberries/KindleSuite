@@ -1,19 +1,20 @@
-var adb = require('adbkit');
-var client = adb.createClient();
-var Promise = require('bluebird');
+var Promise = require('bluebird')
+var adb = require('adbkit')
+var client = adb.createClient()
 
-function checkDevices(){
-client.listDevices().then(function(devices){
-if(devices.length != 0) {
-/*grep ro.product.model from build.prop to var model
- If (model != "ro.product.model=KFSOWI" && model.length != 0) {alert('KindleSuite does not work with this device')}
- else {continue}
- */
-alert('Device Detected!')
-}
-else {
-alert('NO Device Detected! Click KindleSuite title to check again.')
-}
-client.kill(device);
-})
-};
+client.listDevices()
+  .then(function(devices) {
+   if (devices.length <= 0) throw new Error('No Device Detected.');
+    return Promise.filter(devices, function(device) {
+      return client.getProperties(device.id)
+        .then(function(properties) {
+          if(properties['ro.product.model'] != "KFSOWI") throw new Error('Wrong Device. KS WILL brick this device');
+        })
+    })
+  })
+  .then(function(supportedDevices) {
+    $('#console').text('KFSOWI detected: '+ supportedDevices)
+  })
+  .catch(function(err) {
+    $('#console').text(err)
+  })
