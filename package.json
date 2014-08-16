@@ -8,7 +8,7 @@
     "title": "KindleSuite4 demo",
     "icon": ".icon/16.png",
     "toolbar": false,
-    "frame": false,
+    "frame": true,
     "width": 800,
     "height": 550,
     "position": "center",
