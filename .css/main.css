@@ -22,3 +22,6 @@ body{
 	border:1px dashed;
 	margin-bottom:20px;
 	    }
+ul{
+    list-style-type:none;
+  }
