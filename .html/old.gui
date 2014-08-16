@@ -1,0 +1,183 @@
+<!--div id="wrapper">
+    <div id="header">
+      <span style="margin-left:35%" onclick="location.reload()" class="title1">KindleSuite </span><span class="title2">Alpha 4.0</span><span class="minimize" >min</span><span class="maximize" >max</span><span class="close">close</span><br /><br />
+	  <div id="console" class="console">
+	  ADB Console...
+	  </div>
+	</div>
+    <div id="content">
+      <div class="navigation"><br />
+          <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="driverBtn">Drivers</a><br /><br />
+          <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="rootBtn">Root</a><br /><br />
+          <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="gappsBtn">Google Play</a><br /><br />
+          <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="romsBtn">Roms</a><br /><br />
+		  <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="restoreBtn">Restore</a><br /><br />
+          <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="extrasBtn">Extras</a><br /><br />
+          <a href="#" onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="link" id="wikiBtn">Wiki</a><br /><br />
+        </div>
+      <div class="pages"><br /><br />
+        <div id="home" class="content">
+          It is important to us that you understand that while this Tool is tested before release, it is not guaranteed in any way and is not offered with any implied warranty or guarantee. It isnt recommended that you use this tool if you dont have some understanding of how ADB works. This tool is designed to get the newest resources to you as soon as possible, and as such bugs are possible within the tool. If you are uncertain about your ability to troubleshoot potential issues DO NOT use this tool.<br /><br /><br />
+          If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com<br />
+		  <!--input id="devices" style="width:300px;"type="button" class="btn" value="Check for connected devices" onclick="checkDevices()" /><br />
+		  <input style="width:300px;"type="button" class="btn" value="Push test.txt /sdcard" onclick="adbPush('test.txt','/sdcard/test.txt')" />
+		  <input style="width:300px;"type="button" class="btn" value="shell reboot test" onclick="adbShell(device,'su -c 'reboot'')" /><br />
+        </div>
+        <div id="drivers" class="content" style="display:none;overflow:hidden">
+          <b>The tools on this page will install:</b><br />
+		  <ul>
+		    <li>The drivers required for your PC to communicate with your Kindle.</li>
+		    <li>The adb and fastboot utilities for manual Kindle modifications.</li>
+		  </ul><br />
+		  <input class="btn" name=drivers_install id="drivers_install" type="button" value="Install Drivers" /><br /><br />
+		  <input class="btn" id="adb_install" type="button" value="Install ADB" />
+        </div>
+        <div id="root" class="content" style="display:none;overflow:hidden">
+          This tool will give you root access on your Kindle which is required to install Gapps or ROMs. Currently KindleSuite supports FireOS versions up to 11.3.2.4<br /><br />
+		  <input style="margin-left:45%;width:200px;" type="button" class="btn" value="Root Kindle" />
+        </div>
+        <div id="restore" class="content" style="display:none;overflow:hidden">
+          The restore function will erase ALL of your data and apps and restore the Kindle to 11.3.2.4 as well as UNroot it.<br /><br />
+         <input type="button" style="margin-left:45%;width:200px" class="btn" value="Restore Kindle" />
+        </div>
+        <div id="gapps" class="content" style="display:none;overflow:hidden">
+          This tool will install two things. First it will install Google Play and its associated apps. Second because installing Google Play will cause the Amazon Appstore to stop working, you will also get a new custom binary called dlp and one called dlpc. To use dlp & dlpc open your terminal emulator app (included) and enter <i>dlp</i> to see what appstore is active and <i>su -c "dlpc"</i> to switch appstores and reboot.<br /><br />
+          <input type="button" class="btn" style="margin-left:45%;width:200px;" value="Install Google Play" />
+        </div>
+        <div id="roms" class="content" style="display:none">
+          Choose a Rom<br /><br />
+          <input id="ice_show" type="button" value="Ice" class="btn" />
+          <input id="hellfire_show" type="button" value="Hellfire" class="btn" />
+          <input id="plasma_show" type="button" value="Plasma" class="btn" /><br /><br />
+              <div id="ice" class="content" style="display:none;">
+                 <h2>Ice ROM (Colton DRG)</h2><input type="button" class="btn" value="install" />
+                 <hr />
+                    <h4>Screenshots</h4>
+                    <img src="#" alt="lockscreen screenshot unavailable" title="Ice Lockscreen" />
+                    <img src="#" alt="launcher screenshot unavailable" title="Ice Home Screen" />
+                     <hr />
+                   <h4>Description</h4>
+                   <p>This is Ice, an Android ROM for the 2013 Amazon Kindle Fire HD (KFSOWI / Soho). It is based upon Amazon FireOS, and runs Android 4.2.2. </p>
+                   <p>This software should NEVER be flashed on ANY device outside of the Amazon Kindle Fire HD (2013). Please make sure this is your device before proceeding. </p>
+                   <p>This involves changing system files. This means it may permanently mess up your device, rendering it unusable. I do not take any responsibility should this occur. You are on your own. </p>
+                   <p>Ice ROM Alpha 2!<br />
+                   Even though it is an Alpha, it is pretty stable and everything seems to work! This is based on stock FireOS 11.3.2.2. Ice is designed to get as close to AOSP as we possibly can with the Kindle in it's current development state. It does everything in it's power to bring the cleanest Android experience possible to the Kindle. Ice is a great ROM for all purposes! </p>
+                <hr />
+                   <h4>Features</h4>
+                      <ul>
+                           <li>Android 4.2.2 </li>
+                           <li>Based on FireOS 11.3.2.2 </li>
+                           <li>AOSP Settings </li>
+                           <li>AOSP Clock, Calendar, Email, Calculator, and Launcher </li>
+                           <li>Firefox Web Browser </li>
+                           <li>Open-Source Superuser </li>
+                           <li>AOSP / Google Keyboard </li>
+                           <li>Google Play Store </li>
+                           <li>Google Plus </li>
+                           <li>Google Now (Voice Search requires external mic) </li>
+                           <li>Most Amazon Rubbish Removed </li>
+                           <li>BusyBox </li>
+                           <li>ADB Over WiFi </li>
+                           <li>Tablet UI Mod </li>
+                      </ul>
+                 <p><strong>Think we should add a feature? Request it: colton@kfsowi.com</strong>  
+                          </p><hr />
+                  <h4>Bugs</h4>
+                    <ul>
+                       <li>After selecting your language at first boot, it takes a long time to progress to the next screen -- Just wait a couple minutes. </li>
+                       <li>Screen stays black instead of continuing to the homescreen after completion of the first boot setup -- Easy workaround: Pull down the notification drawer a bit to activate the navigation bar, then press home. </li>
+                       <li>Occasionally Google Apps crash with an error about Google Play Services -- This may actually be an issue with Android. It is rare, so just restart the app. </li>
+                       <li>WiFi button in notification pulldown causes SystemUI to crash/restart and doesn't actually do anything -- Not much you can do... We will look into it. </li>
+                       <li>Help button in notification pulldown does nothing -- If you need the help button you probably shouldn't be flashing this. </li>
+                       <li>Status bar looks a bit bugged at times -- This is partially a side effect of Tablet UI fix, but it also has to do with the Kindle having a flat out stupid, broken SystemUI. </li>
+                       <li>Lock screen bar (for unlocking) is a bit hidden behind the edge of the screen -- This is a side effect of tablet UI fix. If you swipe from the middle of the right edge of the screen to the left the screen will unlock</li>
+                       <li>Lock screen has a plus button for adding widgets, but they don't actually work. </li>
+                       <li>Device Administrators don't seem to work -- We are looking into this and we will try to have a solution or workaround available as soon as possible! </li>
+                       <li>Facebook and possibly some other apps will not install -- If you copy a Facebook APK to /system/app, you can get it running. We know this is not optimal, but it is a workaround </li>
+                       <li>Users reported crashing, freezing, and even failure to boot when using languages with non-latin character sets, such as Korean. -- We have no workaround, but we will look into a solution. </li>
+                    </ul>
+                 <p><strong>Found a bug we didn't mention? Report it: colton@kfsowi.com</strong></p>
+                           <h4>For the Future</h4>
+                                 <ul>
+                                     <li>More features</li>
+                                     <li>Bug Fixes</li>
+                                     <li>I'm taking feature requests</li>
+                                 </ul>
+                        <hr />
+                    <h4>More stuff you should read</h4>
+                       <p>Note: You only have to wipe data when switching from a different ROM! Upgrading Ice does not require you to wipe your data! </p>
+                       <p>WARNING: Only wipe data after flashing Ice. If you wipe before you flash, you may cause a bug with your internal storage that will prevent you from flashing Ice!</p>
+
+        </div>
+              <div id="hellfire" class="content" style="display:none">
+                     <h3>HellFire ROM (Darian Branum)</h3><input type="button" class="btn" value="Install" />
+               <hr />
+                     <h4>Screenshots</h4>
+                          <p><img src="https://lh4.googleusercontent.com/-jhbUKRJrguQ/U9e6l_7qP6I/AAAAAAAAC9I/a-PvKqB3bFI/w71-h91-no/HF.png" alt="HF Icon unavailable" title="Hellfire" /> <br />
+                          <img src="#" alt="lockscreen unavailable" title="HellFire Lockscreen" /><br />
+                          <img src="#" alt="launcher unavailable" title="HellFire Home Screen" /></p>
+               <hr />
+                     <h4>Description</h4>
+                          <p><strong>PENDING</strong></p>
+                 <hr />
+                     <h4>Features</h4>
+                          <ul>
+                           <li><strong>PENDING</strong></li>
+                          </ul>
+               <hr />
+                     <h4>Bugs</h4>
+                           <p><strong>PENDING</strong></p>
+
+    </div>
+              <div id="plasma" class="content" style="display:none">
+                            <h3>Plasma ROM (Ben Valle)</h3><input type="button" value="Install" class="btn" />
+                      <hr />
+                            <h4>Screenshots</h4>
+                                <img style="width:200px;" src="https://lh5.googleusercontent.com/-xQxD3kPT6pQ/U9ac72cO7gI/AAAAAAAAAXs/zRLSQtz1dsw/w468-h293-no/14+-+1" alt="lockscreen" title="Plasma Lockscreen" /><br /> 
+                                <img style="width:200px;margin-left:4.5%" src="https://lh6.googleusercontent.com/-AqaiDqwAR94/U9ac70n0Z8I/AAAAAAAAAXw/7_SE8BNc5Co/s800/14+-+2" alt="launcher" title="Plasma Home Screen" />
+                       <hr />
+                            <h4>Description</h4>
+                                  <p>This is ROM I have created for the Kindle Fire HD 2nd Generation (KFSOWI). It is meant as a successor to Kindle-Water which I have discontinued because it can potentially fry your device.</p>
+                       <hr />
+                            <h4>Features</h4>
+                                   <ul>
+                                     <li>Smart Launcher</li>
+                                     <li>AOSP(ish) Lockscreen <strong>Read the more stuff section at bottom</strong></li>
+                                     <li>AOSP Settings</li>
+                                     <li>As always, lockscreen ads disabled</li>
+                                     <li><strong>Much</strong> Easier setup</li>
+                                     <li>Performance on-par with Kindle-ICE ( +Colton DRG )</li>
+                                     <li>Wallpapers</li>
+                                     <li>Widgets</li>
+                                     <li>Google Services/Play</li>
+                                     <li><strong><em>NO AMAZON STUFF</em></strong></li>
+                                   </ul>
+                            <h4>Bugs (No deal breakers)</h4>
+                                    <ul>
+                                      <li>The notification drawer is really bugged. Should not interfere with usage</li>
+                                      <li>Says &quot;My Kindle&quot; in top left (My cohorts and I are working on it)</li>
+                                      <li>FireOS based</li>
+                                    </ul>
+                       <hr />
+                            <h4>More stuff you should read</h4>
+                                    <ul>
+                                         <li>We now have an aospish lock screen because of the new launcher. In settings, set lock screen type to none and activate the SL lock screen in Smart Launcher prefs.</li>
+                                         <li>Activate the moonshine icon pack in SL prefs because the default one is fugly.</li>
+                                         <li>Apex launcher is removed in this version so back up your Apex desktop layout before the install and after the install download Apex from the play store and restore your layout if you don't like SL.﻿</li>
+                                    </ul>
+
+            </div>
+        </div>
+        <div id="extras" class="content" style="display:none;overflow:hidden">
+		                                       <span>Extras Donec justo dolor, egestas non nibh eget, bibendum porta metus. Donec vel lobortis odio. Donec tristique commodo ligula sed blandit. Quisque condimentum, est vitae fringilla sollicitudin, felis lectus mollis sapien, ut bibendum neque dui non odio. Nulla consequat aliquam mauris, vestibulum molestie lacus facilisis eu. Ut vel scelerisque eros, quis dapibus nulla. Fusce porta cursus mauris, sed aliquet turpis sagittis eget. Vivamus mattis libero sapien, at pharetra nunc accumsan dictum. Morbi convallis sagittis venenatis. Donec feugiat erat id erat pharetra sagittis. Quisque vel sem posuere, commodo ipsum nec, fringilla odio.
+                                       </span>
+          </div>
+        <div id="console" class="content" style="display:none;overflow:auto"></div>
+		</div>
+      </div>
+	<div id="footer">
+Copyright (c) 2014 --
+<a id="update" class="update" href="#">Update KindleSuite</a>
+  --   KFSOWI.com
+	</div>
+    </div-->
