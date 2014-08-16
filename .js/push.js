@@ -1,10 +1,12 @@
 var Promise = require('bluebird');
 var adb = require('adbkit');
 var client = adb.createClient();
+
 function adbPush(pushFile,pushFileDest){
 client.listDevices()
   .then(function(devices) {
   if (devices.length <= 0) throw new Error('No device detected!');
+  else{
     return Promise.map(devices, function(device) {
       return client.push(device.id, pushFile, pushFileDest)
         .then(function(transfer) {
@@ -21,7 +23,7 @@ client.listDevices()
             transfer.on('error', reject)
           })
         })
-    })
+    })}
   })
   .then(function() {
     alert('Done pushing file to all connected devices')
