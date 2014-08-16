@@ -13,7 +13,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
   </head>
   
-  <body onload="consoleRefresh()" oncontextmenu="return false;"> 
+  <body onload="checkDevices()" oncontextmenu="return false;"> 
    <div id="wrapper">
     <div id="header">
       <span style="margin-left:35%" onclick="location.reload()" class="title1">KindleSuite </span><span class="title2">Alpha 4.0</span><span class="minimize" >min</span><span class="maximize" >max</span><span class="close">close</span><br /><br />
@@ -35,9 +35,9 @@
         <div id="home" class="content">
           It is important to us that you understand that while this Tool is tested before release, it is not guaranteed in any way and is not offered with any implied warranty or guarantee. It isnt recommended that you use this tool if you dont have some understanding of how ADB works. This tool is designed to get the newest resources to you as soon as possible, and as such bugs are possible within the tool. If you are uncertain about your ability to troubleshoot potential issues DO NOT use this tool.<br /><br /><br />
           If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com<br />
-		  <input id="devices" style="width:300px;"type="button" class="btn" value="Check for connected devices" onclick="checkDevices()" /><br />
+		  <!--input id="devices" style="width:300px;"type="button" class="btn" value="Check for connected devices" onclick="checkDevices()" /><br />
 		  <input style="width:300px;"type="button" class="btn" value="Push test.txt /sdcard" onclick="adbPush('test.txt','/sdcard/test.txt')" />
-		  <input style="width:300px;"type="button" class="btn" value="shell reboot test" onclick="adbShell(device,'su -c 'reboot'')" /><br />
+		  <input style="width:300px;"type="button" class="btn" value="shell reboot test" onclick="adbShell(device,'su -c 'reboot'')" /--><br />
         </div>
         <div id="drivers" class="content" style="display:none;overflow:hidden">
           <b>The tools on this page will install:</b><br />

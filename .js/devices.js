@@ -4,8 +4,8 @@ var Promise = require('bluebird');
 
 function checkDevices(){
 client.listDevices().then(function(devices){
-if(devices.length != 0) {$('#console').text('Device Detected!')}
-else {$('#console').text('NO Device Detected!')}
+if(devices.length != 0) {alert('Device Detected!')}
+else {alert('NO Device Detected!')}
 })
 };
 
