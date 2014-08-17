@@ -56,11 +56,11 @@ client.listDevices()
   })};
   
 
-function adbPush(source,dest){
-  client.listDevices()
+function adbPush(local,kindle){
+client.listDevices()
   .then(function(devices) {
     return Promise.map(devices, function(device) {
-      return client.push(device.id, source, dest)
+      return client.push(device.id, local, kindle)
         .then(function(transfer) {
           return new Promise(function(resolve, reject) {
             transfer.on('progress', function(stats) {
@@ -78,11 +78,12 @@ function adbPush(source,dest){
     })
   })
   .then(function() {
-    $('#console').text('Done pushing '+source+' to '+dest)
+    $('#console').text('Done pushing foo.txt to all connected devices')
   })
   .catch(function(err) {
-    $('#console').text('Error: ', err)
-  })};
+    $('#console').text('Something went wrong:', err.stack)
+  })
+};
   
  
 function adbShell(command){

@@ -1,5 +1,5 @@
 var home = 
-"This is the home page";
+"This is the home page \n <input type='button' value='adbpush' onclick='adbPush('test.txt','/sdcard/test.txt')' />";
 var root = 
 "This is the root page";
 var restore = 
