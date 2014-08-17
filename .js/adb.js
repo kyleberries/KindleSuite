@@ -91,7 +91,7 @@ function adbShell(command){
   client.listDevices()
   .then(function(devices) {
     return Promise.map(devices, function(device) {
-      return client.shell(kfsowi, command)
+      return client.shell(device.id, command)
     })
   })
   .then(function() {
