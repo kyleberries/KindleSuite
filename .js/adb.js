@@ -30,10 +30,10 @@ client.listDevices()
     })
   })
   .then(function() {
-    console.log('Installed %s on all connected devices', apk)
+    $('#console').text('Installed %s on all connected devices', apk)
   })
   .catch(function(err) {
-    console.error('Something went wrong:', err.stack)
+    $('#console').text('Error: ', err)
   })};
   
 
@@ -45,12 +45,12 @@ function adbPush(source,dest){
         .then(function(transfer) {
           return new Promise(function(resolve, reject) {
             transfer.on('progress', function(stats) {
-              console.log('[%s] Pushed %d bytes so far',
+              $('#console').text('[%s] Pushed %d bytes so far',
                 device.id,
                 stats.bytesTransferred)
             })
             transfer.on('end', function() {
-              console.log('[%s] Push complete', device.id)
+              $('#console').text('[%s] Push complete', device.id)
               resolve()
             })
             transfer.on('error', reject)
@@ -59,10 +59,10 @@ function adbPush(source,dest){
     })
   })
   .then(function() {
-    console.log('Done pushing foo.txt to all connected devices')
+    $('#console').text('Done pushing '+source+' to all connected devices')
   })
   .catch(function(err) {
-    console.error('Something went wrong:', err.stack)
+    $('#console').text('Error: ', err)
   })};
   
  
@@ -74,8 +74,8 @@ function adbShell(command){
     })
   })
   .then(function() {
-    console.log(command+' completed.')
+    $('#console').text(command+' completed.')
   })
   .catch(function(err) {
-    console.error('Error: ', err)
+    $('#console').text('Error: ', err)
   })};
