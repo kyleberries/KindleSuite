@@ -13,7 +13,6 @@ client.listDevices()
       return client.getProperties(device.id)
         .then(function(properties) {
           if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") {throw new Error('Wrong Device. KS WILL brick this device');
-		  $('.tool').css('display','none');
         }})
     })
   })

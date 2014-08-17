@@ -8,6 +8,9 @@ background: linear-gradient(#dddddd, #555555); /* Standard syntax (must be last)
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 }
+.tool{
+display:none
+     }
 .header{
 	font-size:36px;
 	margin-left:25%;
