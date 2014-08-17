@@ -23,7 +23,7 @@ client.listDevices()
   })
   .catch(function(err) {
     $('#detector').text(err)
-  })},3000)};
+  })},1000)};
 
   
 function adbInstall(apk){
