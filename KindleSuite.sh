@@ -1,2 +1,2 @@
 #!/bin/bash
-nw ./ks.nw
+nw ./
