@@ -8,7 +8,7 @@ function kindleCheck(){
      setInterval(function(){
 client.listDevices()
   .then(function(devices) {
-   if (devices.length <= 0) throw new Error('No Device Detected.');
+   if (devices.length <= 0) {$('.tool').css('display','none'); throw new Error('No Device Detected.')};
     return Promise.filter(devices, function(device) {
       return client.getProperties(device.id)
         .then(function(properties) {
