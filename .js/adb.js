@@ -1,8 +1,13 @@
 var Promise = require('bluebird');
+var whichOs = require('which-os');
 var adb = require('adbkit');
 var client = adb.createClient();
 var kfsowi = null;
+var fastbootSuffix;
+var currentOs = whichOs().search("Windows");
 
+if(currentOs != -1) fastbootSuffix = "cmd";
+else if(currentOs = -1) fastbootSuffix = "sh";
 
 function kindleCheck(){
      setInterval(function(){
