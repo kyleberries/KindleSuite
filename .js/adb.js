@@ -78,10 +78,10 @@ client.listDevices()
     })
   })
   .then(function() {
-    $('#console').text('Done pushing foo.txt to all connected devices')
+    $('#console').text('File upload complete.')
   })
   .catch(function(err) {
-    $('#console').text('Something went wrong:', err.stack)
+    $('#console').text('Error: ', err.stack)
   })
 };
   
