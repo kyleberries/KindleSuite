@@ -3,26 +3,25 @@ var adb = require('adbkit');
 var client = adb.createClient();
 var kfsowi = null;
 
-window.onunload= $('.tool').css('display','block');
 
 function kindleCheck(){
+     setInterval(function(){
 client.listDevices()
   .then(function(devices) {
    if (devices.length <= 0) throw new Error('No Device Detected.');
     return Promise.filter(devices, function(device) {
       return client.getProperties(device.id)
         .then(function(properties) {
-          if(properties['ro.product.model'] = "KFSOWI"){ $('#detector').text('KFSOWI detected: '+device.id);
-		  kfsowi = device.id;};
-		  if(properties['ro.product.model'] != "KFSOWI") {
-		  $('.tool').css('display','none');
-		  kfsowi = null;};
+          if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") throw new Error('Wrong Device. KS WILL brick this device');
         })
     })
   })
+  .then(function(supportedDevices) {
+    $('#detector').text('KFSOWI detected: '+ supportedDevices);
+  })
   .catch(function(err) {
     $('#detector').text(err)
-  })};
+  })},3000)};
 
   
 function adbInstall(apk){
@@ -44,7 +43,7 @@ function adbPush(local,kindle){
 client.listDevices()
   .then(function(devices) {
     return Promise.map(devices, function(device) {
-      return client.push(kfsowi, local, kindle)
+      return client.push(device.id, local, kindle)
         .then(function(transfer) {
           return new Promise(function(resolve, reject) {
             transfer.on('progress', function(stats) {
