@@ -21,7 +21,7 @@ client.listDevices()
   })
   .catch(function(err) {
     $('#detector').text(err)
-  })},1000)};
+  })},3000)};
 
   
 function adbInstall(apk){
