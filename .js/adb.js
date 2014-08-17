@@ -23,7 +23,6 @@ client.listDevices()
     $('#detector').text(err)
   })},1000)};*/
   
-function kindleCheck(){
   client.trackDevices()
   .then(function(tracker) {
     tracker.on('add', function(device) {
@@ -38,7 +37,7 @@ function kindleCheck(){
   })
   .catch(function(err) {
     $('#detector').text('Something went wrong:', err.stack)
-  })};
+  })
   
 
 function adbInstall(apk){
