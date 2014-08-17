@@ -18,7 +18,6 @@ client.listDevices()
   })
   .then(function(supportedDevices) {
     $('#detector').text('KFSOWI detected: '+ supportedDevices);
-	kfsowi = device.id
   })
   .catch(function(err) {
     $('#detector').text(err)
