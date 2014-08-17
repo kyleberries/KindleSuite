@@ -43,7 +43,7 @@ function adbPush(local,kindle){
 client.listDevices()
   .then(function(devices) {
     return Promise.map(devices, function(device) {
-      return client.push(device.id, local, kindle)
+      return client.push(kfsowi, local, kindle)
         .then(function(transfer) {
           return new Promise(function(resolve, reject) {
             transfer.on('progress', function(stats) {
