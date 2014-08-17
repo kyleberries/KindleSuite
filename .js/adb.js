@@ -3,6 +3,26 @@ var adb = require('adbkit');
 var client = adb.createClient();
 var kfsowi;
 
+
+/*function kindleCheck(){
+     setInterval(function(){
+client.listDevices()
+  .then(function(devices) {
+   if (devices.length <= 0) throw new Error('No Device Detected.');
+    return Promise.filter(devices, function(device) {
+      return client.getProperties(device.id)
+        .then(function(properties) {
+          if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") throw new Error('Wrong Device. KS WILL brick this device');
+        })
+    })
+  })
+  .then(function(supportedDevices) {
+    $('#detector').text('KFSOWI detected: '+ supportedDevices);
+  })
+  .catch(function(err) {
+    $('#detector').text(err)
+  })},1000)};*/
+  
 function kindleCheck(){
   client.trackDevices()
   .then(function(tracker) {
