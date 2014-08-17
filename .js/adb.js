@@ -1,9 +1,10 @@
 var Promise = require('bluebird');
 var adb = require('adbkit');
 var client = adb.createClient();
+var kfsowi;
 
 
-function kindleCheck(){
+/*function kindleCheck(){
 client.listDevices()
   .then(function(devices) {
    if (devices.length <= 0) throw new Error('No Device Detected.');
@@ -15,10 +16,28 @@ client.listDevices()
     })
   })
   .then(function(supportedDevices) {
-    $('#console').text('KFSOWI detected: '+ supportedDevices)
+    $('#detector').text('KFSOWI detected: '+ supportedDevices);
   })
   .catch(function(err) {
-    $('#console').text(err)
+    $('#detector').text(err)
+  })};
+  */
+  
+  function kindleCheck(){
+  client.trackDevices()
+  .then(function(tracker) {
+    tracker.on('add', function(device) {
+      $('#detector').text('Device %s was plugged in', device.id)
+    })
+    tracker.on('remove', function(device) {
+      $('#detector').text('Device %s was unplugged', device.id)
+    })
+    tracker.on('end', function() {
+      $('#detector').text('Tracking stopped')
+    })
+  })
+  .catch(function(err) {
+    $('#detector').text('Something went wrong:', err.stack)
   })};
   
 
@@ -59,7 +78,7 @@ function adbPush(source,dest){
     })
   })
   .then(function() {
-    $('#console').text('Done pushing '+source+' to all connected devices')
+    $('#console').text('Done pushing '+source+' to '+dest)
   })
   .catch(function(err) {
     $('#console').text('Error: ', err)

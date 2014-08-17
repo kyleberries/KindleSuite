@@ -32,6 +32,10 @@ background: linear-gradient(#dddddd, #555555); /* Standard syntax (must be last)
 	margin-bottom:20px;
 	color:white;
 	    }
+.detector{
+	text-align:center;
+	margin-bottom:5px;
+	color:white;
 ul{
     list-style-type:none;
   }
