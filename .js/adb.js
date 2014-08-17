@@ -15,7 +15,7 @@ client.listDevices()
           if(properties['ro.product.model'] = "KFSOWI"){ $('#detector').text('KFSOWI detected: '+device.id);
 		  kfsowi = device.id;};
 		  if(properties['ro.product.model'] != "KFSOWI") {
-		  $('.tool').css('display','none')
+		  $('.tool').css('display','none');
 		  kfsowi = null;};
         })
     })
