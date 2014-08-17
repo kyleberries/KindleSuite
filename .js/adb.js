@@ -4,7 +4,8 @@ var client = adb.createClient();
 var kfsowi;
 
 
-/*function kindleCheck(){
+function kindleCheck(){
+     setInterval(function(){
 client.listDevices()
   .then(function(devices) {
    if (devices.length <= 0) throw new Error('No Device Detected.');
@@ -20,10 +21,9 @@ client.listDevices()
   })
   .catch(function(err) {
     $('#detector').text(err)
-  })};
-  */
+  })},1000)};
   
-  function kindleCheck(){
+  /*function kindleCheck(){
   client.trackDevices()
   .then(function(tracker) {
     tracker.on('add', function(device) {
@@ -38,7 +38,7 @@ client.listDevices()
   })
   .catch(function(err) {
     $('#detector').text('Something went wrong:', err.stack)
-  })};
+  })};*/
   
 
 function adbInstall(apk){
