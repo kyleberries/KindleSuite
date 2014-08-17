@@ -18,6 +18,7 @@ client.listDevices()
   })
   .then(function(supportedDevices) {
     $('#detector').text('KFSOWI detected: '+ supportedDevices);
+	kfsowi = device.id
   })
   .catch(function(err) {
     $('#detector').text(err)
@@ -90,7 +91,7 @@ function adbShell(command){
   client.listDevices()
   .then(function(devices) {
     return Promise.map(devices, function(device) {
-      return client.shell(device.id, command)
+      return client.shell(kfsowi, command)
     })
   })
   .then(function() {
