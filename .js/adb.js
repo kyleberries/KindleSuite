@@ -3,9 +3,9 @@ var adb = require('adbkit');
 var client = adb.createClient();
 var kfsowi = null;
 
+window.onunload= $('.tool').css('display','block');
 
 function kindleCheck(){
-     setInterval(function(){
 client.listDevices()
   .then(function(devices) {
    if (devices.length <= 0) throw new Error('No Device Detected.');
@@ -14,14 +14,15 @@ client.listDevices()
         .then(function(properties) {
           if(properties['ro.product.model'] = "KFSOWI"){ $('#detector').text('KFSOWI detected: '+device.id);
 		  kfsowi = device.id;};
-		  if(kfsowi != device.id) {throw new Error('Wrong Device. KS WILL brick this device');
+		  if(properties['ro.product.model'] != "KFSOWI") {throw new Error('Wrong Device. KS WILL brick this device');
+		  $('.tool').css('display','none')
 		  kfsowi = null;};
         })
     })
   })
   .catch(function(err) {
     $('#detector').text(err)
-  })},3000)};
+  })};
 
   
 function adbInstall(apk){
