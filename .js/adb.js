@@ -12,8 +12,8 @@ client.listDevices()
     return Promise.filter(devices, function(device) {
       return client.getProperties(device.id)
         .then(function(properties) {
-          if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") {throw new Error('Wrong Device. KS WILL brick this device');
-		  	$('.tool').css('display','none');
+          if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") {	$('.tool').css('display','none');
+		  throw new Error('Wrong Device. KS WILL brick this device');
         }})
     })
   })
