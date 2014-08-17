@@ -12,8 +12,10 @@ client.listDevices()
     return Promise.filter(devices, function(device) {
       return client.getProperties(device.id)
         .then(function(properties) {
-          if(properties['ro.product.model'] = "KFSOWI") $('#detector').text('KFSOWI detected: '+device.id);
-		  if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") throw new Error('Wrong Device. KS WILL brick this device');
+          if(properties['ro.product.model'] = "KFSOWI"){ $('#detector').text('KFSOWI detected: '+device.id);
+		  kfsowi = device.id;};
+		  if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") {throw new Error('Wrong Device. KS WILL brick this device');
+		  kfsowi = null;};
         })
     })
   })
