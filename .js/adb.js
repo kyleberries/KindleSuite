@@ -12,12 +12,14 @@ client.listDevices()
     return Promise.filter(devices, function(device) {
       return client.getProperties(device.id)
         .then(function(properties) {
-          if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") throw new Error('Wrong Device. KS WILL brick this device');
-        })
+          if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") {throw new Error('Wrong Device. KS WILL brick this device');
+		  $('.tool').css('display','none');
+        }})
     })
   })
   .then(function(supportedDevices) {
     $('#detector').text('KFSOWI detected: '+ supportedDevices);
+	$('.tool').css('display','block');
   })
   .catch(function(err) {
     $('#detector').text(err)
