@@ -1,0 +1,1 @@
+cat downgrade = lindg; >> ..\adb.js
