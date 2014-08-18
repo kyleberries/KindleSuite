@@ -1,16 +1,48 @@
 body{ 
 font-family:Open Sans Condensed;
-background: -webkit-linear-gradient(#eeeeee, #555555); /* For Safari 5.1 to 6.0 */
-background: -o-linear-gradient(#dddddd, #555555); /* For Opera 11.1 to 12.0 */
-background: -moz-linear-gradient(#dddddd, #555555); /* For Firefox 3.6 to 15 */
-background: linear-gradient(#dddddd, #555555); /* Standard syntax (must be last) */
+background: -webkit-linear-gradient(grey,#dddddd);
     background-color:transparent;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 }
-.tool{
-display:none
-     }
+
+.tool {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  border:transparent;
+  text-shadow: 2px 2px 1px #04446e;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.tool:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
+	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+	background-color:#fb9e25;
+}.tool:active {
+	position:relative;
+	top:1px;  
+	}
 .header{
 	font-size:36px;
 	margin-left:25%;
@@ -18,6 +50,7 @@ display:none
 	   }
 .menu{
     float:left;
+	font-size:20px;
 	 }
 .contentWrap{
     width:80%;
@@ -26,22 +59,27 @@ display:none
 	padding:10px;
 	        }
 .content{
-    border:1px solid;
+    margin-left:20px;
+    text-indent:50px;
 	min-height:300px;
 	    }
 .console{
 	text-align:center;
 	border:1px dashed;
 	margin-bottom:20px;
+	margin-left:20px;
 	color:white;
 	    }
 .toggle{
     display:none;
+	font-size:15px;
+	margin-top:-5px;
+	margin-bottom:-5px;
 	   }
 .detector{
     float:left;
 	text-align:center;
-	margin-left:15px;
+	margin-left:20%;
 	color:red;
 	     }
 ul{
@@ -63,3 +101,6 @@ a:active{
     color:red;
 	text-decoration:none;
                  }
+.oneBtn{
+   margin-left:40%;
+       }

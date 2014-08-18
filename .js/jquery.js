@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   $('.romLink').click(function(){
-     $('.toggle').toggle();             
+     $('.toggle').toggle('slow');             
     });
 
 });

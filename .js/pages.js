@@ -1,5 +1,5 @@
 var root = 
-"Android rooting is the process of allowing users of smartphones, tablets, and other devices running the Android mobile operating system to attain privileged control (known as \"root access\") within Android's sub-system.<br /><br />YOU MUST ROOT YOUR DEVICE TO DO ANYTHING ELSE IN KINDLESUITE<br />YOU MUST HAVE A FASTBTOOT CABLE TO ROOT<br /> <input class='tool' type='button' value='Root Device'></input>";
+"Android rooting is the process of allowing users of smartphones, tablets, and other devices running the Android mobile operating system to attain privileged control (known as \"root access\") within Android's sub-system.<br /><br />YOU MUST ROOT YOUR DEVICE TO DO ANYTHING ELSE IN KINDLESUITE<br />YOU MUST HAVE A FASTBTOOT CABLE TO ROOT<br /> <br /><input class='tool oneBtn' type='button' value='Root Device'></input>";
 var restore = 
 "This is the restore page";
 var ice = 
@@ -12,22 +12,22 @@ var extras =
 "This is the extras page";
 
 $(document).ready(function(){
-  $("#rootLink").click(function(){
-    $("#content").html(root);
+  $("#rootLink").click(function(){    
+    $("#content").hide(0).html(root).fadeIn(500);
   });
   $("#restoreLink").click(function(){
-    $("#content").html(restore);
+     $("#content").hide(0).html(restore).fadeIn(500);
   });
   $("#iceLink").click(function(){
-    $("#content").html(ice);
+    $("#content").hide(0).html(ice).fadeIn(500);
   });
   $("#hellfireLink").click(function(){
-    $("#content").html(hellfire);
+    $("#content").hide(0).html(hellfire).fadeIn(500);
   });
   $("#plasmaLink").click(function(){
-    $("#content").html(plasma);
+    $("#content").hide(0).html(plasma).fadeIn(500);
   });
   $("#extrasLink").click(function(){
-    $("#content").html(extras);
+    $("#content").hide(0).html(extras).fadeIn(500);
   });
 });

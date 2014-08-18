@@ -9,6 +9,8 @@ var currentOs = whichOs().search("Windows");
 if(currentOs != -1) fastbootSuffix = "cmd";
 else if(currentOs = -1) fastbootSuffix = "sh";
 
+//[HMTL]   Disabled in body onload
+//[CSS]   .tool display needs to be changed to none to enable this function
 function kindleCheck(){
      setInterval(function(){
 client.listDevices()
@@ -30,7 +32,7 @@ client.listDevices()
   .catch(function(err) {
     $('#detector').text(err)
   })},1000)};
-
+  
   
 function adbInstall(apk){
 client.listDevices()
