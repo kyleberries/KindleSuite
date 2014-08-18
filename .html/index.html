@@ -26,12 +26,10 @@
 		     <ul id="menu" class="menu">
 			     <li><a href="#" id="rootLink">Root</a></li>
 				 <li><a href="#" id="restoreLink">Restore</a></li>
-				 <li>ROMs
-				     <ul>
-					     <li><a href="#" id="iceLink">Ice</a></li>
-						 <li><a href="#" id="hellfireLink">HellFire</a></li>
-						 <li><a href="#" id="plasmaLink">Plasma</a></li>
-					 </ul>
+				 <li  onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="romLink">ROMs</li>
+					     <li><a href="#" class="toggle" id="iceLink">Ice</a></li>
+						 <li><a href="#" class="toggle" id="hellfireLink">HellFire</a></li>
+						 <li><a href="#" class="toggle" id="plasmaLink">Plasma</a></li>
 				 </li>
 				 <li><a href="#" id="extrasLink">Extras</a></li>
 			 </ul>
@@ -44,10 +42,9 @@
 		 		 <div id="console" class="console">
 		 ADB CONSOLE...
 		 </div>
+		 <div 
 		 <div id="content" class="content">
-             <input class="tool" type='button' value='adbpush' onclick="adbPush('test.txt','/sdcard/test.txt')" />
-<br />
-             <input class="tool" type='button' value='adbshell' onclick="adbShell('su -c reboot')" />					 
+Welcome to KindleSuite v4 <br />If you have any questions or concerns please let us know at kfsowi.com or email me at kyle@kfsowi.com<br />Check out our new <a href='https://github.com/secretdevwork/KindleSuite/wiki'>GITHUB WIKI</a> for more info on our tools and ROMs.<br /><br />It is important to us that you understand that while this Tool is tested before release, it is not guaranteed in any way and is not offered with any implied warranty or guarantee. It isnt recommended that you use this tool if you dont have some understanding of how ADB works. This tool is designed to get the newest resources to you as soon as possible, and as such bugs are possible within the tool. If you are uncertain about your ability to troubleshoot potential issues DO NOT use this tool.<br />		 
 		 </div>
 		 </div>
 	 </div>

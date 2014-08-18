@@ -35,15 +35,31 @@ display:none
 	margin-bottom:20px;
 	color:white;
 	    }
+.toggle{
+    display:none;
+	   }
 .detector{
+    float:left;
 	text-align:center;
-	margin-bottom:5px;
-	color:white;
+	margin-left:15px;
+	color:red;
+	     }
 ul{
     list-style-type:none;
   }
-a{
+a:link{
     color:black;
 	text-decoration:none;
- }
- 
+                 }
+a:visited{
+    color:black;
+	text-decoration:none;
+                 }
+a:hover{
+    color:red;
+	text-decoration:none;
+                 }
+a:active{
+    color:red;
+	text-decoration:none;
+                 }

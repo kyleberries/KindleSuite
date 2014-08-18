@@ -25,6 +25,7 @@ client.listDevices()
   .then(function(supportedDevices) {
     $('#detector').text('KFSOWI detected: '+ supportedDevices);
 	$('.tool').css('display','block');
+	$('#detector').css('color','red');
   })
   .catch(function(err) {
     $('#detector').text(err)
