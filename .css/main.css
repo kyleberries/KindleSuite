@@ -94,11 +94,12 @@ a:visited{
 	text-decoration:none;
                  }
 a:hover{
-    color:red;
+    color:#3498db;
 	text-decoration:none;
+	text-shadow:1px 1px black;
                  }
 a:active{
-    color:red;
+    color:#3498db;
 	text-decoration:none;
                  }
 .oneBtn{
