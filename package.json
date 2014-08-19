@@ -6,7 +6,7 @@
   "keywords": [ "KindleSuite", "KFSOWI" ],
   "window": {
     "title": "KindleSuite4 demo",
-    "icon": ".icon/16.png",
+    "icon": ".icon/icon.png",
     "toolbar": false,
     "frame": true,
     "width": 800,
