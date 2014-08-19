@@ -1,1 +1,0 @@
-cat downgrade = linUg; >> ..\adb.js

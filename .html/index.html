@@ -17,7 +17,7 @@
 	<!--end scripts-->
   </head>
   
-  <body onload="kindleCheck()"> 
+  <body onload=""> 
      <div id="wrapper" class="wrapper">
 	     <div id="headerWrap" class="headerWrap">
 		     <span class="header" id="header">KindleSuite alpha v4.0.0</span>
@@ -26,9 +26,7 @@
 		     <ul id="menu" class="menu">
 			     <li><a href="#" id="rootLink">Root</a></li>
 				 <li><a href="#" id="restoreLink">Restore</a></li>
-				 <li  
-				 onmouseover="$(this).css('color','#3498db').css('text-shadow','1px 1px black')" 
-				 onmouseout="$(this).css('color','black').css('text-shadow','none')" class="romLink">ROMs</li>
+				 <li  onmouseover="$(this).css('color','red')" onmouseout="$(this).css('color','black')" class="romLink">ROMs</li>
 					     <li class="toggle"><a href="#" id="iceLink">Ice</a></li>
 						 <li class="toggle"><a href="#" id="hellfireLink">HellFire</a></li>
 						 <li class="toggle"><a href="#" id="plasmaLink">Plasma</a></li>
@@ -39,7 +37,7 @@
 		 </div>
 		 <div id="contentWrap" class="contentWrap">
 		        <div id="detector" class="detector">
-				 <span style="text-shadow:1px 1px black">ERROR: detector not running...</span>
+				 ERROR: detector not running...
 				 </div>
 		 		 <div id="console" class="console">
 		 ADB CONSOLE...

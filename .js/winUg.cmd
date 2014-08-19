@@ -1,1 +1,0 @@
-echo downgrade = lindg; >> ..\adb.js
