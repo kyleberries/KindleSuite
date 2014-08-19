@@ -5,7 +5,7 @@ var client = adb.createClient();
 var kfsowi = null;
 var fastbootSuffix;
 var currentOs = whichOs().search("Windows");
-var linUg = null;
+var fbDg = null;
 var winUg = null;
 var linDg = null;
 var winDg = null;
