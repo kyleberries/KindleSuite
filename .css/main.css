@@ -95,12 +95,11 @@ a:visited{
 	text-decoration:none;
                  }
 a:hover{
-    color:#3498db;
+    color:red;
 	text-decoration:none;
-	text-shadow:1px 1px black;
                  }
 a:active{
-    color:#3498db;
+    color:red;
 	text-decoration:none;
                  }
 .oneBtn{
