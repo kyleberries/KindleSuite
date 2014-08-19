@@ -1,5 +1,5 @@
 var root = 
-"Android rooting is the process of allowing users of smartphones, tablets, and other devices running the Android mobile operating system to attain privileged control (known as \"root access\") within Android's sub-system.<br /><br />YOU MUST ROOT YOUR DEVICE TO DO ANYTHING ELSE IN KINDLESUITE<br />YOU MUST HAVE A FASTBTOOT CABLE TO ROOT<br /> <br /><input class='tool oneBtn' type='button' value='Root Device'></input>";
+"Android rooting is the process of allowing users of smartphones, tablets, and other devices running the Android mobile operating system to attain privileged control (known as \"root access\") within Android's sub-system.<br /><br />YOU MUST ROOT YOUR DEVICE TO DO ANYTHING ELSE IN KINDLESUITE<br />YOU MUST HAVE A FASTBTOOT CABLE TO ROOT<br /> <br /><input id='rootBtn' class='tool oneBtn' type='button' value='Root Device'></input>";
 var restore = 
 "This is the restore page";
 var ice = 

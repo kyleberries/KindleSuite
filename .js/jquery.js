@@ -4,4 +4,7 @@ $(document).ready(function(){
      $('.toggle').toggle('slow');             
     });
 
+  $('#rootBtn').click(function(){
+  
+    });
 });

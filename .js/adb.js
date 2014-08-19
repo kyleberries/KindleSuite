@@ -5,6 +5,10 @@ var client = adb.createClient();
 var kfsowi = null;
 var fastbootSuffix;
 var currentOs = whichOs().search("Windows");
+var linUg = null;
+var winUg = null;
+var linDg = null;
+var winDg = null;
 
 if(currentOs != -1) fastbootSuffix = "cmd";
 else if(currentOs = -1) fastbootSuffix = "sh";
@@ -17,6 +21,7 @@ client.listDevices()
   .then(function(devices) {
    if (devices.length <= 0) {$('.tool').css('display','none'); throw new Error('No Device Detected.')};
     return Promise.filter(devices, function(device) {
+		$('.detector').css('text-shadow','1px 1px black');
       return client.getProperties(device.id)
         .then(function(properties) {
           if(properties['ro.product.model'] != "KFSOWI" && properties['ro.product.model'] != "") {	$('.tool').css('display','none');
@@ -27,10 +32,11 @@ client.listDevices()
   .then(function(supportedDevices) {
     $('#detector').text('KFSOWI detected: '+ supportedDevices);
 	$('.tool').css('display','block');
-	$('#detector').css('color','red');
+	$('#detector').css('color','green');
   })
   .catch(function(err) {
-    $('#detector').text(err)
+    $('#detector').text(err);
+	$('.detector').css('text-shadow','1px 1px black')
   })},1000)};
   
   
