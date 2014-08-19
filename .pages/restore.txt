@@ -1,1 +1,6 @@
-RESTORE
+###What is Restoring?     
+
+Restoring here refers to the process of **erasing** all userdata, and **overwriting** the existing system with a stock factory copy (most recent that is rootable)
+
+* The current Factory Restore version is: **11.3.2.5**
+* Restoring requires a fastboot cable.

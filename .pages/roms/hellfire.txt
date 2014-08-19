@@ -1,1 +1,28 @@
-HELLFIRE
+###HellFire ROM (Darian Branum)
+
+####Screenshots
+![HF Icon unavailable](https://lh4.googleusercontent.com/-jhbUKRJrguQ/U9e6l_7qP6I/AAAAAAAAC9I/a-PvKqB3bFI/w71-h91-no/HF.png Hellfire)   
+![lockscreen unavailable](# "HellFire Lockscreen")  
+![launcher unavailable](# "HellFire Home Screen")
+
+***
+
+####Description
+
+**PENDING**
+
+***
+
+####Features
+
+* **PENDING**
+
+####Bugs  
+* **PENDING**
+
+####For the Future
+* **PENDING** 
+
+####More stuff you should read
+
+* **PENDING**

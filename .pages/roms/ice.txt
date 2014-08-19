@@ -1,5 +1,4 @@
 ###Ice ROM (Colton DRG)
-***
 
 ####Screenshots
 ![lockscreen screenshot unavailable](# "Ice Lockscreen")  

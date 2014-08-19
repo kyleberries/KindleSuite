@@ -1,1 +1,46 @@
-PLASMA
+###Plasma ROM (Ben Valle)
+
+####Screenshots
+![lockscreen](https://lh5.googleusercontent.com/-xQxD3kPT6pQ/U9ac72cO7gI/AAAAAAAAAXs/zRLSQtz1dsw/w468-h293-no/14+-+1 "Plasma Lockscreen")
+![launcher](https://lh6.googleusercontent.com/-AqaiDqwAR94/U9ac70n0Z8I/AAAAAAAAAXw/7_SE8BNc5Co/s800/14+-+2 "Plasma Home Screen")
+
+***
+
+####Description
+This is ROM I have created for the Kindle Fire HD 2nd Generation. (KFSOWI)
+It is meant as a successor to Kindle-Water which I have discontinued because it can potentially fry your device.
+
+***
+
+####Features
+
+* Smart Launcher
+* AOSP(ish) Lockscreen **Read the more stuff section at bottom**
+* AOSP Settings
+* As always, lockscreen ads disabled
+* **Much** Easier setup
+* Performance on-par with Kindle-ICE ( +Colton DRG )
+* Wallpapers
+* Widgets
+* Google Services/Play
+* ___NO AMAZON STUFF___
+
+####Bugs (No deal breakers)
+* The notification drawer is really bugged. Should not interfere with usage
+* Says "My Kindle" in top left (My cohorts and I are working on it)
+* FireOS based
+
+####For the Future
+* More features
+* Bug Fixes
+* I'm taking feature requests  
+
+***
+
+####More stuff you should read
+
+* We now have an aospish lock screen because of the new launcher. In settings, set lock screen type to none and activate the SL lock screen in Smart Launcher prefs.
+* Activate the moonshine icon pack in SL prefs because the default one is fugly.
+* Apex launcher is removed in this version so back up your Apex desktop layout before the install and after the install download Apex from the play store and restore your layout if you don't like SL.﻿
+
+
