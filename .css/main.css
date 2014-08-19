@@ -61,6 +61,8 @@ background: -webkit-linear-gradient(grey,#dddddd);
 	        }
 .content{
     margin-left:20px;
+	margin-bottom:10px;
+	overflow:auto;
     text-indent:50px;
 	min-height:300px;
 	    }

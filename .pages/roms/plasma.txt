@@ -2,7 +2,7 @@
 
 ####Screenshots
 ![lockscreen](https://lh5.googleusercontent.com/-xQxD3kPT6pQ/U9ac72cO7gI/AAAAAAAAAXs/zRLSQtz1dsw/w468-h293-no/14+-+1 "Plasma Lockscreen")
-![launcher](https://lh6.googleusercontent.com/-AqaiDqwAR94/U9ac70n0Z8I/AAAAAAAAAXw/7_SE8BNc5Co/s800/14+-+2 "Plasma Home Screen")
+![launcher screenshot unavailable](#, "Plasma Home Screen")
 
 ***
 
