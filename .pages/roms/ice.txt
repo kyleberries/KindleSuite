@@ -1,0 +1,62 @@
+###Ice ROM (Colton DRG)
+***
+
+####Screenshots
+![lockscreen screenshot unavailable](# "Ice Lockscreen")  
+![launcher screenshot unavailable](# "Ice Home Screen")
+
+
+####Description
+This is Ice, an Android ROM for the 2013 Amazon Kindle Fire HD (KFSOWI / Soho). It is based upon Amazon FireOS, and runs Android 4.2.2. 
+
+This software should NEVER be flashed on ANY device outside of the Amazon Kindle Fire HD (2013). Please make sure this is your device before proceeding. 
+
+This involves changing system files. This means it may permanently mess up your device, rendering it unusable. I do not take any responsibility should this occur. You are on your own. 
+
+Ice ROM Alpha 2! Even though it is an Alpha, it is pretty stable and everything seems to work! This is based on stock FireOS 11.3.2.2. Ice is designed to get as close to AOSP as we possibly can with the Kindle in it's current development state. It does everything in it's power to bring the cleanest Android experience possible to the Kindle. Ice is a great ROM for all purposes! 
+
+***
+
+####Features
+
+* Android 4.2.2 
+* Based on FireOS 11.3.2.2 
+* AOSP Settings 
+* AOSP Clock, Calendar, Email, Calculator, and Launcher 
+* Firefox Web Browser 
+* Open-Source Superuser 
+* AOSP / Google Keyboard 
+* Google Play Store 
+* Google Plus 
+* Google Now (Voice Search requires external mic) 
+* Most Amazon Rubbish Removed 
+* BusyBox 
+* ADB Over WiFi 
+* Tablet UI Mod 
+
+**Think we should add a feature? Request it: colton@kfsowi.com**  
+***
+
+####Bugs  
+* After selecting your language at first boot, it takes a long time to progress to the next screen -- Just wait a couple minutes. 
+* Screen stays black instead of continuing to the homescreen after completion of the first boot setup -- Easy workaround: Pull down the notification drawer a bit to activate the navigation bar, then press home. 
+* Launcher flips when trying to move a widget or app in landscape mode -- This is an Amazon issue... Portrait mode works fine, or you can disable auto-rotate temporarily to workaround this bug. 
+* Occasionally Google Apps crash with an error about Google Play Services -- This may actually be an issue with Android. It is rare, so just restart the app. 
+* WiFi button in notification pulldown causes SystemUI to crash/restart and doesn't actually do anything -- Not much you can do... We will look into it. 
+* Help button in notification pulldown does nothing -- If you need the help button you probably shouldn't be flashing this. 
+* Status bar looks a bit bugged at times -- This is partially a side effect of Tablet UI fix, but it also has to do with the Kindle having a flat out stupid, broken SystemUI. 
+* Lock screen bar (for unlocking) is a bit hidden behind the edge of the screen -- This is a side effect of tablet UI fix. If you swipe from the middle of the right edge of the screen to the left the screen will unlock
+* Lock screen has a plus button for adding widgets, but they don't actually work. 
+* Device Administrators don't seem to work -- We are looking into this and we will try to have a solution or workaround available as soon as possible! 
+* Facebook and possibly some other apps will not install -- If you copy a Facebook APK to /system/app, you can get it running. We know this is not optimal, but it is a workaround 
+* Users reported crashing, freezing, and even failure to boot when using languages with non-latin character sets, such as Korean. -- We have no workaround, but we will look into a solution. 
+
+**Found a bug we didn't mention? Report it: colton@kfsowi.com**
+
+####For the Future
+* More features
+* Bug Fixes
+* I'm taking feature requests  
+
+***
+

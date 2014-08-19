@@ -5,16 +5,11 @@ var client = adb.createClient();
 var kfsowi = null;
 var fastbootSuffix;
 var currentOs = whichOs().search("Windows");
-var linUg = null;
-var winUg = null;
-var linDg = null;
-var winDg = null;
 
-if(currentOs != -1) fastbootSuffix = "cmd";
-else if(currentOs = -1) fastbootSuffix = "sh";
+if(currentOs != -1) fastbootSuffix = ".cmd";
+else if(currentOs = -1) fastbootSuffix = ".sh";
 
-//[HMTL]   Disabled in body onload
-//[CSS]   .tool display needs to be changed to none to enable this function
+
 function kindleCheck(){
      setInterval(function(){
 client.listDevices()
