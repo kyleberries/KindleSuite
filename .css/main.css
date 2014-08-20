@@ -48,7 +48,7 @@ background: -webkit-linear-gradient(grey,#dddddd);
 	   }
 .menu{
     float:left;
-	font-size:20px;
+	font-size:25px;
 	 }
 .contentWrap{
     width:80%;
@@ -62,17 +62,17 @@ background: -webkit-linear-gradient(grey,#dddddd);
 	overflow:auto;
     text-indent:50px;
 	min-height:300px;
+	max-height:80%;
 	    }
 .console{
 	text-align:center;
-	border:1px dashed;
 	margin-bottom:20px;
 	margin-left:20px;
 	color:white;
 	    }
 .toggle{
     display:none;
-	font-size:15px;
+	font-size:20px;
 	margin-top:-5px;
 	margin-bottom:-5px;
 	   }
