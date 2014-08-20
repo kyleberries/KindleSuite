@@ -17,22 +17,34 @@ var extras = $.get('../.pages/extras.txt',function(data){extrasParsed = markdown
 $(document).ready(function(){
   $('#content').html(homeParsed);
     $("#rootLink").click(function(){
-	      $('#content').html(rootParsed)
+	      $('#content').hide();
+	      $('#content').html(rootParsed);
+		   $('#content').fadeIn();
 		  });
     $("#restoreLink").click(function(){
-	      $('#content').html(restoreParsed)
+	      $('#content').hide();
+	      $('#content').html(restoreParsed);
+		  $('#content').fadeIn();
 	      });
 	$("#iceLink").click(function(){
-	      $('#content').html(iceParsed)
+	      $('#content').hide();
+	      $('#content').html(iceParsed);
+		  $('#content').fadeIn();
 	      });
 	$("#hellfireLink").click(function(){
-	      $('#content').html(hellfireParsed)
+	      $('#content').hide();
+	      $('#content').html(hellfireParsed);
+		  $('#content').fadeIn();
 		  });
 	$("#plasmaLink").click(function(){
-	      $('#content').html(plasmaParsed)
+	      $('#content').hide();
+	      $('#content').html(plasmaParsed);
+		  $('#content').fadeIn();
 		  });
 	$("#extrasLink").click(function(){
-	      $('#content').html(extrasParsed)
+	      $('#content').hide();
+	      $('#content').html(extrasParsed);
+		  $('#content').fadeIn();
 		  });
 	
 });
