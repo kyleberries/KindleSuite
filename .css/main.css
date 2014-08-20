@@ -42,7 +42,12 @@ background: -webkit-linear-gradient(grey,#dddddd);
 }
 .header{
 	font-size:40px;
-	margin-left:25%;
+	margin-left:35%;
+	font-family:Josefin Slab;
+	font-weight:100;
+	   }
+.version{
+	margin-left:10%;
 	font-family:Josefin Slab;
 	font-weight:100;
 	   }
