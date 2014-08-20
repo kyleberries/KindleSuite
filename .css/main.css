@@ -25,7 +25,7 @@ background: -webkit-linear-gradient(grey,#dddddd);
   padding: 5px 20px 5px 20px;
   text-decoration: none;
 }
-
+.romLink:hover{cursor:pointer}
 .tool:hover {
   background: #3cb0fd;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
