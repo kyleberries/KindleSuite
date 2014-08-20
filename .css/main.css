@@ -63,6 +63,7 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
 	min-height:300px;
 	max-height:80%;
 	font-family:Muli;
+	line-height: 140%;
 	    }
 .console{
 	text-align:center;
