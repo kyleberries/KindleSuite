@@ -6,6 +6,7 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
 	background-repeat:no-repeat;
 	color:#3e606f;
 	text-shadow:1px 1px white;
+	overflow:hidden;
 }
 
 .tool {
@@ -59,9 +60,10 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
     margin-left:20px;
 	margin-bottom:10px;
 	overflow:auto;
+	height:550px;
     text-indent:40px;
-	min-height:300px;
-    height:500px;
+	min-height:100px;
+	position:relative;
 	font-family:Muli;
 	line-height: 180%;
 	width:100%;
