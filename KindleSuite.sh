@@ -1,2 +1,2 @@
 #!/bin/bash
-./bin/nw ./
+nw ./
