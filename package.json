@@ -10,10 +10,10 @@
     "toolbar": false,
     "frame": true,
     "width": 800,
-    "height": 550,
+    "height": 700,
     "position": "center",
-    "min_width": 700,
-    "min_height": 250,
+    "min_width": 800,
+    "min_height": 500,
 	"resizable": true,
     "bugs": "kyle@kfsowi.com"	
   },
