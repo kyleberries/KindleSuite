@@ -59,11 +59,12 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
     margin-left:20px;
 	margin-bottom:10px;
 	overflow:auto;
-    text-indent:50px;
+    text-indent:40px;
 	min-height:300px;
-	max-height:80%;
+    height:500px;
 	font-family:Muli;
-	line-height: 140%;
+	line-height: 180%;
+	width:600px;
 	    }
 .console{
 	text-align:center;
