@@ -12,12 +12,10 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
   display:none;
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  -webkit-border-radius: 5;
-  -moz-border-radius: 5;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
   border:transparent;
   text-shadow: 2px 2px 1px #04446e;
-  font-family: Cinzel;
+  font-family: Lobster Two;
   color: #ffffff;
   font-size: 24px;
   padding: 5px 20px 5px 20px;
@@ -46,8 +44,18 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
 .menu{
     float:left;
 	font-size:25px;
-	font-family:Cinzel;
+	font-family:Josefin Slab;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	width:100px;
+	margin-left:-20px;
+	padding-top:15px;
+	padding-bottom:15px;
+	border-radius:15px;
+	text-shadow:1px 1px #777777;
 	 }
+.menuWrap{
+    color:black;
+         }
 .contentWrap{
     width:70%;
 	float:left;
@@ -90,7 +98,7 @@ ul{
     list-style-type:none;
   }
 a:link{
-    color:#3e606f;
+    color:black;
 	text-decoration:none;
                  }
 a:visited{
