@@ -8,20 +8,6 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
 	text-shadow:1px 1px white;
 	overflow:hidden;
 }
-.menuBg{
-  display:block;
-  background: transparent;
-  -webkit-border-radius: 5;
-  -moz-border-radius: 5;
-  border-radius: 5px;
-  border:1px black solid;
-  text-shadow: 2px 2px 1px #04446e;
-  font-family: Cinzel;
-  color: #ffffff;
-  font-size: 24px;
-  padding: 5px 20px 5px 20px;
-  text-decoration: none;
-}
 .tool{
   display:none;
   background: #3498db;
