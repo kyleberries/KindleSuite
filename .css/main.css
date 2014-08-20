@@ -29,8 +29,8 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
   text-decoration: none;}
 .tool:active{
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
-	background-color:#fb9e25;
+	background:-webkit-linear-gradient(top, #3498db,#3cb0fd);
+	background-color:#3cb0fd;
 }
 .header{
 	font-size:60px;

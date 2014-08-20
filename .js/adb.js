@@ -33,21 +33,6 @@ client.listDevices()
     $('#detector').text(err);
   })},100)};
   
-  
-function adbInstall(apk){
-client.listDevices()
-  .then(function(devices) {
-    return Promise.map(devices, function(device) {
-      return client.install(device.id, apk)
-    })
-  })
-  .then(function() {
-    $('#console').text('Installed %s on all connected devices', apk)
-  })
-  .catch(function(err) {
-    $('#console').text('Error: ', err)
-  })};
-  
 
 function adbPush(local,kindle){
 client.listDevices()
