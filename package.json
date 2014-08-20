@@ -13,7 +13,7 @@
     "height": 700,
     "position": "center",
     "min_width": 800,
-    "min_height": 500,
+    "min_height": 700,
 	"resizable": true,
     "bugs": "kyle@kfsowi.com"	
   },
