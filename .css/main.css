@@ -33,17 +33,13 @@ background: -webkit-linear-gradient(grey,#dddddd);
   background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
-}
-
+  text-decoration: none;}
+.tool:active{
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
 	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
 	background-color:#fb9e25;
-}.tool:active {
-	position:relative;
-	top:1px;  
-	}
+}
 .header{
 	font-size:36px;
 	margin-left:25%;
