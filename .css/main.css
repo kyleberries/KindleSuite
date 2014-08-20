@@ -88,11 +88,11 @@ ul{
     list-style-type:none;
   }
 a:link{
-    color:black;
+    color:#3e606f;
 	text-decoration:none;
                  }
 a:visited{
-    color:black;
+    color:#3e606f;
 	text-decoration:none;
                  }
 a:hover{
@@ -101,7 +101,7 @@ a:hover{
 	text-shadow:1px 1px black;
                  }
 a:active{
-    color:#3498db;
+    color:white;
 	text-decoration:none;
                  }
 .oneBtn{

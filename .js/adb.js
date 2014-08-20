@@ -31,7 +31,6 @@ client.listDevices()
   })
   .catch(function(err) {
     $('#detector').text(err);
-	$('.detector').css('text-shadow','1px 1px black')
   })},100)};
   
   
