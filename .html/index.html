@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../.css/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Muli:300,400|Noticia+Text:400,700,700italic|Share:400,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,700italic|Yanone+Kaffeesatz:400,200|Cinzel:400,700|Open+Sans+Condensed:300,300italic' rel='stylesheet' type='text/css'>
 	<!--end styles-->
 	<!--Scripts-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -21,19 +21,21 @@
   <body onload="kindleCheck()"> 
      <div id="wrapper" class="wrapper">
 	     <div id="headerWrap" class="headerWrap">
-		     <span class="header" id="header"><b>So</b>ho<b>Su</b>ite<span class="header version" style="font-size:15px">alpha_v0.5</span></span>
+		     <span class="header" id="header">(<b>So</b>)ho(<b>Su</b>)ite<span class="header version" style="font-size:15px">alpha_v0.5</span></span>
 		 </div>
 		 <div id="menuWrap" class="menuWrap">
 		     <ul id="menu" class="menu">
-			     <li><a href="#" id="rootLink">Root</a></li><br />
-				 <li><a href="#" id="restoreLink">Restore</a></li><br />
+			     <li><a href="#" id="rootLink">Root</a></li>
+				 <li><a href="#" id="restoreLink">Restore</a></li>
 				 <li  
 				 onmouseover="$(this).css('color','#3498db').css('text-shadow','1px 1px black')" 
 				 onmouseout="$(this).css('color','#3e606f').css('text-shadow','none')" class="romLink">ROMs</li>
-					     <li class="toggle"><br /><a href="#" id="iceLink">Ice</a></li>
+				 <div class="menuBg">
+					     <li class="toggle"><a href="#" id="iceLink">Ice</a></li>
 						 <li class="toggle"><a href="#" id="hellfireLink">HellFire</a></li>
 						 <li class="toggle"><a href="#" id="plasmaLink">Plasma</a></li>
-				 </li><br />
+				 </div>
+				 </li>
 				 <li><a href="#" id="extrasLink">Extras</a></li>
 			 </ul>
 			 </ul>
