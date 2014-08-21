@@ -51,10 +51,12 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
 	padding-top:15px;
 	padding-bottom:15px;
 	border-radius:15px;
-	text-shadow:1px 1px #777777;
+	    color:white;
+	text-shadow:1px 1px black;
 	 }
 .menuWrap{
-    color:black;
+	    color:white;
+	text-shadow:1px 1px black;
          }
 .contentWrap{
     width:70%;
@@ -86,6 +88,8 @@ background: -webkit-linear-gradient(#d1dbbd,#fcfff5,#d1dbbd);
 	font-size:20px;
 	margin-top:-5px;
 	margin-bottom:-5px;
+		    color:white;
+	text-shadow:1px 1px black;
 	   }
 .detector{
     float:left;
@@ -98,7 +102,8 @@ ul{
     list-style-type:none;
   }
 a:link{
-    color:black;
+	    color:white;
+	text-shadow:1px 1px black;
 	text-decoration:none;
                  }
 a:visited{
